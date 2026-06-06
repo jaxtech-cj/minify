@@ -1,0 +1,23 @@
+{
+  "name": "minify",
+  "version": "1.0.0",
+  "description": "Minifier",
+  "keywords": [
+    "minify"
+  ],
+  "homepage": "https://github.com/jaxtech-cj/minify#readme",
+  "bugs": {
+    "url": "https://github.com/jaxtech-cj/minify/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jaxtech-cj/minify.git"
+  },
+  "license": "ISC",
+  "author": "Corey Jackson",
+  "type": "commonjs",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
