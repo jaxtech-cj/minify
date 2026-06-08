@@ -14,15 +14,44 @@ import path from 'path';
 import { bundle, transform } from 'lightningcss';
 import { glob, globSync } from 'glob';
 import UglifyJS from 'uglify-js';
+import { fontawesomeSubset } from "fontawesome-subset";
 
 
 console.log("Minify Utility by Jax Tech");
 
+minifyFA();
+//minifyFonts();
 //minifyJS();
-minifyCSS();
+//minifyCSS();
 //minifyImages();
 
 console.log("Minify Complete");
+
+function minifyFA()
+{
+	//npm i fontawesome-subset
+	//npm i @fortawesome/fontawesome-pro
+	//npm i @fortawesome/fontawesome-free
+	console.log("Minify Font Awesome");
+	fontawesomeSubset(
+	{
+		regular: ["fa-share-nodes"],
+		brands: ["fa-instagram", "fa-square-x-twitter", "fa-facebook", "fa-bluesky", "fa-pinterest"],
+		solid: ["fa-square-rss", "fa-laptop-arrow-down"],
+	}, 'famin');
+	console.log("Font Awesome Minifying Complete");
+}
+
+function minifyFonts()
+{
+	console.log("minify Fonts");
+	//subfont http://127.0.0.1:5501/index.html -o fonts
+	//glyphhanger http://127.0.0.1:5501/index.html
+	//glyphhanger http://127.0.0.1:5501/index.html --family='Roboto'
+	//glyphhanger http://127.0.0.1:5501/index.html --family='Roboto' --subset="*.ttf"
+	//glyphhanger http://127.0.0.1:5501/index.html --family='Roboto' --formats=woff2,woff --subset="*.woff2" --output=fonts
+	
+}
 
 function minifyJS()
 {
