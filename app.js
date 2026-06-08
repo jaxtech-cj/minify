@@ -10,15 +10,16 @@
 import imagemin from 'imagemin';
 import imageminWebp from 'imagemin-webp';
 import fs  from 'fs';
-import { bundle } from 'lightningcss';
-import { glob } from 'glob';
+import path from 'path';
+import { bundle, transform } from 'lightningcss';
+import { glob, globSync } from 'glob';
 import UglifyJS from 'uglify-js';
 
 
 console.log("Minify Utility by Jax Tech");
 
-minifyJS();
-//minifyCSS();
+//minifyJS();
+minifyCSS();
 //minifyImages();
 
 console.log("Minify Complete");
@@ -56,20 +57,47 @@ function minifyJS()
 	  console.log("JS Minifying Complete");
 }
 
-function minifyCSS() {
+function minifyCSS()
+{
 	// Find all CSS files in your source directory
-	const cssfiles = glob.sync('src/**/*.css');
+	const inputDir = path.join(import.meta.dirname, '/css');
+	const outputDir = path.join(import.meta.dirname, '/css/min');
+
+	 // Find all .css files recursively
+	const cssfiles = globSync('*.css', { cwd: inputDir });
 	console.log(cssfiles);
 
-	// Process and minify the external file
-	let { code, map } = bundle({
-		filename: 'css/all.css',
-		minify: true,
-		sourceMap: true // Optional: Generates a source map
+	cssfiles.forEach(file => {
+		const inputFilePath = path.join(inputDir, file);
+		const outputFilePath = outputDir;
+	
+		console.log("MINIFYING: " + file);
+		// Read input file
+		const fileContent = fs.readFileSync(inputFilePath);
+	
+		// Minify using Lightning CSS
+		const { code } = transform({
+		  filename: file,
+		  code: fileContent,
+		  minify: true,
+		  sourceMap: false, 
+		});
+		
+		// Ensure output sub-directories exist
+		fs.mkdirSync(path.dirname(outputFilePath), { recursive: true });
+		
+		const outputFile = path.join(outputFilePath, file.substring(0, file.lastIndexOf("."))) + ".min.css";
+		console.log(outputFile);
+		// Write the minified code to disk
+		fs.writeFileSync(outputFile, code);
+		console.log(`Minified: ${file}`);
 	});
 
+	/*
 	// Write the minified payload to disk
 	fs.writeFileSync('css/min/all.min.css', code);
+	*/
+
 	console.log("CSS Minifying Complete");
 }
 
