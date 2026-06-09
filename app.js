@@ -5,6 +5,7 @@
  * @author Corey Jackson <cjaxsn@gmail.com>
  * @requires imagemin, imagemin-webp
  * @copyright Jax Tech
+ * @date 2026-06-09
  */
 
 import imagemin from 'imagemin';
