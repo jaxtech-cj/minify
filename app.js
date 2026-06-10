@@ -22,13 +22,89 @@ import { promisify } from 'util';
 
 console.log("Minify Utility by Jax Tech");
 
-//minifyFA();
+//discoverFonts('http://127.0.0.1:5501/index.html');
 minifyFonts();
+//minifyFA();
 //minifyJS();
 //minifyCSS();
 //minifyImages();
 
 console.log("Minify Complete");
+
+function discoverFonts(strURL)
+{
+	console.log("Discover Fonts");
+	
+	const command = `npx glyphhanger ${strURL} --json`;
+	//const command = `npx glyphhanger ${url} --family='Font Awesome 7 Pro'`;
+	console.log(command);
+
+	try
+	{
+		console.log('Crawling for used glyphs');
+		execSync(command, { stdio: 'inherit' });
+		console.log('Font identification completed successfully!');
+	} catch (error)
+	{
+		console.error('An error occured during font identifaction:', error.message);
+		process.exit(1);
+	}
+}
+
+function minifyFonts()
+{
+	console.log("minify Fonts");
+	
+	//https://anylove.jax.tech/emojis
+	//https://anyclub.app/index.html
+	//http://127.0.0.1:5501/emojis/index.html
+	
+	async function optimizeFonts(strFontPath)
+	{		
+		const cmdSubset = `npx glyphhanger --subset=${strFontPath} --whitelist=U+20,U+2F,U+E1C6,U+F004,U+F143,U+F1E0 --formats=woff2`;
+		console.log("Subset Command:" + cmdSubset);
+		try
+		{
+			console.log('Subsetting fonts');
+			execSync(cmdSubset, { stdio: 'inherit' });
+			console.log('Font subsetting completed successfully!');
+		}
+		catch (error)
+		{
+			console.error('Error during font subsetting:', error.message);
+			process.exit(1);
+		}
+	}
+	  
+	  optimizeFonts('fonts/fa-solid-900.woff2');
+
+	//glyphhanger --subset=path/to/fontawesome-solid.ttf --whitelist=U+F007,U+F00c --formats=woff2
+	//subfont http://127.0.0.1:5501/index.html -o fonts
+	
+	//Step 1
+		//glyphhanger http://127.0.0.1:5501/index.html --json
+		//This will print a JSON array of the Unicode values for your icons in the terminal.
+		//FA 7 Pro - U+20,U+2F,U+E1C6,U+F004,U+F143,U+F1E0
+		//FA 7 Brands - U+20,U+2F,U+E61A,U+E671,U+F0D2,U+F16D
+
+		//RSS - F143
+		//LAPTOP - e1c6
+		//HEART - f004
+
+	//Step 2
+	//glyphhanger --subset=fonts/fa/fa-brands-400.woff2 --whitelist=U+E61A,U+E671,U+F0D2,U+F16D --formats=woff2
+	//glyphhanger --subset=fonts/fa/fa-regular-400.woff2 --whitelist=U+E1C6,U+F004,U+F143,U+F1E0 --formats=woff2
+	//glyphhanger --subset=fonts/fa/fa-solid-900.woff2 --whitelist= --formats=woff2
+
+	//glyphhanger http://127.0.0.1:5501/index.html --json
+	//glyphhanger http://127.0.0.1:5501/index.html --family='Font Awesome 7 Pro'
+	//glyphhanger http://127.0.0.1:5501/index.html --json --family='Roboto'
+    //glyphhanger http://127.0.0.1:5501/index.html --json --family='Font Awesome 7 Pro Solid'
+
+	//glyphhanger http://127.0.0.1:5501/index.html --family='Roboto' --subset="*.ttf"
+	//glyphhanger http://127.0.0.1:5501/index.html --family='Roboto' --formats=woff2,woff --subset="*.woff2" --output=fonts
+	
+}
 
 function minifyFA()
 {
@@ -49,50 +125,6 @@ function minifyFA()
         package: "pro"
     });
 	console.log("Font Awesome Minifying Complete");
-}
-
-function minifyFonts()
-{
-	console.log("minify Fonts");
-	
-	async function optimizeFonts() {
-		// Target your HTML files and the source font
-		const url1 = 'http://127.0.0.1:5501/index.html';
-		const url = 'https://anyclub.app/index.html';
-		
-		const command = `npx glyphhanger ${url} --json`;
-		console.log(command);
-
-		try {
-			console.log('Crawling for used glyphs');
-			execSync(command, { stdio: 'inherit' });
-			console.log('Font identification completed successfully!');
-		  } catch (error) {
-			console.error('Error during font identifaction:', error.message);
-			process.exit(1);
-		  }
-	  }
-	  
-	  optimizeFonts();
-
-	//glyphhanger --subset=path/to/fontawesome-solid.ttf --whitelist=U+F007,U+F00c --formats=woff2
-	//subfont http://127.0.0.1:5501/index.html -o fonts
-	
-	//Step 1
-		//glyphhanger http://127.0.0.1:5501/index.html --json
-		//This will print a JSON array of the Unicode values for your icons in the terminal.
-		//FA 6 Brands - U+E61A,U+E671,U+F0D2,U+F16D
-		//FA 6 Pro - U+E1C6,U+F004,U+F143,U+F1E0
-
-	//Step 2
-	//glyphhanger --subset=fonts/fa/fa-brands-400.woff2 --whitelist=U+E61A,U+E671,U+F0D2,U+F16D --formats=woff2
-	//glyphhanger --subset=fonts/fa/fa-regular-400.woff2 --whitelist=U+E1C6,U+F004,U+F143,U+F1E0 --formats=woff2
-	//glyphhanger --subset=fonts/fa/fa-solid-900.woff2 --whitelist= --formats=woff2
-
-	//glyphhanger http://127.0.0.1:5501/index.html --family='Roboto'
-	//glyphhanger http://127.0.0.1:5501/index.html --family='Roboto' --subset="*.ttf"
-	//glyphhanger http://127.0.0.1:5501/index.html --family='Roboto' --formats=woff2,woff --subset="*.woff2" --output=fonts
-	
 }
 
 function minifyJS()
