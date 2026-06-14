@@ -15,21 +15,73 @@ import path from 'path';
 import { bundle, transform } from 'lightningcss';
 import { glob, globSync } from 'glob';
 import UglifyJS from 'uglify-js';
+import { minify } from 'html-minifier-terser';
 import { fontawesomeSubset } from "fontawesome-subset";
+import { faBriefcase } from '@fortawesome/free-solid-svg-icons';
+import { faUser } from '@fortawesome/free-regular-svg-icons';
+import { faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { execSync } from 'child_process';
 import { promisify } from 'util';
 
+/*
+dependencies
+npm i html-minifier-terser
+*/
 
-console.log("Minify Utility by Jax Tech");
+console.log("Minify Utility v1 by Jax Tech");
 
-//discoverFonts('http://127.0.0.1:5501/index.html');
-minifyFonts();
+const strFontURL = "http://127.0.0.1:5500/index.html";
+//const strFontURL = "https://coreyjackson.me/index.html";
+
+//faLookup();
+
+minifyHTML()
+//discoverFonts(strFontURL);
+//minifyFonts();
 //minifyFA();
 //minifyJS();
 //minifyCSS();
 //minifyImages();
 
 console.log("Minify Complete");
+
+async function minifyHTML()
+{
+	try
+	{
+		const inputHtml = fs.readFileSync('html/index.html', 'utf8');
+		console.log(inputHtml);
+
+		//Define minification settings (most are disabled by default)
+		const options = {
+		  collapseWhitespace: true,
+		  removeComments: true,
+		  keepClosingSlash: true,
+		  //minifyJS: true, // Minifies inline <script> blocks via Terser
+		  minifyCSS: true // Minifies inline <style> blocks
+		};
+	
+		// 3. Process the file data
+		console.log("begin minify...");
+		const minifiedHtml = await minify(inputHtml, options);
+	
+		// 4. Write the compressed output back to disk
+		fs.writeFileSync('html/index.min.html', minifiedHtml);
+		console.log('Minify HTML Completed Successfully');
+	} catch (error) {
+		console.error('Error minifying HTML:', error);
+	}
+}
+
+function faLookup()
+{
+	console.log(faInstagram.iconName);
+	console.log(faInstagram.icon[3]);
+	console.log(faBriefcase.iconName); // Returns "briefcase"
+	console.log(faBriefcase.icon[3]); // Returns "f0b1"
+	console.log(faUser.iconName); // Returns "user"
+	console.log(faUser.icon[3]); // Returns "f0b1"
+}
 
 function discoverFonts(strURL)
 {
@@ -59,15 +111,15 @@ function minifyFonts()
 	//https://anyclub.app/index.html
 	//http://127.0.0.1:5501/emojis/index.html
 	
-	async function optimizeFonts(strFontPath)
+	async function subsetFonts(strFontPath, strWhitelist)
 	{		
-		const cmdSubset = `npx glyphhanger --subset=${strFontPath} --whitelist=U+20,U+2F,U+E1C6,U+F004,U+F143,U+F1E0 --formats=woff2`;
-		console.log("Subset Command:" + cmdSubset);
+		const cmdSubset = `npx glyphhanger --subset=${strFontPath} --whitelist=${strWhitelist} --formats=woff2`;
+		//console.log("Subset Command:" + cmdSubset);
 		try
 		{
-			console.log('Subsetting fonts');
-			execSync(cmdSubset, { stdio: 'inherit' });
-			console.log('Font subsetting completed successfully!');
+			console.log('Subsetting fonts using glyphhanger');
+			const output = execSync(cmdSubset, { stdio: 'inherit', encoding: 'utf-8' });
+			//console.log(output);
 		}
 		catch (error)
 		{
@@ -75,8 +127,10 @@ function minifyFonts()
 			process.exit(1);
 		}
 	}
-	  
-	  optimizeFonts('fonts/fa-solid-900.woff2');
+
+	subsetFonts('fonts/fa-brands-400.woff2', "U+20,U+2F,U+E5AE,U+E663,U+F08C,U+F092,U+F16D,U+F368");
+	subsetFonts('fonts/fa-regular-400.woff2', "U+20,U+2F,U+E042,U+E0C6,U+E0D2,U+E0DC,U+E0E9,U+E165,U+E1EC,U+E206,U+E267,U+E3D1,U+E471,U+E4A2,U+E4E5,U+E533,U+E54B,U+E574,U+E5E9,U+E5FD,U+E699,U+E6A1,U+F007,U+F015,U+F023,U+F085,U+F08E,U+F0AE,U+F0B1,U+F0C2,U+F0C5,U+F0D1,U+F0EC,U+F0F2,U+F126,U+F133,U+F19D,U+F1AB,U+F1C0,U+F1C9,U+F228,U+F247,U+F2DB,U+F2EC,U+F37E,U+F3B3,U+F40E,U+F49C,U+F508,U+F52D,U+F534,U+F542,U+F56D,U+F57D,U+F5AB,U+F5BB,U+F5DA,U+F5F3,U+F611,U+F643,U+F647,U+F6FF,U+F78A,U+F7E7,U+F7EA,U+F808,U+F82C");
+	//subsetFonts('fonts/fa-solid-900.woff2', "");
 
 	//glyphhanger --subset=path/to/fontawesome-solid.ttf --whitelist=U+F007,U+F00c --formats=woff2
 	//subfont http://127.0.0.1:5501/index.html -o fonts
@@ -103,7 +157,7 @@ function minifyFonts()
 
 	//glyphhanger http://127.0.0.1:5501/index.html --family='Roboto' --subset="*.ttf"
 	//glyphhanger http://127.0.0.1:5501/index.html --family='Roboto' --formats=woff2,woff --subset="*.woff2" --output=fonts
-	
+	console.log('Font subsetting completed successfully!');
 }
 
 function minifyFA()
@@ -174,7 +228,7 @@ function minifyCSS()
 		const inputFilePath = path.join(inputDir, file);
 		const outputFilePath = outputDir;
 	
-		console.log("MINIFYING: " + file);
+		console.log("MINIFYING CSS: " + file);
 		// Read input file
 		const fileContent = fs.readFileSync(inputFilePath);
 	
@@ -206,7 +260,7 @@ function minifyCSS()
 
 function minifyImages()
 {
-	const files = imagemin(['images/*.{jpg,webp}'], {
+	const files = imagemin(['images/*.{jpg,png,webp}'], {
 		destination: 'images/min',
 		plugins: [
 			imageminWebp({quality: 75})
