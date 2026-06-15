@@ -47,30 +47,53 @@ console.log("Minify Complete");
 
 async function minifyHTML()
 {
-	try
+	
+	// Find all HTML files in source directory
+	const inputDir = path.join(import.meta.dirname, '/html');
+	const outputDir = path.join(import.meta.dirname, '/html/min');
+
+	// Find all .html files recursively
+	const htmlfiles = globSync('*.html', { cwd: inputDir });
+	console.log(htmlfiles);
+
+	htmlfiles.forEach(async (file) =>
 	{
-		const inputHtml = fs.readFileSync('html/index.html', 'utf8');
-		console.log(inputHtml);
+		const inputFilePath = path.join(inputDir, file);
+		const outputFilePath = outputDir;
+
+		console.log("MINIFYING HTML file: " + file);
+	
+		const fileContent = fs.readFileSync(inputFilePath);
+
+		const inputHtml = fs.readFileSync(inputFilePath, 'utf8');
 
 		//Define minification settings (most are disabled by default)
 		const options = {
-		  collapseWhitespace: true,
-		  removeComments: true,
-		  keepClosingSlash: true,
-		  //minifyJS: true, // Minifies inline <script> blocks via Terser
-		  minifyCSS: true // Minifies inline <style> blocks
+			collapseWhitespace: true,
+			removeComments: true,
+			keepClosingSlash: true,
+			//minifyJS: true, // Minifies inline <script> blocks via Terser
+			minifyCSS: true // Minifies inline <style> blocks
 		};
-	
-		// 3. Process the file data
-		console.log("begin minify...");
-		const minifiedHtml = await minify(inputHtml, options);
-	
-		// 4. Write the compressed output back to disk
-		fs.writeFileSync('html/index.min.html', minifiedHtml);
-		console.log('Minify HTML Completed Successfully');
-	} catch (error) {
-		console.error('Error minifying HTML:', error);
-	}
+			
+		try
+		{
+			// 3. Process the file data
+			const minifiedHtml = await minify(inputHtml, options);
+			
+			// 4. Write the compressed output back to disk
+			const outputFile = path.join(outputFilePath, file.substring(0, file.lastIndexOf("."))) + ".min.html";
+			//console.log(outputFile);
+			
+			// Write the minified code to disk
+			fs.writeFileSync(outputFile, minifiedHtml);
+			console.log(`Minified: ${file}`);
+		}
+		catch (error) {
+			console.error('Error minifying HTML on file:' + file, error);
+		}
+	});
+	//console.log('Minify HTML Completed Successfully');
 }
 
 function faLookup()
