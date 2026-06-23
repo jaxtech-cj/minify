@@ -45,8 +45,8 @@ const strFontURL = "http://fightden.ca";
 //minifyFonts();
 //minifyFA();
 //minifyJS();
-minifyCSS();
-minifyImages();
+//minifyCSS();
+//minifyImages();
 generateReport();
 
 console.log("Minify Complete");
@@ -94,7 +94,7 @@ function getDirectoryStats(folderPath)
 			const stats = fs.statSync(folderPath + "/" + file);
 			//console.log(path.basename(folderPath));
 
-			if (stats.isFile()) {
+			if (stats.isFile() && file != ".DS_Store") {
 				arrResults.push([path.basename(folderPath), file, stats.size, (stats.size / 1024)]); //foldername, filename, size (bytes), size(kb)
 			}
 		});
@@ -115,7 +115,8 @@ function generateReport()
 		arrAll.push(getDirectoryStats('js/min'));
 		arrAll.push(getDirectoryStats('images'));
 		arrAll.push(getDirectoryStats('images/min'));
-		
+		arrAll.push(getDirectoryStats('fonts'));
+		arrAll.push(getDirectoryStats('fonts/min'));
 
 	 	let dataHTML = "<html><body><table><tr><th>Folder<th>Filename</th><th>File Size (bytes)</th><th>File Size (KB)</th></tr>";
 
