@@ -87,7 +87,7 @@ function getDirectoryStats(folderPath)
 		let arrResults = [];
 		
 		//Get all file and folder names inside the directory
-		const files = fs.readdirSync(folderPath);
+		const files = fs.readdirSync(folderPath).sort();
 		
 		//console.log(files);
 		files.forEach(file => {
@@ -435,16 +435,23 @@ cssfiles.forEach(file => {
 
 async function minifyImages()
 {
-	const arrFiles = await imagemin(['images/*.{jpg,png,webp}'], {
-		destination: 'images/min',
-		plugins: [
-			imageminWebp({quality: 75})
-		]
-	});
-
-	for (const record of arrFiles)
+	try
 	{
-	console.log(record.destinationPath);
+		const arrFiles = await imagemin(['images/*.{jpg,png,webp}'], {
+			destination: 'images/min',
+			plugins: [
+				imageminWebp({quality: 75})
+			]
+		});
+
+		for (const record of arrFiles)
+		{
+		console.log(record.destinationPath);
+		}
+		console.log('Image optimization complete on ' + arrFiles.length + " images");
 	}
-	console.log('Image optimization complete on ' + arrFiles.length + " images");
+	catch (error)
+	{
+		console.log(error.message);
+	}
 }
