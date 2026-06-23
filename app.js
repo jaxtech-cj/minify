@@ -38,7 +38,37 @@ const strFontURL = "http://fightden.ca";
 //const strFontURL = "https://coreyjackson.me/index.html";
 
 //faLookup();
+var arrURLs = ['https://fightden.ca',
+'https://fightden.ca/about',
+'https://fightden.ca/services/',
+'https://www.fightden.ca/service-category/krav-maga-weapons-disarm/',
+'https://www.fightden.ca/service-category/no-gi-jiu-jitsu/',
+'https://www.fightden.ca/service-category/mixed-martial-arts/',
+'https://www.fightden.ca/service-category/combat-fitness/',
+'https://www.fightden.ca/schedule/',
+'https://www.fightden.ca/product-category/memberships/',
+'https://www.fightden.ca/product-category/individual-classes/',
+'https://www.fightden.ca/product-category/corporate-classes/',
+'https://www.fightden.ca/product-category/digital-products/',
+'https://www.fightden.ca/contact/'
+	 ]
 
+	 discoverFonts(arrURLs);
+	 /*
+discoverFonts('https://fightden.ca');
+discoverFonts('https://fightden.ca/about');
+discoverFonts('https://fightden.ca/services/');
+discoverFonts('https://www.fightden.ca/service-category/krav-maga-weapons-disarm/');
+discoverFonts('https://www.fightden.ca/service-category/no-gi-jiu-jitsu/');
+discoverFonts('https://www.fightden.ca/service-category/mixed-martial-arts/');
+discoverFonts('https://www.fightden.ca/service-category/combat-fitness/');
+discoverFonts('https://www.fightden.ca/schedule/');
+discoverFonts('https://www.fightden.ca/product-category/memberships/');
+discoverFonts('https://www.fightden.ca/product-category/individual-classes/');
+discoverFonts('https://www.fightden.ca/product-category/corporate-classes/');
+discoverFonts('https://www.fightden.ca/product-category/digital-products/');
+*/
+		
 //scrapeWeb();
 //minifyHTML()
 //discoverFonts(strFontURL);
@@ -216,23 +246,26 @@ function faLookup()
 	console.log(faUser.icon[3]); // Returns "f0b1"
 }
 
-function discoverFonts(strURL)
+function discoverFonts(arrURLs)
 {
 	console.log("Discover Fonts");
 	
-	const command = `npx glyphhanger ${strURL} --json`;
-	//const command = `npx glyphhanger ${url} --family='Font Awesome 7 Pro'`;
-	console.log(command);
+	for (const url of arrURLs)
+	{
+		const command = `npx glyphhanger ${url} --json`;
+		//const command = `npx glyphhanger ${url} --family='Font Awesome 7 Pro'`;
+		console.log(command);
 
-	try
-	{
-		console.log('Crawling for used glyphs');
-		execSync(command, { stdio: 'inherit' });
-		console.log('Font identification completed successfully!');
-	} catch (error)
-	{
-		console.error('An error occured during font identifaction:', error.message);
-		process.exit(1);
+		try
+		{
+			console.log('Crawling for used glyphs');
+			execSync(command, { stdio: 'inherit' });
+			console.log('Font identification completed successfully!');
+		} catch (error)
+		{
+			console.error('An error occured during font identifaction:', error.message);
+			process.exit(1);
+		}
 	}
 }
 
