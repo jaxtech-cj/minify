@@ -78,10 +78,11 @@ function generateReport()
 {
 	try {
 		let arrAll = [];
-		let arrCSS = getDirectoryStats('css');
-		arrAll.push(arrCSS);
-		let arrCSSmin = getDirectoryStats('css/min');
-		arrAll.push(arrCSSmin);
+		arrAll.push(getDirectoryStats('css'));
+		arrAll.push(getDirectoryStats('css/min'));
+		arrAll.push(getDirectoryStats('js'));
+		arrAll.push(getDirectoryStats('js/min'));
+		
 
 	 	let dataHTML = "<html><body><table><tr><th>Folder<th>Filename</th><th>File Size (bytes)</th><th>File Size (KB)</th></tr>";
 
@@ -114,6 +115,7 @@ function generateReport()
 		}
 	 	dataHTML += "</body></html>";
 	 	fs.writeFileSync(path.join(import.meta.dirname, '/report.html'), dataHTML, 'utf8');
+		console.log("Report successfully generated");
 	   } catch (err) {
 	 	console.error('Error generating report:', err);
 	   }
