@@ -52,27 +52,11 @@ var arrURLs = ['https://fightden.ca',
 'https://www.fightden.ca/product-category/digital-products/',
 'https://www.fightden.ca/contact/'
 	 ]
-
-	 discoverFonts(arrURLs);
-	 /*
-discoverFonts('https://fightden.ca');
-discoverFonts('https://fightden.ca/about');
-discoverFonts('https://fightden.ca/services/');
-discoverFonts('https://www.fightden.ca/service-category/krav-maga-weapons-disarm/');
-discoverFonts('https://www.fightden.ca/service-category/no-gi-jiu-jitsu/');
-discoverFonts('https://www.fightden.ca/service-category/mixed-martial-arts/');
-discoverFonts('https://www.fightden.ca/service-category/combat-fitness/');
-discoverFonts('https://www.fightden.ca/schedule/');
-discoverFonts('https://www.fightden.ca/product-category/memberships/');
-discoverFonts('https://www.fightden.ca/product-category/individual-classes/');
-discoverFonts('https://www.fightden.ca/product-category/corporate-classes/');
-discoverFonts('https://www.fightden.ca/product-category/digital-products/');
-*/
 		
 //scrapeWeb();
 //minifyHTML()
-//discoverFonts(strFontURL);
-//minifyFonts();
+//discoverFonts(arrURLs);
+minifyFonts();
 //minifyFA();
 //minifyJS();
 //minifyCSS();
@@ -285,13 +269,9 @@ function minifyFonts()
 {
 	console.log("minify Fonts");
 	
-	//https://anylove.jax.tech/emojis
-	//https://anyclub.app/index.html
-	//http://127.0.0.1:5501/emojis/index.html
-	
 	async function subsetFonts(strFontPath, strWhitelist)
 	{		
-		const cmdSubset = `npx glyphhanger --subset=${strFontPath} --whitelist=${strWhitelist} --formats=woff2`;
+		const cmdSubset = `npx glyphhanger --subset=${strFontPath} --whitelist=${strWhitelist} --formats=woff2 --output=fonts/min`;
 		//console.log("Subset Command:" + cmdSubset);
 		try
 		{
@@ -306,16 +286,10 @@ function minifyFonts()
 		}
 	}
 
-	//fight den
-// 	Open Sans": "U+A,U+20-23,U+25-2A,U+2C-3B,U+3E-50,U+52-59,U+5F,U+61-7B,U+7D",
-//   "Lato": "U+20,U+26,U+2D,U+41-50,U+52-59",
-//   "ETmodules": "U+33,U+49,U+4C,U+61",
-//   "Font Awesome 6 Brands": "U+F16D",
-//   "Font Awesome 6 Pro": "U+F060-F062,U+F095" }
+	//fightden.ca
 	subsetFonts('fonts/fa-brands-400.woff2', "U+20,U+2F,U+F16D");
-	subsetFonts('fonts/pro-fa-solid-900-0.woff2', "U+20,U+2F,U+F060-F062,U+F095");
-	//subsetFonts('fonts/fa-solid-900.woff2', "");
-
+	subsetFonts('fonts/pro-fa-solid-900-0.woff2', "U+F060,U+F061,U+F073,U+F095,U+F10D,U+F10E,U+F3C5,U+F438,U+F675");
+	
 	//glyphhanger --subset=path/to/fontawesome-solid.ttf --whitelist=U+F007,U+F00c --formats=woff2
 	//subfont http://127.0.0.1:5501/index.html -o fonts
 	
