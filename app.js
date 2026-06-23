@@ -437,7 +437,7 @@ async function minifyImages()
 {
 	try
 	{
-		const arrFiles = await imagemin(['images/*.{jpg,png,webp}'], {
+		const arrFiles = await imagemin(['images/*.{gif,jpg,png,webp}'], {
 			destination: 'images/min',
 			plugins: [
 				imageminWebp({quality: 75})
@@ -446,7 +446,7 @@ async function minifyImages()
 
 		for (const record of arrFiles)
 		{
-		console.log(record.destinationPath);
+			console.log(record.destinationPath);
 		}
 		console.log('Image optimization complete on ' + arrFiles.length + " images");
 	}
