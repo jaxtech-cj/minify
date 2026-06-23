@@ -24,6 +24,7 @@ import { execSync } from 'child_process';
 import { readdir, stat } from 'node:fs';
 import { join } from 'node:path';
 import { promisify } from 'util';
+import scrape from 'website-scraper';
 
 /*
 dependencies
@@ -45,9 +46,25 @@ const strFontURL = "http://fightden.ca";
 //minifyJS();
 //minifyCSS();
 //minifyImages();
-generateReport();
+//generateReport();
+scrapeWeb();
 
 console.log("Minify Complete");
+
+function scrapeWeb()
+{
+	try
+	{
+	  scrape({
+		urls: ['https://fightden.ca' ],	// Will be saved with default filename 'index.html'
+		directory: 'scrape/fightden.ca'
+	  });
+	}
+	catch (error)
+	{
+		console.error(error.message);
+	}
+}
 
 function getDirectoryStats(folderPath)
 {
@@ -82,6 +99,8 @@ function generateReport()
 		arrAll.push(getDirectoryStats('css/min'));
 		arrAll.push(getDirectoryStats('js'));
 		arrAll.push(getDirectoryStats('js/min'));
+		arrAll.push(getDirectoryStats('images'));
+		arrAll.push(getDirectoryStats('images/min'));
 		
 
 	 	let dataHTML = "<html><body><table><tr><th>Folder<th>Filename</th><th>File Size (bytes)</th><th>File Size (KB)</th></tr>";

@@ -31,7 +31,8 @@
     "imagemin-webp": "^8.0.0",
     "lightningcss": "^1.32.0",
     "subfont": "^7.2.3",
-    "uglify-js": "^3.19.3"
+    "uglify-js": "^3.19.3",
+    "website-scraper": "^6.0.0"
   },
   "devDependencies": {
     "fontawesome-subset": "^4.6.0",
