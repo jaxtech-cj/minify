@@ -45,7 +45,7 @@ const strFontURL = "http://fightden.ca";
 //minifyFonts();
 //minifyFA();
 //minifyJS();
-//minifyCSS();
+minifyCSS();
 minifyImages();
 generateReport();
 
@@ -89,7 +89,7 @@ function getDirectoryStats(folderPath)
 		//Get all file and folder names inside the directory
 		const files = fs.readdirSync(folderPath).sort((a, b) => a.localeCompare(b, undefined, { sensitivity: 'base' }));
 		
-		console.log(files);
+		//console.log(files);
 		files.forEach(file => {
 			const stats = fs.statSync(folderPath + "/" + file);
 			//console.log(path.basename(folderPath));
@@ -446,7 +446,7 @@ async function minifyImages()
 
 		for (const record of arrFiles)
 		{
-			console.log(record.destinationPath);
+			//console.log(record.destinationPath); //verbose log
 		}
 		console.log('Image optimization complete on ' + arrFiles.length + " images");
 	}
