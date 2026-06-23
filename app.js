@@ -21,6 +21,8 @@ import { faBriefcase } from '@fortawesome/free-solid-svg-icons';
 import { faUser } from '@fortawesome/free-regular-svg-icons';
 import { faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { execSync } from 'child_process';
+import { readdir, stat } from 'node:fs';
+import { join } from 'node:path';
 import { promisify } from 'util';
 
 /*
@@ -40,11 +42,77 @@ const strFontURL = "http://fightden.ca";
 //discoverFonts(strFontURL);
 //minifyFonts();
 //minifyFA();
-minifyJS();
+//minifyJS();
 //minifyCSS();
 //minifyImages();
+listFileSizes('css');
 
 console.log("Minify Complete");
+
+function listFileSizes(folderPath) {
+	try {
+		let arrResults = [];
+		
+		//Get all file and folder names inside the directory
+		const files = fs.readdirSync(folderPath);
+		
+		//console.log(files);
+		files.forEach(file => {
+			const stats = fs.statSync(folderPath + "/" + file);
+			
+		   	if (stats.isFile()) {
+				//console.log(file);
+				// console.log(stats.size + ' bytes');
+				// console.log((stats.size / 1024).toFixed(2) + ' KB');
+				arrResults.push([file, stats.size, (stats.size / 1024)]); //filename, size (bytes), size(kb)
+		  }
+		});
+
+		let totalBytes = 0;
+
+		for (const row of arrResults) {
+			console.log(row);
+			totalBytes += row[1];
+		}
+		console.log("File Count:" + arrResults.length);
+		console.log("Tot Bytes:" + totalBytes);
+		console.log("Tot KB:" + (totalBytes / 1024).toFixed(2)); //1720.23
+		console.log("Tot MB:" + (totalBytes / 1024 / 1024).toFixed(2));
+	  } catch (err) {
+		console.error('Error computing file sizes:', err);
+	  }
+}
+
+async function asycListFileSizes(dirPath) {
+	try {
+		// Read directory entries including their file type objects
+		const entries = await readdir(dirPath, { withFileTypes: true });
+		
+	  	// Map through entries and pull size info for valid files
+	  	const fileStats = await Promise.all(
+		entries.map(async (entry) => {
+		  const fullPath = join(dirPath, entry.name);
+		  
+		  if (entry.isFile()) {
+			const fileStat = await stat(fullPath);
+			return {
+			  FileName: entry.name,
+			  SizeBytes: fileStat.size,
+			  SizeKB: (fileStat.size / 1024).toFixed(2) + ' KB'
+			};
+		  }
+		  return null; // Skip subdirectories
+		})
+	  );
+  
+	  // Filter out null entries from subdirectories and display results
+	  const cleanFiles = fileStats.filter(file => file !== null);
+	  console.table(cleanFiles);
+	  
+	} catch (error) {
+	  console.error('Error reading directory:', error);
+	}
+}
 
 async function minifyHTML()
 {
@@ -257,7 +325,7 @@ jsfiles.forEach(file => {
 		if (result.error) {
 			throw result.error;
 		}
-		
+
 		const outputFile = path.join(outputFilePath, file.substring(0, file.lastIndexOf("."))) + ".min.js";
 		console.log(outputFile);
 		// Write the minified code to disk
