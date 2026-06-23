@@ -39,6 +39,7 @@ const strFontURL = "http://fightden.ca";
 
 //faLookup();
 
+//scrapeWeb();
 //minifyHTML()
 //discoverFonts(strFontURL);
 //minifyFonts();
@@ -47,7 +48,6 @@ const strFontURL = "http://fightden.ca";
 //minifyCSS();
 //minifyImages();
 //generateReport();
-scrapeWeb();
 
 console.log("Minify Complete");
 
@@ -56,9 +56,23 @@ function scrapeWeb()
 	try
 	{
 	  scrape({
-		urls: ['https://fightden.ca' ],	// Will be saved with default filename 'index.html'
+		urls: ['https://fightden.ca',
+		'https://fightden.ca/about',
+		'https://fightden.ca/services/',
+		'https://www.fightden.ca/service-category/krav-maga-weapons-disarm/',
+		'https://www.fightden.ca/service-category/no-gi-jiu-jitsu/',
+		'https://www.fightden.ca/service-category/mixed-martial-arts/',
+		'https://www.fightden.ca/service-category/combat-fitness/',
+		'https://www.fightden.ca/schedule/',
+		'https://www.fightden.ca/product-category/memberships/',
+		'https://www.fightden.ca/product-category/individual-classes/',
+		'https://www.fightden.ca/product-category/corporate-classes/',
+		'https://www.fightden.ca/product-category/digital-products/',
+		'https://www.fightden.ca/contact/'
+		 ],	// Will be saved with default filename 'index.html'
 		directory: 'scrape/fightden.ca'
 	  });
+	  console.log("scrape complete");
 	}
 	catch (error)
 	{
