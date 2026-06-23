@@ -87,9 +87,9 @@ function getDirectoryStats(folderPath)
 		let arrResults = [];
 		
 		//Get all file and folder names inside the directory
-		const files = fs.readdirSync(folderPath).sort();
+		const files = fs.readdirSync(folderPath).sort((a, b) => a.localeCompare(b, undefined, { sensitivity: 'base' }));
 		
-		//console.log(files);
+		console.log(files);
 		files.forEach(file => {
 			const stats = fs.statSync(folderPath + "/" + file);
 			//console.log(path.basename(folderPath));
@@ -109,10 +109,10 @@ function generateReport()
 {
 	try {
 		let arrAll = [];
-		arrAll.push(getDirectoryStats('css'));
-		arrAll.push(getDirectoryStats('css/min'));
-		arrAll.push(getDirectoryStats('js'));
-		arrAll.push(getDirectoryStats('js/min'));
+		//arrAll.push(getDirectoryStats('css'));
+		//arrAll.push(getDirectoryStats('css/min'));
+		//arrAll.push(getDirectoryStats('js'));
+		//arrAll.push(getDirectoryStats('js/min'));
 		arrAll.push(getDirectoryStats('images'));
 		arrAll.push(getDirectoryStats('images/min'));
 		
