@@ -109,10 +109,10 @@ function generateReport()
 {
 	try {
 		let arrAll = [];
-		//arrAll.push(getDirectoryStats('css'));
-		//arrAll.push(getDirectoryStats('css/min'));
-		//arrAll.push(getDirectoryStats('js'));
-		//arrAll.push(getDirectoryStats('js/min'));
+		arrAll.push(getDirectoryStats('css'));
+		arrAll.push(getDirectoryStats('css/min'));
+		arrAll.push(getDirectoryStats('js'));
+		arrAll.push(getDirectoryStats('js/min'));
 		arrAll.push(getDirectoryStats('images'));
 		arrAll.push(getDirectoryStats('images/min'));
 		
