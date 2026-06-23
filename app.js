@@ -1,6 +1,6 @@
 /**
  * @file Minifier
- * @since 1.0.0
+ * @since 1.0.1
  * @module app.js
  * @author Corey Jackson <cjaxsn@gmail.com>
  * @requires imagemin, imagemin-webp
@@ -30,7 +30,7 @@ dependencies
 npm i html-minifier-terser
 */
 
-console.log("Minify Utility v1 by Jax Tech");
+console.log("Minify Utility v1.0.1 - Jax Tech Inc.");
 
 const strFontURL = "http://fightden.ca";
 //const strFontURL = "http://127.0.0.1:5500/index.html";
@@ -45,11 +45,11 @@ const strFontURL = "http://fightden.ca";
 //minifyJS();
 //minifyCSS();
 //minifyImages();
-listFileSizes('css');
+generateReport('css');
 
 console.log("Minify Complete");
 
-function listFileSizes(folderPath) {
+function generateReport(folderPath) {
 	try {
 		let arrResults = [];
 		
@@ -68,16 +68,29 @@ function listFileSizes(folderPath) {
 		  }
 		});
 
+		let dataHTML = "<html><body><table><tr><th>Filename</th><th>File Size (bytes)</th><th>File Size (MB)</th></tr>";
 		let totalBytes = 0;
 
 		for (const row of arrResults) {
 			console.log(row);
 			totalBytes += row[1];
+			dataHTML += "<tr>";
+			dataHTML += "<td>" + row[0] + "</td>"; //filename
+			dataHTML += "<td>" + row[1] + "</td>"; //size (bytes)
+			dataHTML += "<td>" + row[2] + "</td>"; //size (kb)
+			dataHTML += "</tr>";
 		}
 		console.log("File Count:" + arrResults.length);
 		console.log("Tot Bytes:" + totalBytes);
-		console.log("Tot KB:" + (totalBytes / 1024).toFixed(2)); //1720.23
-		console.log("Tot MB:" + (totalBytes / 1024 / 1024).toFixed(2));
+		const totalKB = (totalBytes / 1024).toFixed(2);
+		const totalMB = (totalBytes / 1024 / 1024).toFixed(2);
+		console.log("Tot KB:" + totalBytes);
+		console.log("Tot MB:" + totalMB);
+		dataHTML += "<td>Total</td>";
+		dataHTML += "<td>" + totalBytes + "</td>";
+		dataHTML += "<td>" + totalKB + "</td>";
+		dataHTML += "</body></html>";
+		fs.writeFileSync(path.join(import.meta.dirname, '/report.html'), dataHTML, 'utf8');
 	  } catch (err) {
 		console.error('Error computing file sizes:', err);
 	  }
