@@ -46,8 +46,8 @@ const strFontURL = "http://fightden.ca";
 //minifyFA();
 //minifyJS();
 //minifyCSS();
-//minifyImages();
-//generateReport();
+minifyImages();
+generateReport();
 
 console.log("Minify Complete");
 
@@ -433,15 +433,16 @@ cssfiles.forEach(file => {
 	console.log("CSS Minifying Complete");
 }
 
-function minifyImages()
+async function minifyImages()
 {
-	const files = imagemin(['images/*.{jpg,png,webp}'], {
+	const arrFiles = await imagemin(['images/*.{jpg,png,webp}'], {
 		destination: 'images/min',
 		plugins: [
 			imageminWebp({quality: 75})
 		]
 	});
 
-	console.log(files);
+	for (const record of arrFiles)
+	console.log(record.destinationPath);
 	console.log('Image optimization complete');
 }
