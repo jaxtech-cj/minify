@@ -45,12 +45,14 @@ const strFontURL = "http://fightden.ca";
 //minifyJS();
 //minifyCSS();
 //minifyImages();
-generateReport('css');
+generateReport();
 
 console.log("Minify Complete");
 
-function generateReport(folderPath) {
-	try {
+function getDirectoryStats(folderPath)
+{
+	try
+	{
 		let arrResults = [];
 		
 		//Get all file and folder names inside the directory
@@ -59,72 +61,62 @@ function generateReport(folderPath) {
 		//console.log(files);
 		files.forEach(file => {
 			const stats = fs.statSync(folderPath + "/" + file);
-			
-		   	if (stats.isFile()) {
-				//console.log(file);
-				// console.log(stats.size + ' bytes');
-				// console.log((stats.size / 1024).toFixed(2) + ' KB');
-				arrResults.push([file, stats.size, (stats.size / 1024)]); //filename, size (bytes), size(kb)
-		  }
+			//console.log(path.basename(folderPath));
+
+			if (stats.isFile()) {
+				arrResults.push([path.basename(folderPath), file, stats.size, (stats.size / 1024)]); //foldername, filename, size (bytes), size(kb)
+			}
 		});
 
-		let dataHTML = "<html><body><table><tr><th>Filename</th><th>File Size (bytes)</th><th>File Size (MB)</th></tr>";
-		let totalBytes = 0;
-
-		for (const row of arrResults) {
-			console.log(row);
-			totalBytes += row[1];
-			dataHTML += "<tr>";
-			dataHTML += "<td>" + row[0] + "</td>"; //filename
-			dataHTML += "<td>" + row[1] + "</td>"; //size (bytes)
-			dataHTML += "<td>" + row[2] + "</td>"; //size (kb)
-			dataHTML += "</tr>";
-		}
-		console.log("File Count:" + arrResults.length);
-		console.log("Tot Bytes:" + totalBytes);
-		const totalKB = (totalBytes / 1024).toFixed(2);
-		const totalMB = (totalBytes / 1024 / 1024).toFixed(2);
-		console.log("Tot KB:" + totalBytes);
-		console.log("Tot MB:" + totalMB);
-		dataHTML += "<td>Total</td>";
-		dataHTML += "<td>" + totalBytes + "</td>";
-		dataHTML += "<td>" + totalKB + "</td>";
-		dataHTML += "</body></html>";
-		fs.writeFileSync(path.join(import.meta.dirname, '/report.html'), dataHTML, 'utf8');
-	  } catch (err) {
+		return arrResults;
+  	} catch (err) {
 		console.error('Error computing file sizes:', err);
-	  }
+  	}
 }
 
-async function asycListFileSizes(dirPath) {
+function generateReport()
+{
 	try {
-		// Read directory entries including their file type objects
-		const entries = await readdir(dirPath, { withFileTypes: true });
-		
-	  	// Map through entries and pull size info for valid files
-	  	const fileStats = await Promise.all(
-		entries.map(async (entry) => {
-		  const fullPath = join(dirPath, entry.name);
-		  
-		  if (entry.isFile()) {
-			const fileStat = await stat(fullPath);
-			return {
-			  FileName: entry.name,
-			  SizeBytes: fileStat.size,
-			  SizeKB: (fileStat.size / 1024).toFixed(2) + ' KB'
-			};
-		  }
-		  return null; // Skip subdirectories
-		})
-	  );
-  
-	  // Filter out null entries from subdirectories and display results
-	  const cleanFiles = fileStats.filter(file => file !== null);
-	  console.table(cleanFiles);
-	  
-	} catch (error) {
-	  console.error('Error reading directory:', error);
-	}
+		let arrAll = [];
+		let arrCSS = getDirectoryStats('css');
+		arrAll.push(arrCSS);
+		let arrCSSmin = getDirectoryStats('css/min');
+		arrAll.push(arrCSSmin);
+
+	 	let dataHTML = "<html><body><table><tr><th>Folder<th>Filename</th><th>File Size (bytes)</th><th>File Size (KB)</th></tr>";
+
+		for (let i = 0; i < arrAll.length; i++)
+		{
+			//console.log(rowAll[i]);
+			let totalBytes = 0;
+			
+			for (const row of arrAll[i]) {
+				//console.log(row);
+				totalBytes += row[2];
+				dataHTML += "<tr>";
+				dataHTML += "<td>" + row[0] + "</td>"; //foldername
+				dataHTML += "<td>" + row[1] + "</td>"; //filename
+				dataHTML += "<td style='text-align: right;'>" + row[2] + "</td>"; //size (bytes)
+				dataHTML += "<td style='text-align: right;'>" + row[3].toFixed(2) + "</td>"; //size (kb)
+				dataHTML += "</tr>";
+			}
+			console.log("File Count:" + arrAll[i].length);
+			console.log("Tot Bytes:" + totalBytes);
+			let totalKB = (totalBytes / 1024).toFixed(2);
+			let totalMB = (totalBytes / 1024 / 1024).toFixed(2);
+			console.log("Tot KB:" + totalKB.toLocaleString('en-US'));
+			console.log("Tot MB:" + totalMB);
+			dataHTML += "<td style='font-weight: bold;'></td>";
+			dataHTML += "<td style='font-weight: bold;'>Total (File Count:" + arrAll[i].length + ")</td>";
+			dataHTML += "<td style='font-weight: bold; text-align: right;'>" + totalBytes.toLocaleString('en-US') + "</td>";
+			dataHTML += "<td style='font-weight: bold; text-align: right;'>" + totalKB + "</td>";
+			dataHTML += "<tr><td></td></tr>";
+		}
+	 	dataHTML += "</body></html>";
+	 	fs.writeFileSync(path.join(import.meta.dirname, '/report.html'), dataHTML, 'utf8');
+	   } catch (err) {
+	 	console.error('Error generating report:', err);
+	   }
 }
 
 async function minifyHTML()
