@@ -443,6 +443,8 @@ async function minifyImages()
 	});
 
 	for (const record of arrFiles)
+	{
 	console.log(record.destinationPath);
-	console.log('Image optimization complete');
+	}
+	console.log('Image optimization complete on ' + arrFiles.length + " images");
 }
