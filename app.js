@@ -1,11 +1,12 @@
 /**
  * @file Minifier
- * @since 1.0.1
+ * @since 1.0.2
  * @module app.js
  * @author Corey Jackson <cjaxsn@gmail.com>
  * @requires imagemin, imagemin-webp
  * @copyright Jax Tech
- * @date 2026-06-09
+ * @createddate 2026-06-09
+ * @modifieddate 2026-06-27
  */
 
 import imagemin from 'imagemin';
@@ -59,13 +60,13 @@ var arrURLs = ['https://fightden.ca',
 //scrapeWeb();
 //minifyHTML()
 //analyzeHTMLHead();
-analyzeCriticalPath();
+//analyzeCriticalPath();
 //discoverFonts(arrURLs);
 //minifyFonts();
 //minifyFA();
 //minifyJS();
 //minifyCSS();
-//minifyImages();
+minifyImages();
 //generateReport();
 
 console.log("Minify Complete");
@@ -76,7 +77,7 @@ function analyzeCriticalPath()
 		inline: true,
 		base: "critical/",
 		src: "index.html",
-		css: ["assets/css/facustom.min.css"],
+		css: ["assets/css/main.css"],
 		target: {
 			css: "output/critical.css",
 			html: "output/index-critical.html",
@@ -318,9 +319,9 @@ function minifyFonts()
 		}
 	}
 
-	//fightden.ca
-	subsetFonts('fonts/fa-brands-400.woff2', "U+20,U+2F,U+F16D");
-	subsetFonts('fonts/pro-fa-solid-900-0.woff2', "U+F060,U+F061,U+F073,U+F095,U+F10D,U+F10E,U+F3C5,U+F438,U+F675");
+	//jax.tech
+	subsetFonts('fonts/fa-brands-400.woff2', "U+20,U+2F,U+E61A,U+F16D,U+F09A,U+F0D2,U+F08C,U+E671,U+F4F6,U+F167");
+	subsetFonts('fonts/fa-solid-900.woff2', "U+20,U+2F,U+F143");
 	
 	//glyphhanger --subset=path/to/fontawesome-solid.ttf --whitelist=U+F007,U+F00c --formats=woff2
 	//subfont http://127.0.0.1:5501/index.html -o fonts
