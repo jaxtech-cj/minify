@@ -1,10 +1,6 @@
 <!DOCTYPE html><html lang="en-US"><head>
 	<meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<script>
-var gform;gform||(document.addEventListener("gform_main_scripts_loaded",function(){gform.scriptsLoaded=!0}),window.addEventListener("DOMContentLoaded",function(){gform.domLoaded=!0}),gform={domLoaded:!1,scriptsLoaded:!1,initializeOnLoaded:function(o){gform.domLoaded&&gform.scriptsLoaded?o():!gform.domLoaded&&gform.scriptsLoaded?window.addEventListener("DOMContentLoaded",o):document.addEventListener("gform_main_scripts_loaded",o)},hooks:{action:{},filter:{}},addAction:function(o,n,r,t){gform.addHook("action",o,n,r,t)},addFilter:function(o,n,r,t){gform.addHook("filter",o,n,r,t)},doAction:function(o){gform.doHook("action",o,arguments)},applyFilters:function(o){return gform.doHook("filter",o,arguments)},removeAction:function(o,n){gform.removeHook("action",o,n)},removeFilter:function(o,n,r){gform.removeHook("filter",o,n,r)},addHook:function(o,n,r,t,i){null==gform.hooks[o][n]&&(gform.hooks[o][n]=[]);var e=gform.hooks[o][n];null==i&&(i=n+"_"+e.length),gform.hooks[o][n].push({tag:i,callable:r,priority:t=null==t?10:t})},doHook:function(n,o,r){var t;if(r=Array.prototype.slice.call(r,1),null!=gform.hooks[n][o]&&((o=gform.hooks[n][o]).sort(function(o,n){return o.priority-n.priority}),o.forEach(function(o){"function"!=typeof(t=o.callable)&&(t=window[t]),"action"==n?t.apply(null,r):r[0]=t.apply(null,r)})),"filter"==n)return r[0]},removeHook:function(o,n,t,i){var r;null!=gform.hooks[o][n]&&(r=(r=gform.hooks[o][n]).filter(function(o,n,r){return!!(null!=i&&i!=o.tag||null!=t&&t!=o.priority)}),gform.hooks[o][n]=r)}});
-</script>
-
 	<link rel="pingback" href="https://fightden.ca/xmlrpc.php">
 
 	<script type="text/javascript">
@@ -12,32 +8,34 @@ var gform;gform||(document.addEventListener("gform_main_scripts_loaded",function
 	</script>
 	
 	<script data-cfasync="false" data-no-defer="1" data-no-minify="1" data-no-optimize="1">var ewww_webp_supported=!1;function check_webp_feature(A,e){var w;e=void 0!==e?e:function(){},ewww_webp_supported?e(ewww_webp_supported):((w=new Image).onload=function(){ewww_webp_supported=0<w.width&&0<w.height,e&&e(ewww_webp_supported)},w.onerror=function(){e&&e(!1)},w.src="data:image/webp;base64,"+{alpha:"UklGRkoAAABXRUJQVlA4WAoAAAAQAAAAAAAAAAAAQUxQSAwAAAARBxAR/Q9ERP8DAABWUDggGAAAABQBAJ0BKgEAAQAAAP4AAA3AAP7mtQAAAA=="}[A])}check_webp_feature("alpha");</script><script data-cfasync="false" data-no-defer="1" data-no-minify="1" data-no-optimize="1">var Arrive=function(c,w){"use strict";if(c.MutationObserver&&"undefined"!=typeof HTMLElement){var r,a=0,u=(r=HTMLElement.prototype.matches||HTMLElement.prototype.webkitMatchesSelector||HTMLElement.prototype.mozMatchesSelector||HTMLElement.prototype.msMatchesSelector,{matchesSelector:function(e,t){return e instanceof HTMLElement&&r.call(e,t)},addMethod:function(e,t,r){var a=e[t];e[t]=function(){return r.length==arguments.length?r.apply(this,arguments):"function"==typeof a?a.apply(this,arguments):void 0}},callCallbacks:function(e,t){t&&t.options.onceOnly&&1==t.firedElems.length&&(e=[e[0]]);for(var r,a=0;r=e[a];a++)r&&r.callback&&r.callback.call(r.elem,r.elem);t&&t.options.onceOnly&&1==t.firedElems.length&&t.me.unbindEventWithSelectorAndCallback.call(t.target,t.selector,t.callback)},checkChildNodesRecursively:function(e,t,r,a){for(var i,n=0;i=e[n];n++)r(i,t,a)&&a.push({callback:t.callback,elem:i}),0<i.childNodes.length&&u.checkChildNodesRecursively(i.childNodes,t,r,a)},mergeArrays:function(e,t){var r,a={};for(r in e)e.hasOwnProperty(r)&&(a[r]=e[r]);for(r in t)t.hasOwnProperty(r)&&(a[r]=t[r]);return a},toElementsArray:function(e){return e=void 0!==e&&("number"!=typeof e.length||e===c)?[e]:e}}),e=(l.prototype.addEvent=function(e,t,r,a){a={target:e,selector:t,options:r,callback:a,firedElems:[]};return this._beforeAdding&&this._beforeAdding(a),this._eventsBucket.push(a),a},l.prototype.removeEvent=function(e){for(var t,r=this._eventsBucket.length-1;t=this._eventsBucket[r];r--)e(t)&&(this._beforeRemoving&&this._beforeRemoving(t),(t=this._eventsBucket.splice(r,1))&&t.length&&(t[0].callback=null))},l.prototype.beforeAdding=function(e){this._beforeAdding=e},l.prototype.beforeRemoving=function(e){this._beforeRemoving=e},l),t=function(i,n){var o=new e,l=this,s={fireOnAttributesModification:!1};return o.beforeAdding(function(t){var e=t.target;e!==c.document&&e!==c||(e=document.getElementsByTagName("html")[0]);var r=new MutationObserver(function(e){n.call(this,e,t)}),a=i(t.options);r.observe(e,a),t.observer=r,t.me=l}),o.beforeRemoving(function(e){e.observer.disconnect()}),this.bindEvent=function(e,t,r){t=u.mergeArrays(s,t);for(var a=u.toElementsArray(this),i=0;i<a.length;i++)o.addEvent(a[i],e,t,r)},this.unbindEvent=function(){var r=u.toElementsArray(this);o.removeEvent(function(e){for(var t=0;t<r.length;t++)if(this===w||e.target===r[t])return!0;return!1})},this.unbindEventWithSelectorOrCallback=function(r){var a=u.toElementsArray(this),i=r,e="function"==typeof r?function(e){for(var t=0;t<a.length;t++)if((this===w||e.target===a[t])&&e.callback===i)return!0;return!1}:function(e){for(var t=0;t<a.length;t++)if((this===w||e.target===a[t])&&e.selector===r)return!0;return!1};o.removeEvent(e)},this.unbindEventWithSelectorAndCallback=function(r,a){var i=u.toElementsArray(this);o.removeEvent(function(e){for(var t=0;t<i.length;t++)if((this===w||e.target===i[t])&&e.selector===r&&e.callback===a)return!0;return!1})},this},i=new function(){var s={fireOnAttributesModification:!1,onceOnly:!1,existing:!1};function n(e,t,r){return!(!u.matchesSelector(e,t.selector)||(e._id===w&&(e._id=a++),-1!=t.firedElems.indexOf(e._id)))&&(t.firedElems.push(e._id),!0)}var c=(i=new t(function(e){var t={attributes:!1,childList:!0,subtree:!0};return e.fireOnAttributesModification&&(t.attributes=!0),t},function(e,i){e.forEach(function(e){var t=e.addedNodes,r=e.target,a=[];null!==t&&0<t.length?u.checkChildNodesRecursively(t,i,n,a):"attributes"===e.type&&n(r,i)&&a.push({callback:i.callback,elem:r}),u.callCallbacks(a,i)})})).bindEvent;return i.bindEvent=function(e,t,r){t=void 0===r?(r=t,s):u.mergeArrays(s,t);var a=u.toElementsArray(this);if(t.existing){for(var i=[],n=0;n<a.length;n++)for(var o=a[n].querySelectorAll(e),l=0;l<o.length;l++)i.push({callback:r,elem:o[l]});if(t.onceOnly&&i.length)return r.call(i[0].elem,i[0].elem);setTimeout(u.callCallbacks,1,i)}c.call(this,e,t,r)},i},o=new function(){var a={};function i(e,t){return u.matchesSelector(e,t.selector)}var n=(o=new t(function(){return{childList:!0,subtree:!0}},function(e,r){e.forEach(function(e){var t=e.removedNodes,e=[];null!==t&&0<t.length&&u.checkChildNodesRecursively(t,r,i,e),u.callCallbacks(e,r)})})).bindEvent;return o.bindEvent=function(e,t,r){t=void 0===r?(r=t,a):u.mergeArrays(a,t),n.call(this,e,t,r)},o};d(HTMLElement.prototype),d(NodeList.prototype),d(HTMLCollection.prototype),d(HTMLDocument.prototype),d(Window.prototype);var n={};return s(i,n,"unbindAllArrive"),s(o,n,"unbindAllLeave"),n}function l(){this._eventsBucket=[],this._beforeAdding=null,this._beforeRemoving=null}function s(e,t,r){u.addMethod(t,r,e.unbindEvent),u.addMethod(t,r,e.unbindEventWithSelectorOrCallback),u.addMethod(t,r,e.unbindEventWithSelectorAndCallback)}function d(e){e.arrive=i.bindEvent,s(i,e,"unbindArrive"),e.leave=o.bindEvent,s(o,e,"unbindLeave")}}(window,void 0),ewww_webp_supported=!1;function check_webp_feature(e,t){var r;ewww_webp_supported?t(ewww_webp_supported):((r=new Image).onload=function(){ewww_webp_supported=0<r.width&&0<r.height,t(ewww_webp_supported)},r.onerror=function(){t(!1)},r.src="data:image/webp;base64,"+{alpha:"UklGRkoAAABXRUJQVlA4WAoAAAAQAAAAAAAAAAAAQUxQSAwAAAARBxAR/Q9ERP8DAABWUDggGAAAABQBAJ0BKgEAAQAAAP4AAA3AAP7mtQAAAA==",animation:"UklGRlIAAABXRUJQVlA4WAoAAAASAAAAAAAAAAAAQU5JTQYAAAD/////AABBTk1GJgAAAAAAAAAAAAAAAAAAAGQAAABWUDhMDQAAAC8AAAAQBxAREYiI/gcA"}[e])}function ewwwLoadImages(e){if(e){for(var t=document.querySelectorAll(".batch-image img, .image-wrapper a, .ngg-pro-masonry-item a, .ngg-galleria-offscreen-seo-wrapper a"),r=0,a=t.length;r<a;r++)ewwwAttr(t[r],"data-src",t[r].getAttribute("data-webp")),ewwwAttr(t[r],"data-thumbnail",t[r].getAttribute("data-webp-thumbnail"));for(var i=document.querySelectorAll("div.woocommerce-product-gallery__image"),r=0,a=i.length;r<a;r++)ewwwAttr(i[r],"data-thumb",i[r].getAttribute("data-webp-thumb"))}for(var n=document.querySelectorAll("video"),r=0,a=n.length;r<a;r++)ewwwAttr(n[r],"poster",e?n[r].getAttribute("data-poster-webp"):n[r].getAttribute("data-poster-image"));for(var o,l=document.querySelectorAll("img.ewww_webp_lazy_load"),r=0,a=l.length;r<a;r++)e&&(ewwwAttr(l[r],"data-lazy-srcset",l[r].getAttribute("data-lazy-srcset-webp")),ewwwAttr(l[r],"data-srcset",l[r].getAttribute("data-srcset-webp")),ewwwAttr(l[r],"data-lazy-src",l[r].getAttribute("data-lazy-src-webp")),ewwwAttr(l[r],"data-src",l[r].getAttribute("data-src-webp")),ewwwAttr(l[r],"data-orig-file",l[r].getAttribute("data-webp-orig-file")),ewwwAttr(l[r],"data-medium-file",l[r].getAttribute("data-webp-medium-file")),ewwwAttr(l[r],"data-large-file",l[r].getAttribute("data-webp-large-file")),null!=(o=l[r].getAttribute("srcset"))&&!1!==o&&o.includes("R0lGOD")&&ewwwAttr(l[r],"src",l[r].getAttribute("data-lazy-src-webp"))),l[r].className=l[r].className.replace(/\bewww_webp_lazy_load\b/,"");for(var s=document.querySelectorAll(".ewww_webp"),r=0,a=s.length;r<a;r++)e?(ewwwAttr(s[r],"srcset",s[r].getAttribute("data-srcset-webp")),ewwwAttr(s[r],"src",s[r].getAttribute("data-src-webp")),ewwwAttr(s[r],"data-orig-file",s[r].getAttribute("data-webp-orig-file")),ewwwAttr(s[r],"data-medium-file",s[r].getAttribute("data-webp-medium-file")),ewwwAttr(s[r],"data-large-file",s[r].getAttribute("data-webp-large-file")),ewwwAttr(s[r],"data-large_image",s[r].getAttribute("data-webp-large_image")),ewwwAttr(s[r],"data-src",s[r].getAttribute("data-webp-src"))):(ewwwAttr(s[r],"srcset",s[r].getAttribute("data-srcset-img")),ewwwAttr(s[r],"src",s[r].getAttribute("data-src-img"))),s[r].className=s[r].className.replace(/\bewww_webp\b/,"ewww_webp_loaded");window.jQuery&&jQuery.fn.isotope&&jQuery.fn.imagesLoaded&&(jQuery(".fusion-posts-container-infinite").imagesLoaded(function(){jQuery(".fusion-posts-container-infinite").hasClass("isotope")&&jQuery(".fusion-posts-container-infinite").isotope()}),jQuery(".fusion-portfolio:not(.fusion-recent-works) .fusion-portfolio-wrapper").imagesLoaded(function(){jQuery(".fusion-portfolio:not(.fusion-recent-works) .fusion-portfolio-wrapper").isotope()}))}function ewwwWebPInit(e){ewwwLoadImages(e),ewwwNggLoadGalleries(e),document.arrive(".ewww_webp",function(){ewwwLoadImages(e)}),document.arrive(".ewww_webp_lazy_load",function(){ewwwLoadImages(e)}),document.arrive("videos",function(){ewwwLoadImages(e)}),"loading"==document.readyState?document.addEventListener("DOMContentLoaded",ewwwJSONParserInit):("undefined"!=typeof galleries&&ewwwNggParseGalleries(e),ewwwWooParseVariations(e))}function ewwwAttr(e,t,r){null!=r&&!1!==r&&e.setAttribute(t,r)}function ewwwJSONParserInit(){"undefined"!=typeof galleries&&check_webp_feature("alpha",ewwwNggParseGalleries),check_webp_feature("alpha",ewwwWooParseVariations)}function ewwwWooParseVariations(e){if(e)for(var t=document.querySelectorAll("form.variations_form"),r=0,a=t.length;r<a;r++){var i=t[r].getAttribute("data-product_variations"),n=!1;try{for(var o in i=JSON.parse(i))void 0!==i[o]&&void 0!==i[o].image&&(void 0!==i[o].image.src_webp&&(i[o].image.src=i[o].image.src_webp,n=!0),void 0!==i[o].image.srcset_webp&&(i[o].image.srcset=i[o].image.srcset_webp,n=!0),void 0!==i[o].image.full_src_webp&&(i[o].image.full_src=i[o].image.full_src_webp,n=!0),void 0!==i[o].image.gallery_thumbnail_src_webp&&(i[o].image.gallery_thumbnail_src=i[o].image.gallery_thumbnail_src_webp,n=!0),void 0!==i[o].image.thumb_src_webp&&(i[o].image.thumb_src=i[o].image.thumb_src_webp,n=!0));n&&ewwwAttr(t[r],"data-product_variations",JSON.stringify(i))}catch(e){}}}function ewwwNggParseGalleries(e){if(e)for(var t in galleries){var r=galleries[t];galleries[t].images_list=ewwwNggParseImageList(r.images_list)}}function ewwwNggLoadGalleries(e){e&&document.addEventListener("ngg.galleria.themeadded",function(e,t){window.ngg_galleria._create_backup=window.ngg_galleria.create,window.ngg_galleria.create=function(e,t){var r=$(e).data("id");return galleries["gallery_"+r].images_list=ewwwNggParseImageList(galleries["gallery_"+r].images_list),window.ngg_galleria._create_backup(e,t)}})}function ewwwNggParseImageList(e){for(var t in e){var r=e[t];if(void 0!==r["image-webp"]&&(e[t].image=r["image-webp"],delete e[t]["image-webp"]),void 0!==r["thumb-webp"]&&(e[t].thumb=r["thumb-webp"],delete e[t]["thumb-webp"]),void 0!==r.full_image_webp&&(e[t].full_image=r.full_image_webp,delete e[t].full_image_webp),void 0!==r.srcsets)for(var a in r.srcsets)nggSrcset=r.srcsets[a],void 0!==r.srcsets[a+"-webp"]&&(e[t].srcsets[a]=r.srcsets[a+"-webp"],delete e[t].srcsets[a+"-webp"]);if(void 0!==r.full_srcsets)for(var i in r.full_srcsets)nggFSrcset=r.full_srcsets[i],void 0!==r.full_srcsets[i+"-webp"]&&(e[t].full_srcsets[i]=r.full_srcsets[i+"-webp"],delete e[t].full_srcsets[i+"-webp"])}return e}check_webp_feature("alpha",ewwwWebPInit);</script><style id="et-divi-open-sans-inline-css">/* Original: https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&#038;subset=latin,latin-ext&#038;display=swap *//* User Agent: Mozilla/5.0 (Unknown; Linux x86_64) AppleWebKit/538.1 (KHTML, like Gecko) Safari/538.1 Daum/4.1 */@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 300;font-stretch: normal;font-display: swap;src: url(fonts/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk5hkWV4exQ.ttf) format('truetype');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 400;font-stretch: normal;font-display: swap;src: url(fonts/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk8ZkWV4exQ.ttf) format('truetype');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 600;font-stretch: normal;font-display: swap;src: url(fonts/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0RkxhjWV4exQ.ttf) format('truetype');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 700;font-stretch: normal;font-display: swap;src: url(fonts/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0RkyFjWV4exQ.ttf) format('truetype');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 800;font-stretch: normal;font-display: swap;src: url(fonts/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk0ZjWV4exQ.ttf) format('truetype');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 300;font-stretch: normal;font-display: swap;src: url(fonts/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsiH0B4uaVc.ttf) format('truetype');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 400;font-stretch: normal;font-display: swap;src: url(fonts/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0B4uaVc.ttf) format('truetype');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 600;font-stretch: normal;font-display: swap;src: url(fonts/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsgH1x4uaVc.ttf) format('truetype');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 700;font-stretch: normal;font-display: swap;src: url(fonts/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsg-1x4uaVc.ttf) format('truetype');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 800;font-stretch: normal;font-display: swap;src: url(fonts/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgshZ1x4uaVc.ttf) format('truetype');}/* User Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:27.0) Gecko/20100101 Firefox/27.0 */@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 300;font-stretch: normal;font-display: swap;src: url(fonts/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk5hkWV4exg.woff) format('woff');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 400;font-stretch: normal;font-display: swap;src: url(fonts/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk8ZkWV4exg.woff) format('woff');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 600;font-stretch: normal;font-display: swap;src: url(fonts/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0RkxhjWV4exg.woff) format('woff');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 700;font-stretch: normal;font-display: swap;src: url(fonts/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0RkyFjWV4exg.woff) format('woff');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 800;font-stretch: normal;font-display: swap;src: url(fonts/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk0ZjWV4exg.woff) format('woff');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 300;font-stretch: normal;font-display: swap;src: url(fonts/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsiH0B4uaVQ.woff) format('woff');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 400;font-stretch: normal;font-display: swap;src: url(fonts/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0B4uaVQ.woff) format('woff');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 600;font-stretch: normal;font-display: swap;src: url(fonts/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsgH1x4uaVQ.woff) format('woff');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 700;font-stretch: normal;font-display: swap;src: url(fonts/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsg-1x4uaVQ.woff) format('woff');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 800;font-stretch: normal;font-display: swap;src: url(fonts/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgshZ1x4uaVQ.woff) format('woff');}/* User Agent: Mozilla/5.0 (Windows NT 6.3; rv:39.0) Gecko/20100101 Firefox/39.0 */@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 300;font-stretch: normal;font-display: swap;src: url(fonts/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk5hkWV4ewA.woff2) format('woff2');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 400;font-stretch: normal;font-display: swap;src: url(fonts/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk8ZkWV4ewA.woff2) format('woff2');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 600;font-stretch: normal;font-display: swap;src: url(fonts/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0RkxhjWV4ewA.woff2) format('woff2');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 700;font-stretch: normal;font-display: swap;src: url(fonts/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0RkyFjWV4ewA.woff2) format('woff2');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 800;font-stretch: normal;font-display: swap;src: url(fonts/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk0ZjWV4ewA.woff2) format('woff2');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 300;font-stretch: normal;font-display: swap;src: url(fonts/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsiH0B4uaVI.woff2) format('woff2');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 400;font-stretch: normal;font-display: swap;src: url(fonts/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0B4uaVI.woff2) format('woff2');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 600;font-stretch: normal;font-display: swap;src: url(fonts/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsgH1x4uaVI.woff2) format('woff2');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 700;font-stretch: normal;font-display: swap;src: url(fonts/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsg-1x4uaVI.woff2) format('woff2');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 800;font-stretch: normal;font-display: swap;src: url(fonts/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgshZ1x4uaVI.woff2) format('woff2');}</style><style id="et-builder-googlefonts-cached-inline">/* Original: https://fonts.googleapis.com/css?family=Lato:100,100italic,300,300italic,regular,italic,700,700italic,900,900italic&#038;subset=latin,latin-ext&#038;display=swap *//* User Agent: Mozilla/5.0 (Unknown; Linux x86_64) AppleWebKit/538.1 (KHTML, like Gecko) Safari/538.1 Daum/4.1 */@font-face {font-family: 'Lato';font-style: italic;font-weight: 100;font-display: swap;src: url(fonts/S6u-w4BMUTPHjxsIPx-mPCc.ttf) format('truetype');}@font-face {font-family: 'Lato';font-style: italic;font-weight: 300;font-display: swap;src: url(fonts/S6u_w4BMUTPHjxsI9w2_FQfo.ttf) format('truetype');}@font-face {font-family: 'Lato';font-style: italic;font-weight: 400;font-display: swap;src: url(fonts/S6u8w4BMUTPHjxsAUi-v.ttf) format('truetype');}@font-face {font-family: 'Lato';font-style: italic;font-weight: 700;font-display: swap;src: url(fonts/S6u_w4BMUTPHjxsI5wq_FQfo.ttf) format('truetype');}@font-face {font-family: 'Lato';font-style: italic;font-weight: 900;font-display: swap;src: url(fonts/S6u_w4BMUTPHjxsI3wi_FQfo.ttf) format('truetype');}@font-face {font-family: 'Lato';font-style: normal;font-weight: 100;font-display: swap;src: url(fonts/S6u8w4BMUTPHh30AUi-v.ttf) format('truetype');}@font-face {font-family: 'Lato';font-style: normal;font-weight: 300;font-display: swap;src: url(fonts/S6u9w4BMUTPHh7USSwaPHA.ttf) format('truetype');}@font-face {font-family: 'Lato';font-style: normal;font-weight: 400;font-display: swap;src: url(fonts/S6uyw4BMUTPHjxAwWw.ttf) format('truetype');}@font-face {font-family: 'Lato';font-style: normal;font-weight: 700;font-display: swap;src: url(fonts/S6u9w4BMUTPHh6UVSwaPHA.ttf) format('truetype');}@font-face {font-family: 'Lato';font-style: normal;font-weight: 900;font-display: swap;src: url(fonts/S6u9w4BMUTPHh50XSwaPHA.ttf) format('truetype');}/* User Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:27.0) Gecko/20100101 Firefox/27.0 */@font-face {font-family: 'Lato';font-style: italic;font-weight: 100;font-display: swap;src: url(fonts/S6u-w4BMUTPHjxsIPx-mPCQ.woff) format('woff');}@font-face {font-family: 'Lato';font-style: italic;font-weight: 300;font-display: swap;src: url(fonts/S6u_w4BMUTPHjxsI9w2_FQfr.woff) format('woff');}@font-face {font-family: 'Lato';font-style: italic;font-weight: 400;font-display: swap;src: url(fonts/S6u8w4BMUTPHjxsAUi-s.woff) format('woff');}@font-face {font-family: 'Lato';font-style: italic;font-weight: 700;font-display: swap;src: url(fonts/S6u_w4BMUTPHjxsI5wq_FQfr.woff) format('woff');}@font-face {font-family: 'Lato';font-style: italic;font-weight: 900;font-display: swap;src: url(fonts/S6u_w4BMUTPHjxsI3wi_FQfr.woff) format('woff');}@font-face {font-family: 'Lato';font-style: normal;font-weight: 100;font-display: swap;src: url(fonts/S6u8w4BMUTPHh30AUi-s.woff) format('woff');}@font-face {font-family: 'Lato';font-style: normal;font-weight: 300;font-display: swap;src: url(fonts/S6u9w4BMUTPHh7USSwaPHw.woff) format('woff');}@font-face {font-family: 'Lato';font-style: normal;font-weight: 400;font-display: swap;src: url(fonts/S6uyw4BMUTPHjxAwWA.woff) format('woff');}@font-face {font-family: 'Lato';font-style: normal;font-weight: 700;font-display: swap;src: url(fonts/S6u9w4BMUTPHh6UVSwaPHw.woff) format('woff');}@font-face {font-family: 'Lato';font-style: normal;font-weight: 900;font-display: swap;src: url(fonts/S6u9w4BMUTPHh50XSwaPHw.woff) format('woff');}/* User Agent: Mozilla/5.0 (Windows NT 6.3; rv:39.0) Gecko/20100101 Firefox/39.0 */@font-face {font-family: 'Lato';font-style: italic;font-weight: 100;font-display: swap;src: url(fonts/S6u-w4BMUTPHjxsIPx-mPCI.woff2) format('woff2');}@font-face {font-family: 'Lato';font-style: italic;font-weight: 300;font-display: swap;src: url(fonts/S6u_w4BMUTPHjxsI9w2_FQft.woff2) format('woff2');}@font-face {font-family: 'Lato';font-style: italic;font-weight: 400;font-display: swap;src: url(fonts/S6u8w4BMUTPHjxsAUi-q.woff2) format('woff2');}@font-face {font-family: 'Lato';font-style: italic;font-weight: 700;font-display: swap;src: url(fonts/S6u_w4BMUTPHjxsI5wq_FQft.woff2) format('woff2');}@font-face {font-family: 'Lato';font-style: italic;font-weight: 900;font-display: swap;src: url(fonts/S6u_w4BMUTPHjxsI3wi_FQft.woff2) format('woff2');}@font-face {font-family: 'Lato';font-style: normal;font-weight: 100;font-display: swap;src: url(fonts/S6u8w4BMUTPHh30AUi-q.woff2) format('woff2');}@font-face {font-family: 'Lato';font-style: normal;font-weight: 300;font-display: swap;src: url(fonts/S6u9w4BMUTPHh7USSwaPGQ.woff2) format('woff2');}@font-face {font-family: 'Lato';font-style: normal;font-weight: 400;font-display: swap;src: url(fonts/S6uyw4BMUTPHjxAwXg.woff2) format('woff2');}@font-face {font-family: 'Lato';font-style: normal;font-weight: 700;font-display: swap;src: url(fonts/S6u9w4BMUTPHh6UVSwaPGQ.woff2) format('woff2');}@font-face {font-family: 'Lato';font-style: normal;font-weight: 900;font-display: swap;src: url(fonts/S6u9w4BMUTPHh50XSwaPGQ.woff2) format('woff2');}</style><meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-
+<script type="text/javascript">
+			let jqueryParams=[],jQuery=function(r){return jqueryParams=[...jqueryParams,r],jQuery},$=function(r){return jqueryParams=[...jqueryParams,r],$};window.jQuery=jQuery,window.$=jQuery;let customHeadScripts=!1;jQuery.fn=jQuery.prototype={},$.fn=jQuery.prototype={},jQuery.noConflict=function(r){if(window.jQuery)return jQuery=window.jQuery,$=window.jQuery,customHeadScripts=!0,jQuery.noConflict},jQuery.ready=function(r){jqueryParams=[...jqueryParams,r]},$.ready=function(r){jqueryParams=[...jqueryParams,r]},jQuery.load=function(r){jqueryParams=[...jqueryParams,r]},$.load=function(r){jqueryParams=[...jqueryParams,r]},jQuery.fn.ready=function(r){jqueryParams=[...jqueryParams,r]},$.fn.ready=function(r){jqueryParams=[...jqueryParams,r]};</script>
 	<!-- This site is optimized with the Yoast SEO Premium plugin v22.7 (Yoast SEO v27.9) - https://yoast.com/product/yoast-seo-premium-wordpress/ -->
-	<title>Best Self-Defence, Grappling, MMA, &amp; Krav Training | Fight Den</title>
-	<meta name="description" content="Fight Den has the best self-defence, grappling, mixed martial arts, and Krav training programs in Woodbridge, Vaughan, &amp; Toronto (GTA)">
-	<link rel="canonical" href="https://fightden.ca/">
+	<title>Fight Den Services - Jiu-Jitsu, Krav Maga, MMA &amp; Combat Fitness</title>
+	<meta name="description" content="Fight Den services include the best Jiu-Jitsu, Krav Maga, MMA &amp; Combat Fitness in the Vaughan and North Toronto Area!">
+	<link rel="canonical" href="https://fightden.ca/services/">
 	<meta property="og:locale" content="en_US">
-	<meta property="og:type" content="website">
-	<meta property="og:title" content="Home">
-	<meta property="og:description" content="Fight Den has the best self-defence, grappling, mixed martial arts, and Krav training programs in Woodbridge, Vaughan, &amp; Toronto (GTA)">
-	<meta property="og:url" content="https://fightden.ca/">
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="Services">
+	<meta property="og:description" content="Fight Den services include the best Jiu-Jitsu, Krav Maga, MMA &amp; Combat Fitness in the Vaughan and North Toronto Area!">
+	<meta property="og:url" content="https://fightden.ca/services/">
 	<meta property="og:site_name" content="Fight Den">
-	<meta property="article:modified_time" content="2025-10-02T11:17:52+00:00">
-	<meta property="og:image" content="images/FightDenImage.jpg">
-	<meta property="og:image:width" content="1200">
-	<meta property="og:image:height" content="586">
+	<meta property="article:modified_time" content="2022-09-14T03:10:00+00:00">
+	<meta property="og:image" content="images/About3.jpg">
+	<meta property="og:image:width" content="850">
+	<meta property="og:image:height" content="567">
 	<meta property="og:image:type" content="image/jpeg">
 	<meta name="twitter:card" content="summary_large_image">
-	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https:\/\/schema.org","@graph":[{"@type":"WebPage","@id":"https:\/\/fightden.ca\/","url":"https:\/\/fightden.ca\/","name":"Best Self-Defence, Grappling, MMA, & Krav Training | Fight Den","isPartOf":{"@id":"https:\/\/fightden.ca\/#website"},"primaryImageOfPage":{"@id":"https:\/\/fightden.ca\/#primaryimage"},"image":{"@id":"https:\/\/fightden.ca\/#primaryimage"},"thumbnailUrl":"https:\/\/fightden.ca\/wp-content\/uploads\/2022\/07\/FightDenImage.jpg","datePublished":"2022-07-06T17:35:44+00:00","dateModified":"2025-10-02T11:17:52+00:00","description":"Fight Den has the best self-defence, grappling, mixed martial arts, and Krav training programs in Woodbridge, Vaughan, & Toronto (GTA)","breadcrumb":{"@id":"https:\/\/fightden.ca\/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https:\/\/fightden.ca\/"]}]},{"@type":"ImageObject","inLanguage":"en-US","@id":"https:\/\/fightden.ca\/#primaryimage","url":"https:\/\/fightden.ca\/wp-content\/uploads\/2022\/07\/FightDenImage.jpg","contentUrl":"https:\/\/fightden.ca\/wp-content\/uploads\/2022\/07\/FightDenImage.jpg","width":1200,"height":586},{"@type":"BreadcrumbList","@id":"https:\/\/fightden.ca\/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home"}]},{"@type":"WebSite","@id":"https:\/\/fightden.ca\/#website","url":"https:\/\/fightden.ca\/","name":"Fight Den","description":"MMA","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https:\/\/fightden.ca\/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"en-US"}]}</script>
+	<meta name="twitter:label1" content="Est. reading time">
+	<meta name="twitter:data1" content="4 minutes">
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https:\/\/schema.org","@graph":[{"@type":"WebPage","@id":"https:\/\/fightden.ca\/services\/","url":"https:\/\/fightden.ca\/services\/","name":"Fight Den Services - Jiu-Jitsu, Krav Maga, MMA & Combat Fitness","isPartOf":{"@id":"https:\/\/fightden.ca\/#website"},"primaryImageOfPage":{"@id":"https:\/\/fightden.ca\/services\/#primaryimage"},"image":{"@id":"https:\/\/fightden.ca\/services\/#primaryimage"},"thumbnailUrl":"https:\/\/fightden.ca\/wp-content\/uploads\/2022\/08\/About3.jpg","datePublished":"2022-07-06T17:38:09+00:00","dateModified":"2022-09-14T03:10:00+00:00","description":"Fight Den services include the best Jiu-Jitsu, Krav Maga, MMA & Combat Fitness in the Vaughan and North Toronto Area!","breadcrumb":{"@id":"https:\/\/fightden.ca\/services\/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https:\/\/fightden.ca\/services\/"]}]},{"@type":"ImageObject","inLanguage":"en-US","@id":"https:\/\/fightden.ca\/services\/#primaryimage","url":"https:\/\/fightden.ca\/wp-content\/uploads\/2022\/08\/About3.jpg","contentUrl":"https:\/\/fightden.ca\/wp-content\/uploads\/2022\/08\/About3.jpg","width":850,"height":567},{"@type":"BreadcrumbList","@id":"https:\/\/fightden.ca\/services\/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https:\/\/fightden.ca\/"},{"@type":"ListItem","position":2,"name":"Services"}]},{"@type":"WebSite","@id":"https:\/\/fightden.ca\/#website","url":"https:\/\/fightden.ca\/","name":"Fight Den","description":"MMA","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https:\/\/fightden.ca\/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"en-US"}]}</script>
 	<!-- / Yoast SEO Premium plugin. -->
 
 
-<link rel="dns-prefetch" href="//www.google.com">
 <link rel="alternate" type="application/rss+xml" title="Fight Den » Feed" href="https://fightden.ca/feed/">
 <link rel="alternate" type="application/rss+xml" title="Fight Den » Comments Feed" href="https://fightden.ca/comments/feed/">
-<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://fightden.ca/wp-json/oembed/1.0/embed?url=https%3A%2F%2Ffightden.ca%2F">
-<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://fightden.ca/wp-json/oembed/1.0/embed?url=https%3A%2F%2Ffightden.ca%2F&amp;format=xml">
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://fightden.ca/wp-json/oembed/1.0/embed?url=https%3A%2F%2Ffightden.ca%2Fservices%2F">
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://fightden.ca/wp-json/oembed/1.0/embed?url=https%3A%2F%2Ffightden.ca%2Fservices%2F&amp;format=xml">
 <meta content="Divi Child Theme v.Updated for Divi 3+" name="generator"><style id="wp-img-auto-sizes-contain-inline-css">
 img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 /*# sourceURL=wp-img-auto-sizes-contain-inline-css */
@@ -82,7 +80,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 a,abbr,acronym,address,applet,b,big,blockquote,body,center,cite,code,dd,del,dfn,div,dl,dt,em,fieldset,font,form,h1,h2,h3,h4,h5,h6,html,i,iframe,img,ins,kbd,label,legend,li,object,ol,p,pre,q,s,samp,small,span,strike,strong,sub,sup,tt,u,ul,var{margin:0;padding:0;border:0;outline:0;font-size:100%;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:"";content:none}blockquote{margin:20px 0 30px;border-left:5px solid;padding-left:20px}:focus{outline:0}del{text-decoration:line-through}pre{overflow:auto;padding:10px}figure{margin:0}table{border-collapse:collapse;border-spacing:0}article,aside,footer,header,hgroup,nav,section{display:block}body{font-family:Open Sans,Arial,sans-serif;font-size:14px;color:#666;background-color:#fff;line-height:1.7em;font-weight:500;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}body.page-template-page-template-blank-php #page-container{padding-top:0!important}body.et_cover_background{background-size:cover!important;background-position:top!important;background-repeat:no-repeat!important;background-attachment:fixed}a{color:#2ea3f2}a,a:hover{text-decoration:none}p{padding-bottom:1em}p:not(.has-background):last-of-type{padding-bottom:0}p.et_normal_padding{padding-bottom:1em}strong{font-weight:700}cite,em,i{font-style:italic}code,pre{font-family:Courier New,monospace;margin-bottom:10px}ins{text-decoration:none}sub,sup{height:0;line-height:1;position:relative;vertical-align:baseline}sup{bottom:.8em}sub{top:.3em}dl{margin:0 0 1.5em}dl dt{font-weight:700}dd{margin-left:1.5em}blockquote p{padding-bottom:0}embed,iframe,object,video{max-width:100%}h1,h2,h3,h4,h5,h6{color:#333;padding-bottom:10px;line-height:1em;font-weight:500}h1 a,h2 a,h3 a,h4 a,h5 a,h6 a{color:inherit}h1{font-size:30px}h2{font-size:26px}h3{font-size:22px}h4{font-size:18px}h5{font-size:16px}h6{font-size:14px}input{-webkit-appearance:none}input[type=checkbox]{-webkit-appearance:checkbox}input[type=radio]{-webkit-appearance:radio}input.text,input.title,input[type=email],input[type=password],input[type=tel],input[type=text],select,textarea{background-color:#fff;border:1px solid #bbb;padding:2px;color:#4e4e4e}input.text:focus,input.title:focus,input[type=text]:focus,select:focus,textarea:focus{border-color:#2d3940;color:#3e3e3e}input.text,input.title,input[type=text],select,textarea{margin:0}textarea{padding:4px}button,input,select,textarea{font-family:inherit}img{max-width:100%;height:auto}.clear{clear:both}br.clear{margin:0;padding:0}.pagination{clear:both}#et_search_icon:hover,.et-social-icon a:hover,.et_password_protected_form .et_submit_button,.form-submit .et_pb_buttontton.alt.disabled,.nav-single a,.posted_in a{color:#2ea3f2}.et-search-form,blockquote{border-color:#2ea3f2}#main-content{background-color:#fff}.container{width:80%;max-width:1080px;margin:auto;position:relative}body:not(.et-tb) #main-content .container,body:not(.et-tb-has-header) #main-content .container{padding-top:58px}.et_full_width_page #main-content .container:before{display:none}.main_title{margin-bottom:20px}.et_password_protected_form .et_submit_button:hover,.form-submit .et_pb_button:hover{background:rgba(0,0,0,.05)}.et_button_icon_visible .et_pb_button{padding-right:2em;padding-left:.7em}.et_button_icon_visible .et_pb_button:after{opacity:1;margin-left:0}.et_button_left .et_pb_button:hover:after{left:.15em}.et_button_left .et_pb_button:after{margin-left:0;left:1em}.et_button_icon_visible.et_button_left .et_pb_button,.et_button_left .et_pb_button:hover,.et_button_left .et_pb_module .et_pb_button:hover{padding-left:2em;padding-right:.7em}.et_button_icon_visible.et_button_left .et_pb_button:after,.et_button_left .et_pb_button:hover:after{left:.15em}.et_password_protected_form .et_submit_button:hover,.form-submit .et_pb_button:hover{padding:.3em 1em}.et_button_no_icon .et_pb_button:after{display:none}.et_button_no_icon.et_button_icon_visible.et_button_left .et_pb_button,.et_button_no_icon.et_button_left .et_pb_button:hover,.et_button_no_icon .et_pb_button,.et_button_no_icon .et_pb_button:hover{padding:.3em 1em!important}.et_button_custom_icon .et_pb_button:after{line-height:1.7em}.et_button_custom_icon.et_button_icon_visible .et_pb_button:after,.et_button_custom_icon .et_pb_button:hover:after{margin-left:.3em}#left-area .post_format-post-format-gallery .wp-block-gallery:first-of-type{padding:0;margin-bottom:-16px}.entry-content table:not(.variations){border:1px solid #eee;margin:0 0 15px;text-align:left;width:100%}.entry-content thead th,.entry-content tr th{color:#555;font-weight:700;padding:9px 24px}.entry-content tr td{border-top:1px solid #eee;padding:6px 24px}#left-area ul,.entry-content ul,.et-l--body ul,.et-l--footer ul,.et-l--header ul{list-style-type:disc;padding:0 0 23px 1em;line-height:26px}#left-area ol,.entry-content ol,.et-l--body ol,.et-l--footer ol,.et-l--header ol{list-style-type:decimal;list-style-position:inside;padding:0 0 23px;line-height:26px}#left-area ul li ul,.entry-content ul li ol{padding:2px 0 2px 20px}#left-area ol li ul,.entry-content ol li ol,.et-l--body ol li ol,.et-l--footer ol li ol,.et-l--header ol li ol{padding:2px 0 2px 35px}#left-area ul.wp-block-gallery{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;list-style-type:none;padding:0}#left-area ul.products{padding:0!important;line-height:1.7!important;list-style:none!important}.gallery-item a{display:block}.gallery-caption,.gallery-item a{width:90%}#wpadminbar{z-index:100001}#left-area .post-meta{font-size:14px;padding-bottom:15px}#left-area .post-meta a{text-decoration:none;color:#666}#left-area .et_featured_image{padding-bottom:7px}.single .post{padding-bottom:25px}body.single .et_audio_content{margin-bottom:-6px}.nav-single a{text-decoration:none;color:#2ea3f2;font-size:14px;font-weight:400}.nav-previous{float:left}.nav-next{float:right}.et_password_protected_form p input{background-color:#eee;border:none!important;width:100%!important;border-radius:0!important;font-size:14px;color:#999!important;padding:16px!important;-webkit-box-sizing:border-box;box-sizing:border-box}.et_password_protected_form label{display:none}.et_password_protected_form .et_submit_button{font-family:inherit;display:block;float:right;margin:8px auto 0;cursor:pointer}.post-password-required p.nocomments.container{max-width:100%}.post-password-required p.nocomments.container:before{display:none}.aligncenter,div.post .new-post .aligncenter{display:block;margin-left:auto;margin-right:auto}.wp-caption{border:1px solid #ddd;text-align:center;background-color:#f3f3f3;margin-bottom:10px;max-width:96%;padding:8px}.wp-caption.alignleft{margin:0 30px 20px 0}.wp-caption.alignright{margin:0 0 20px 30px}.wp-caption img{margin:0;padding:0;border:0}.wp-caption p.wp-caption-text{font-size:12px;padding:0 4px 5px;margin:0}.alignright{float:right}.alignleft{float:left}img.alignleft{display:inline;float:left;margin-right:15px}img.alignright{display:inline;float:right;margin-left:15px}.page.et_pb_pagebuilder_layout #main-content{background-color:transparent}body #main-content .et_builder_inner_content>h1,body #main-content .et_builder_inner_content>h2,body #main-content .et_builder_inner_content>h3,body #main-content .et_builder_inner_content>h4,body #main-content .et_builder_inner_content>h5,body #main-content .et_builder_inner_content>h6{line-height:1.4em}body #main-content .et_builder_inner_content>p{line-height:1.7em}.wp-block-pullquote{margin:20px 0 30px}.wp-block-pullquote.has-background blockquote{border-left:none}.wp-block-group.has-background{padding:1.5em 1.5em .5em}@media (min-width:981px){#left-area{width:79.125%;padding-bottom:23px}#main-content .container:before{content:"";position:absolute;top:0;height:100%;width:1px;background-color:#e2e2e2}.et_full_width_page #left-area,.et_no_sidebar #left-area{float:none;width:100%!important}.et_full_width_page #left-area{padding-bottom:0}.et_no_sidebar #main-content .container:before{display:none}}@media (max-width:980px){#page-container{padding-top:80px}.et-tb #page-container,.et-tb-has-header #page-container{padding-top:0!important}#left-area,#sidebar{width:100%!important}#main-content .container:before{display:none!important}.et_full_width_page .et_gallery_item:nth-child(4n+1){clear:none}}@media print{#page-container{padding-top:0!important}}#wp-admin-bar-et-use-visual-builder a:before{font-family:ETmodules!important;content:"\e625";font-size:30px!important;width:28px;margin-top:-3px;color:#974df3!important}#wp-admin-bar-et-use-visual-builder:hover a:before{color:#fff!important}#wp-admin-bar-et-use-visual-builder:hover a,#wp-admin-bar-et-use-visual-builder a:hover{transition:background-color .5s ease;-webkit-transition:background-color .5s ease;-moz-transition:background-color .5s ease;background-color:#7e3bd0!important;color:#fff!important}* html .clearfix,:first-child+html .clearfix{zoom:1}.iphone .et_pb_section_video_bg video::-webkit-media-controls-start-playback-button{display:none!important;-webkit-appearance:none}.et_mobile_device .et_pb_section_parallax .et_pb_parallax_css{background-attachment:scroll}.et-social-facebook a.icon:before{content:"\e093"}.et-social-twitter a.icon:before{content:"\e094"}.et-social-google-plus a.icon:before{content:"\e096"}.et-social-instagram a.icon:before{content:"\e09a"}.et-social-rss a.icon:before{content:"\e09e"}.ai1ec-single-event:after{content:" ";display:table;clear:both}.evcal_event_details .evcal_evdata_cell .eventon_details_shading_bot.eventon_details_shading_bot{z-index:3}.wp-block-divi-layout{margin-bottom:1em}*{-webkit-box-sizing:border-box;box-sizing:border-box}#et-info-email:before,#et-info-phone:before,#et_search_icon:before,.comment-reply-link:after,.et-cart-info span:before,.et-pb-arrow-next:before,.et-pb-arrow-prev:before,.et-social-icon a:before,.et_audio_container .mejs-playpause-button button:before,.et_audio_container .mejs-volume-button button:before,.et_overlay:before,.et_password_protected_form .et_submit_button:after,.et_pb_button:after,.et_pb_contact_reset:after,.et_pb_contact_submit:after,.et_pb_font_icon:before,.et_pb_newsletter_button:after,.et_pb_pricing_table_button:after,.et_pb_promo_button:after,.et_pb_testimonial:before,.et_pb_toggle_title:before,.form-submit .et_pb_button:after,.mobile_menu_bar:before,a.et_pb_more_button:after{font-family:ETmodules!important;speak:none;font-style:normal;font-weight:400;-webkit-font-feature-settings:normal;font-feature-settings:normal;font-variant:normal;text-transform:none;line-height:1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-shadow:0 0;direction:ltr}.et-pb-icon,.et_pb_custom_button_icon.et_pb_button:after,.et_pb_login .et_pb_custom_button_icon.et_pb_button:after,.et_pb_woo_custom_button_icon .button.et_pb_custom_button_icon.et_pb_button:after,.et_pb_woo_custom_button_icon .button.et_pb_custom_button_icon.et_pb_button:hover:after{content:attr(data-icon)}.et-pb-icon{font-family:ETmodules;speak:none;font-weight:400;-webkit-font-feature-settings:normal;font-feature-settings:normal;font-variant:normal;text-transform:none;line-height:1;-webkit-font-smoothing:antialiased;font-size:96px;font-style:normal;display:inline-block;-webkit-box-sizing:border-box;box-sizing:border-box;direction:ltr}#et-ajax-saving{display:none;-webkit-transition:background .3s,-webkit-box-shadow .3s;transition:background .3s,-webkit-box-shadow .3s;transition:background .3s,box-shadow .3s;transition:background .3s,box-shadow .3s,-webkit-box-shadow .3s;-webkit-box-shadow:rgba(0,139,219,.247059) 0 0 60px;box-shadow:0 0 60px rgba(0,139,219,.247059);position:fixed;top:50%;left:50%;width:50px;height:50px;background:#fff;border-radius:50px;margin:-25px 0 0 -25px;z-index:999999;text-align:center}#et-ajax-saving img{margin:9px}.et-safe-mode-indicator,.et-safe-mode-indicator:focus,.et-safe-mode-indicator:hover{-webkit-box-shadow:0 5px 10px rgba(41,196,169,.15);box-shadow:0 5px 10px rgba(41,196,169,.15);background:#29c4a9;color:#fff;font-size:14px;font-weight:600;padding:12px;line-height:16px;border-radius:3px;position:fixed;bottom:30px;right:30px;z-index:999999;text-decoration:none;font-family:Open Sans,sans-serif;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.et_pb_button{font-size:20px;font-weight:500;padding:.3em 1em;line-height:1.7em!important;background-color:transparent;background-size:cover;background-position:50%;background-repeat:no-repeat;border:2px solid;border-radius:3px;-webkit-transition-duration:.2s;transition-duration:.2s;-webkit-transition-property:all!important;transition-property:all!important}.et_pb_button,.et_pb_button_inner{position:relative}.et_pb_button:hover,.et_pb_module .et_pb_button:hover{border:2px solid transparent;padding:.3em 2em .3em .7em}.et_pb_button:hover{background-color:hsla(0,0%,100%,.2)}.et_pb_bg_layout_light.et_pb_button:hover,.et_pb_bg_layout_light .et_pb_button:hover{background-color:rgba(0,0,0,.05)}.et_pb_button:after,.et_pb_button:before{font-size:32px;line-height:1em;content:"\35";opacity:0;position:absolute;margin-left:-1em;-webkit-transition:all .2s;transition:all .2s;text-transform:none;-webkit-font-feature-settings:"kern" off;font-feature-settings:"kern" off;font-variant:none;font-style:normal;font-weight:400;text-shadow:none}.et_pb_button.et_hover_enabled:hover:after,.et_pb_button.et_pb_hovered:hover:after{-webkit-transition:none!important;transition:none!important}.et_pb_button:before{display:none}.et_pb_button:hover:after{opacity:1;margin-left:0}.et_pb_column_1_3 h1,.et_pb_column_1_4 h1,.et_pb_column_1_5 h1,.et_pb_column_1_6 h1,.et_pb_column_2_5 h1{font-size:26px}.et_pb_column_1_3 h2,.et_pb_column_1_4 h2,.et_pb_column_1_5 h2,.et_pb_column_1_6 h2,.et_pb_column_2_5 h2{font-size:23px}.et_pb_column_1_3 h3,.et_pb_column_1_4 h3,.et_pb_column_1_5 h3,.et_pb_column_1_6 h3,.et_pb_column_2_5 h3{font-size:20px}.et_pb_column_1_3 h4,.et_pb_column_1_4 h4,.et_pb_column_1_5 h4,.et_pb_column_1_6 h4,.et_pb_column_2_5 h4{font-size:18px}.et_pb_column_1_3 h5,.et_pb_column_1_4 h5,.et_pb_column_1_5 h5,.et_pb_column_1_6 h5,.et_pb_column_2_5 h5{font-size:16px}.et_pb_column_1_3 h6,.et_pb_column_1_4 h6,.et_pb_column_1_5 h6,.et_pb_column_1_6 h6,.et_pb_column_2_5 h6{font-size:15px}.et_pb_bg_layout_dark,.et_pb_bg_layout_dark h1,.et_pb_bg_layout_dark h2,.et_pb_bg_layout_dark h3,.et_pb_bg_layout_dark h4,.et_pb_bg_layout_dark h5,.et_pb_bg_layout_dark h6{color:#fff!important}.et_pb_module.et_pb_text_align_left{text-align:left}.et_pb_module.et_pb_text_align_center{text-align:center}.et_pb_module.et_pb_text_align_right{text-align:right}.et_pb_module.et_pb_text_align_justified{text-align:justify}.clearfix:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both;height:0}.et_pb_bg_layout_light .et_pb_more_button{color:#2ea3f2}.et_builder_inner_content{position:relative;z-index:1}header .et_builder_inner_content{z-index:2}.et_pb_css_mix_blend_mode_passthrough{mix-blend-mode:unset!important}.et_pb_image_container{margin:-20px -20px 29px}.et_pb_module_inner{position:relative}.et_hover_enabled_preview{z-index:2}.et_hover_enabled:hover{position:relative;z-index:2}.et_pb_all_tabs,.et_pb_module,.et_pb_posts_nav a,.et_pb_tab,.et_pb_with_background{position:relative;background-size:cover;background-position:50%;background-repeat:no-repeat}.et_pb_background_mask,.et_pb_background_pattern{bottom:0;left:0;position:absolute;right:0;top:0}.et_pb_background_mask{background-size:calc(100% + 2px) calc(100% + 2px);background-repeat:no-repeat;background-position:50%;overflow:hidden}.et_pb_background_pattern{background-position:0 0;background-repeat:repeat}.et_pb_with_border{position:relative;border:0 solid #333}.post-password-required .et_pb_row{padding:0;width:100%}.post-password-required .et_password_protected_form{min-height:0}body.et_pb_pagebuilder_layout.et_pb_show_title .post-password-required .et_password_protected_form h1,body:not(.et_pb_pagebuilder_layout) .post-password-required .et_password_protected_form h1{display:none}.et_pb_no_bg{padding:0!important}.et_overlay.et_pb_inline_icon:before,.et_pb_inline_icon:before{content:attr(data-icon)}.et_pb_more_button{color:inherit;text-shadow:none;text-decoration:none;display:inline-block;margin-top:20px}.et_parallax_bg_wrap{overflow:hidden;position:absolute;top:0;right:0;bottom:0;left:0}.et_parallax_bg{background-repeat:no-repeat;background-position:top;background-size:cover;position:absolute;bottom:0;left:0;width:100%;height:100%;display:block}.et_parallax_bg.et_parallax_bg__hover,.et_parallax_bg.et_parallax_bg_phone,.et_parallax_bg.et_parallax_bg_tablet,.et_parallax_gradient.et_parallax_gradient__hover,.et_parallax_gradient.et_parallax_gradient_phone,.et_parallax_gradient.et_parallax_gradient_tablet,.et_pb_section_parallax_hover:hover .et_parallax_bg:not(.et_parallax_bg__hover),.et_pb_section_parallax_hover:hover .et_parallax_gradient:not(.et_parallax_gradient__hover){display:none}.et_pb_section_parallax_hover:hover .et_parallax_bg.et_parallax_bg__hover,.et_pb_section_parallax_hover:hover .et_parallax_gradient.et_parallax_gradient__hover{display:block}.et_parallax_gradient{bottom:0;display:block;left:0;position:absolute;right:0;top:0}.et_pb_module.et_pb_section_parallax,.et_pb_posts_nav a.et_pb_section_parallax,.et_pb_tab.et_pb_section_parallax{position:relative}.et_pb_section_parallax .et_pb_parallax_css,.et_pb_slides .et_parallax_bg.et_pb_parallax_css{background-attachment:fixed}body.et-bfb .et_pb_section_parallax .et_pb_parallax_css,body.et-bfb .et_pb_slides .et_parallax_bg.et_pb_parallax_css{background-attachment:scroll;bottom:auto}.et_pb_section_parallax.et_pb_column .et_pb_module,.et_pb_section_parallax.et_pb_row .et_pb_column,.et_pb_section_parallax.et_pb_row .et_pb_module{z-index:9;position:relative}.et_pb_more_button:hover:after{opacity:1;margin-left:0}.et_pb_preload .et_pb_section_video_bg,.et_pb_preload>div{visibility:hidden}.et_pb_preload,.et_pb_section.et_pb_section_video.et_pb_preload{position:relative;background:#464646!important}.et_pb_preload:before{content:"";position:absolute;top:50%;left:50%;background:url(images/preloader.gif) no-repeat;border-radius:32px;width:32px;height:32px;margin:-16px 0 0 -16px}.box-shadow-overlay{position:absolute;top:0;left:0;width:100%;height:100%;z-index:10;pointer-events:none}.et_pb_section>.box-shadow-overlay~.et_pb_row{z-index:11}body.safari .section_has_divider{will-change:transform}.et_pb_row>.box-shadow-overlay{z-index:8}.has-box-shadow-overlay{position:relative}.et_clickable{cursor:pointer}.screen-reader-text{border:0;clip:rect(1px,1px,1px,1px);-webkit-clip-path:inset(50%);clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute!important;width:1px;word-wrap:normal!important}.et_multi_view_hidden,.et_multi_view_hidden_image{display:none!important}@keyframes multi-view-image-fade{0%{opacity:0}10%{opacity:.1}20%{opacity:.2}30%{opacity:.3}40%{opacity:.4}50%{opacity:.5}60%{opacity:.6}70%{opacity:.7}80%{opacity:.8}90%{opacity:.9}to{opacity:1}}.et_multi_view_image__loading{visibility:hidden}.et_multi_view_image__loaded{-webkit-animation:multi-view-image-fade .5s;animation:multi-view-image-fade .5s}#et-pb-motion-effects-offset-tracker{visibility:hidden!important;opacity:0;position:absolute;top:0;left:0}.et-pb-before-scroll-animation{opacity:0}header.et-l.et-l--header:after{clear:both;display:block;content:""}.et_pb_module{-webkit-animation-timing-function:linear;animation-timing-function:linear;-webkit-animation-duration:.2s;animation-duration:.2s}@-webkit-keyframes fadeBottom{0%{opacity:0;-webkit-transform:translateY(10%);transform:translateY(10%)}to{opacity:1;-webkit-transform:translateY(0);transform:translateY(0)}}@keyframes fadeBottom{0%{opacity:0;-webkit-transform:translateY(10%);transform:translateY(10%)}to{opacity:1;-webkit-transform:translateY(0);transform:translateY(0)}}@-webkit-keyframes fadeLeft{0%{opacity:0;-webkit-transform:translateX(-10%);transform:translateX(-10%)}to{opacity:1;-webkit-transform:translateX(0);transform:translateX(0)}}@keyframes fadeLeft{0%{opacity:0;-webkit-transform:translateX(-10%);transform:translateX(-10%)}to{opacity:1;-webkit-transform:translateX(0);transform:translateX(0)}}@-webkit-keyframes fadeRight{0%{opacity:0;-webkit-transform:translateX(10%);transform:translateX(10%)}to{opacity:1;-webkit-transform:translateX(0);transform:translateX(0)}}@keyframes fadeRight{0%{opacity:0;-webkit-transform:translateX(10%);transform:translateX(10%)}to{opacity:1;-webkit-transform:translateX(0);transform:translateX(0)}}@-webkit-keyframes fadeTop{0%{opacity:0;-webkit-transform:translateY(-10%);transform:translateY(-10%)}to{opacity:1;-webkit-transform:translateX(0);transform:translateX(0)}}@keyframes fadeTop{0%{opacity:0;-webkit-transform:translateY(-10%);transform:translateY(-10%)}to{opacity:1;-webkit-transform:translateX(0);transform:translateX(0)}}@-webkit-keyframes fadeIn{0%{opacity:0}to{opacity:1}}@keyframes fadeIn{0%{opacity:0}to{opacity:1}}.et-waypoint:not(.et_pb_counters){opacity:0}@media (min-width:981px){.et_pb_section.et_section_specialty div.et_pb_row .et_pb_column .et_pb_column .et_pb_module.et-last-child,.et_pb_section.et_section_specialty div.et_pb_row .et_pb_column .et_pb_column .et_pb_module:last-child,.et_pb_section.et_section_specialty div.et_pb_row .et_pb_column .et_pb_row_inner .et_pb_column .et_pb_module.et-last-child,.et_pb_section.et_section_specialty div.et_pb_row .et_pb_column .et_pb_row_inner .et_pb_column .et_pb_module:last-child,.et_pb_section div.et_pb_row .et_pb_column .et_pb_module.et-last-child,.et_pb_section div.et_pb_row .et_pb_column .et_pb_module:last-child{margin-bottom:0}}@media (max-width:980px){.et_overlay.et_pb_inline_icon_tablet:before,.et_pb_inline_icon_tablet:before{content:attr(data-icon-tablet)}.et_parallax_bg.et_parallax_bg_tablet_exist,.et_parallax_gradient.et_parallax_gradient_tablet_exist{display:none}.et_parallax_bg.et_parallax_bg_tablet,.et_parallax_gradient.et_parallax_gradient_tablet{display:block}.et_pb_column .et_pb_module{margin-bottom:30px}.et_pb_row .et_pb_column .et_pb_module.et-last-child,.et_pb_row .et_pb_column .et_pb_module:last-child,.et_section_specialty .et_pb_row .et_pb_column .et_pb_module.et-last-child,.et_section_specialty .et_pb_row .et_pb_column .et_pb_module:last-child{margin-bottom:0}.et_pb_more_button{display:inline-block!important}.et_pb_bg_layout_light_tablet.et_pb_button,.et_pb_bg_layout_light_tablet.et_pb_module.et_pb_button,.et_pb_bg_layout_light_tablet .et_pb_more_button{color:#2ea3f2}.et_pb_bg_layout_light_tablet .et_pb_forgot_password a{color:#666}.et_pb_bg_layout_light_tablet h1,.et_pb_bg_layout_light_tablet h2,.et_pb_bg_layout_light_tablet h3,.et_pb_bg_layout_light_tablet h4,.et_pb_bg_layout_light_tablet h5,.et_pb_bg_layout_light_tablet h6{color:#333!important}.et_pb_module .et_pb_bg_layout_light_tablet.et_pb_button{color:#2ea3f2!important}.et_pb_bg_layout_light_tablet{color:#666!important}.et_pb_bg_layout_dark_tablet,.et_pb_bg_layout_dark_tablet h1,.et_pb_bg_layout_dark_tablet h2,.et_pb_bg_layout_dark_tablet h3,.et_pb_bg_layout_dark_tablet h4,.et_pb_bg_layout_dark_tablet h5,.et_pb_bg_layout_dark_tablet h6{color:#fff!important}.et_pb_bg_layout_dark_tablet.et_pb_button,.et_pb_bg_layout_dark_tablet.et_pb_module.et_pb_button,.et_pb_bg_layout_dark_tablet .et_pb_more_button{color:inherit}.et_pb_bg_layout_dark_tablet .et_pb_forgot_password a{color:#fff}.et_pb_module.et_pb_text_align_left-tablet{text-align:left}.et_pb_module.et_pb_text_align_center-tablet{text-align:center}.et_pb_module.et_pb_text_align_right-tablet{text-align:right}.et_pb_module.et_pb_text_align_justified-tablet{text-align:justify}}@media (max-width:767px){.et_pb_more_button{display:inline-block!important}.et_overlay.et_pb_inline_icon_phone:before,.et_pb_inline_icon_phone:before{content:attr(data-icon-phone)}.et_parallax_bg.et_parallax_bg_phone_exist,.et_parallax_gradient.et_parallax_gradient_phone_exist{display:none}.et_parallax_bg.et_parallax_bg_phone,.et_parallax_gradient.et_parallax_gradient_phone{display:block}.et-hide-mobile{display:none!important}.et_pb_bg_layout_light_phone.et_pb_button,.et_pb_bg_layout_light_phone.et_pb_module.et_pb_button,.et_pb_bg_layout_light_phone .et_pb_more_button{color:#2ea3f2}.et_pb_bg_layout_light_phone .et_pb_forgot_password a{color:#666}.et_pb_bg_layout_light_phone h1,.et_pb_bg_layout_light_phone h2,.et_pb_bg_layout_light_phone h3,.et_pb_bg_layout_light_phone h4,.et_pb_bg_layout_light_phone h5,.et_pb_bg_layout_light_phone h6{color:#333!important}.et_pb_module .et_pb_bg_layout_light_phone.et_pb_button{color:#2ea3f2!important}.et_pb_bg_layout_light_phone{color:#666!important}.et_pb_bg_layout_dark_phone,.et_pb_bg_layout_dark_phone h1,.et_pb_bg_layout_dark_phone h2,.et_pb_bg_layout_dark_phone h3,.et_pb_bg_layout_dark_phone h4,.et_pb_bg_layout_dark_phone h5,.et_pb_bg_layout_dark_phone h6{color:#fff!important}.et_pb_bg_layout_dark_phone.et_pb_button,.et_pb_bg_layout_dark_phone.et_pb_module.et_pb_button,.et_pb_bg_layout_dark_phone .et_pb_more_button{color:inherit}.et_pb_module .et_pb_bg_layout_dark_phone.et_pb_button{color:#fff!important}.et_pb_bg_layout_dark_phone .et_pb_forgot_password a{color:#fff}.et_pb_module.et_pb_text_align_left-phone{text-align:left}.et_pb_module.et_pb_text_align_center-phone{text-align:center}.et_pb_module.et_pb_text_align_right-phone{text-align:right}.et_pb_module.et_pb_text_align_justified-phone{text-align:justify}}@media (max-width:479px){a.et_pb_more_button{display:block}}@media (min-width:768px) and (max-width:980px){[data-et-multi-view-load-tablet-hidden=true]:not(.et_multi_view_swapped){display:none!important}}@media (max-width:767px){[data-et-multi-view-load-phone-hidden=true]:not(.et_multi_view_swapped){display:none!important}}.et_pb_menu.et_pb_menu--style-inline_centered_logo .et_pb_menu__menu nav ul{-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}@-webkit-keyframes multi-view-image-fade{0%{-webkit-transform:scale(1);transform:scale(1);opacity:1}50%{-webkit-transform:scale(1.01);transform:scale(1.01);opacity:1}to{-webkit-transform:scale(1);transform:scale(1);opacity:1}}
 /*# sourceURL=divi-style-parent-inline-inline-css */
 </style>
-<link rel="stylesheet" id="divi-dynamic-css" href="css/et-divi-dynamic-tb-11-tb-9391-34.css" media="all">
+<link rel="stylesheet" id="divi-dynamic-css" href="css/et-divi-dynamic-tb-11-tb-81-42.css" media="all">
 <link rel="stylesheet" id="ssa-divi-module-styles-css" href="css/style.min.css" media="all">
 <style id="tnc_custom_css-inline-css">
 
@@ -91,13 +89,13 @@ a,abbr,acronym,address,applet,b,big,blockquote,body,center,cite,code,dd,del,dfn,
         
 /*# sourceURL=tnc_custom_css-inline-css */
 </style>
-<link rel="stylesheet" id="gform_basic-css" href="css/basic.min.css" media="all">
-<link rel="stylesheet" id="gform_theme_components-css" href="css/theme-components.min.css" media="all">
-<link rel="stylesheet" id="gform_theme_ie11-css" href="css/theme-ie11.min.css" media="all">
-<link rel="stylesheet" id="gform_theme-css" href="css/theme.min.css" media="all">
 <link rel="stylesheet" id="divi-style-css" href="css/style_1.css" media="all">
 <script id="jquery-core-js" src="js/jquery.min.js"></script>
 <script id="jquery-migrate-js" src="js/jquery-migrate.min.js"></script>
+<script id="jquery-js-after">
+jqueryParams.length&&$.each(jqueryParams,function(e,r){if("function"==typeof r){var n=String(r);n.replace("$","jQuery");var a=new Function("return "+n)();$(document).ready(a)}});
+//# sourceURL=jquery-js-after
+</script>
 <script data-wp-strategy="defer" defer="" id="wc-jquery-blockui-js" src="js/jquery.blockUI.min.js"></script>
 <script id="wc-add-to-cart-js-extra">
 var wc_add_to_cart_params = {"ajax_url":"/wp-admin/admin-ajax.php","wc_ajax_url":"/?wc-ajax=%%endpoint%%","i18n_view_cart":"View cart","cart_url":"https://fightden.ca/cart/","is_cart":"","cart_redirect_after_add":"no"};
@@ -110,25 +108,10 @@ var woocommerce_params = {"ajax_url":"/wp-admin/admin-ajax.php","wc_ajax_url":"/
 //# sourceURL=woocommerce-js-extra
 </script>
 <script data-wp-strategy="defer" defer="" id="woocommerce-js" src="js/woocommerce.min.js"></script>
-<script id="gform_json-js" defer="defer" src="js/jquery.json.min.js"></script>
-<script id="gform_gravityforms-js-extra">
-var gf_global = {"gf_currency_config":{"name":"U.S. Dollar","symbol_left":"$","symbol_right":"","symbol_padding":"","thousand_separator":",","decimal_separator":".","decimals":2,"code":"USD"},"base_url":"https://fightden.ca/wp-content/plugins/gravityforms","number_formats":[],"spinnerUrl":"https://fightden.ca/wp-content/plugins/gravityforms/images/spinner.svg","version_hash":"830bfc630bb8d526a865fc42343dedfd","strings":{"newRowAdded":"New row added.","rowRemoved":"Row removed","formSaved":"The form has been saved.  The content contains the link to return and complete the form."}};
-var gform_i18n = {"datepicker":{"days":{"monday":"Mo","tuesday":"Tu","wednesday":"We","thursday":"Th","friday":"Fr","saturday":"Sa","sunday":"Su"},"months":{"january":"January","february":"February","march":"March","april":"April","may":"May","june":"June","july":"July","august":"August","september":"September","october":"October","november":"November","december":"December"},"firstDay":1,"iconText":"Select date"}};
-var gf_legacy_multi = {"4":""};
-var gform_gravityforms = {"strings":{"invalid_file_extension":"This type of file is not allowed. Must be one of the following:","delete_file":"Delete this file","in_progress":"in progress","file_exceeds_limit":"File exceeds size limit","illegal_extension":"This type of file is not allowed.","max_reached":"Maximum number of files reached","unknown_error":"There was a problem while saving the file on the server","currently_uploading":"Please wait for the uploading to complete","cancel":"Cancel","cancel_upload":"Cancel this upload","cancelled":"Cancelled"},"vars":{"images_url":"https://fightden.ca/wp-content/plugins/gravityforms/images"}};
-//# sourceURL=gform_gravityforms-js-extra
-</script>
-<script id="gform_gravityforms-js-before">
-
-//# sourceURL=gform_gravityforms-js-before
-</script>
-<script id="gform_gravityforms-js" defer="defer" src="js/gravityforms.min.js"></script>
-<script id="gform_recaptcha-js" defer="defer" src="js/api.js#038;render=explicit"></script>
-<script id="gform_gravityforms_utils-js" defer="defer" src="js/utils.min.js"></script>
-<link rel="https://api.w.org/" href="https://fightden.ca/wp-json/"><link rel="alternate" title="JSON" type="application/json" href="https://fightden.ca/wp-json/wp/v2/pages/34"><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://fightden.ca/xmlrpc.php?rsd">
+<link rel="https://api.w.org/" href="https://fightden.ca/wp-json/"><link rel="alternate" title="JSON" type="application/json" href="https://fightden.ca/wp-json/wp/v2/pages/42"><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://fightden.ca/xmlrpc.php?rsd">
 <meta name="generator" content="WordPress 7.0">
 <meta name="generator" content="WooCommerce 10.9.1">
-<link rel="shortlink" href="https://fightden.ca/">
+<link rel="shortlink" href="https://fightden.ca/?p=42">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">	<noscript><style>.woocommerce-product-gallery{ opacity: 1 !important; }</style></noscript>
 	<meta name="google-site-verification" content="VChBzr8x63soN02MY5qn08lMfuVKoWFYNiNaGJwIiV8">
 <script>
@@ -197,7 +180,7 @@ jQuery('.burger').on('click', function(){
 <link rel="stylesheet" id="wc-blocks-style-css" href="css/wc-blocks.css" media="all">
 
 </head>
-<body class="home wp-singular page-template-default page page-id-34 wp-theme-Divi wp-child-theme-Divi_Child theme-Divi et-tb-has-template et-tb-has-header et-tb-has-footer woocommerce-no-js et_pb_button_helper_class et_cover_background et_pb_gutter windows et_pb_gutters3 et_pb_pagebuilder_layout et_no_sidebar et_divi_theme et-db">
+<body class="wp-singular page-template-default page page-id-42 wp-theme-Divi wp-child-theme-Divi_Child theme-Divi et-tb-has-template et-tb-has-header et-tb-has-footer woocommerce-no-js et_pb_button_helper_class et_cover_background et_pb_gutter et_pb_gutters3 et_pb_pagebuilder_layout et_no_sidebar et_divi_theme et-db">
 	<div id="page-container">
 <div id="et-boc" class="et-boc">
 			
@@ -238,7 +221,7 @@ jQuery('.burger').on('click', function(){
 						<div class="et_pb_menu__wrap">
 							<div class="et_pb_menu__menu">
 								<nav class="et-menu-nav"><ul id="menu-main-menu" class="et-menu nav"><li class="et_pb_menu_page_id-40 menu-item menu-item-type-post_type menu-item-object-page menu-item-51"><a href="https://fightden.ca/about/">About</a></li>
-<li class="et_pb_menu_page_id-42 menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-50"><a href="https://fightden.ca/services/">What We Offer</a>
+<li class="et_pb_menu_page_id-42 menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-42 current_page_item menu-item-has-children menu-item-50"><a href="https://fightden.ca/services/" aria-current="page">What We Offer</a>
 <ul class="sub-menu">
 	<li class="et_pb_menu_page_id-9354 menu-item menu-item-type-custom menu-item-object-custom menu-item-9354"><a href="https://www.fightden.ca/service-category/krav-maga-weapons-disarm/">Krav Maga Weapons &amp; Disarm</a></li>
 	<li class="et_pb_menu_page_id-9355 menu-item menu-item-type-custom menu-item-object-custom menu-item-9355"><a href="https://www.fightden.ca/service-category/no-gi-jiu-jitsu/">No-Gi Jiu Jitsu</a></li>
@@ -338,7 +321,7 @@ jQuery('.burger').on('click', function(){
             </div>
 </div></div>
 <li id="menu-item-8922" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8922"><a href="https://fightden.ca/about/">About Fight Den</a></li>
-<li id="menu-item-8926" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-8926"><a href="https://fightden.ca/services/">What We Offer</a>
+<li id="menu-item-8926" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-42 current_page_item menu-item-has-children menu-item-8926"><a href="https://fightden.ca/services/" aria-current="page">What We Offer</a>
 <ul class="sub-menu">
 	<li id="menu-item-8929" class="menu-item menu-item-type-taxonomy menu-item-object-service_category menu-item-8929"><a href="https://fightden.ca/service-category/krav-maga-weapons-disarm/">Krav Maga Weapons &amp; Disarm</a></li>
 	<li id="menu-item-8931" class="menu-item menu-item-type-taxonomy menu-item-object-service_category menu-item-8931"><a href="https://fightden.ca/service-category/no-gi-jiu-jitsu/">No-Gi Jiu Jitsu</a></li>
@@ -567,13 +550,13 @@ div#main_menu_mobile ul.sub-menu.revealsub a {
 
 
 			
-				<article id="post-34" class="post-34 page type-page status-publish has-post-thumbnail hentry">
+				<article id="post-42" class="post-42 page type-page status-publish has-post-thumbnail hentry">
 
 				
 					<div class="entry-content">
 					<div class="et-l et-l--post">
 			<div class="et_builder_inner_content et_pb_gutters3">
-		<div class="et_pb_section et_pb_section_0 theheaderhome et_pb_section_parallax et_pb_with_background et_section_regular">
+		<div id="hero_header_services" class="et_pb_section et_pb_section_0 et_pb_section_parallax et_pb_with_background et_section_regular">
 				
 				<span class="et_parallax_bg_wrap"><span class="et_parallax_bg" style="background-image: url(images/FIGHTDEN-mainimage3-min.jpg);"></span></span>
 				
@@ -592,105 +575,21 @@ div#main_menu_mobile ul.sub-menu.revealsub a {
 				
 				
 				<div class="et_pb_code_inner"><h1>
-<span class="justfightden">Fight Den</span> <span class="kravmaga">MMA Krav Maga</span>
+<span class="fightdenny">Fight Den</span> Services
 </h1>
-<h2>The best self-defence, grappling, mixed martial arts, and Krav Maga training programs in Woodbridge, Vaughan and the Greater Toronto Area! </h2></div>
+<h2>The best self-defense and professional MMA training program in the Greater Toronto Area.</h2></div>
 			</div>
-			</div><div class="et_pb_column et_pb_column_2_5 et_pb_column_1 put_in_middle first-on-mobile  et_pb_css_mix_blend_mode_passthrough et-last-child">
+			</div><div class="et_pb_column et_pb_column_2_5 et_pb_column_1 put_in_middle first-on-mobile second_column_hero  et_pb_css_mix_blend_mode_passthrough et-last-child">
 				
 				
 				
 				
-				<div class="et_pb_module et_pb_code et_pb_code_1 et_animated">
+				<div class="et_pb_module et_pb_image et_pb_image_0 et_animated et-waypoint">
 				
 				
 				
 				
-				<div class="et_pb_code_inner"><div class="slide-container">
-<div class="slide fade">
-   <img src="images/Mike1-510x382.jpg" alt="Best Self-Defence, Grappling, MMA, &amp; Krav Training | Fight Den">
-      </div>
-      <div class="slide fade">
-            <img src="images/Boxing-510x382.jpg" alt="Best Self-Defence">
-      </div>
-      <div class="slide fade">
-     <img src="images/JapJ-510x382.jpg" alt="Best Self-Defence">
-      </div>
-      <div class="slide fade">
-   <img src="images/bitr-510x382.jpg" alt="Best Self-Defence, Grappling, MMA, &amp; Krav Training | Fight Den">
-      </div>
-
-          <div class="slide fade">
-   <img src="images/About2-510x382.jpg" alt="Best Self-Defence, Grappling, MMA, &amp; Krav Training | Fight Den">
-      </div>
-    
-    
-    
-          <div class="slide fade">
-   <img src="images/Judo-510x382.jpg" alt="Best Self-Defence, Grappling, MMA, &amp; Krav Training | Fight Den">
-      </div>
-    
-              <div class="slide fade">
-   <img src="images/ightde-510x382.jpg" alt="Best Self-Defence, Grappling, MMA, &amp; Krav Training | Fight Den">
-      </div>
-    
-   <a href="javascript:void(0)" class="prev" title="Previous"><i class="fa-solid fa-arrow-left"></i></a>
-      <a href="javascript:void(0)" class="next" title="Next"><i class="fa-solid fa-arrow-right"></i></a>
-    </div>
-    <div class="dots-container">
-      <span class="dot"></span>
-      <span class="dot"></span>
-      <span class="dot"></span>
-      <span class="dot"></span>
-         <span class="dot"></span>
-         <span class="dot"></span>
-               <span class="dot"></span>
-    </div>
-<script>
-let currentSlide = 0;
-const slides = document.querySelectorAll(".slide")
-const dots = document.querySelectorAll('.dot')
-
-const init = (n) => {
-  slides.forEach((slide, index) => {
-    slide.style.display = "none"
-    dots.forEach((dot, index) => {
-      dot.classList.remove("active")
-    })
-  })
-  slides[n].style.display = "block"
-  dots[n].classList.add("active")
-}
-document.addEventListener("DOMContentLoaded", init(currentSlide))
-const next = () => {
-  currentSlide >= slides.length - 1 ? currentSlide = 0 : currentSlide++
-  init(currentSlide)
-}
-
-const prev = () => {
-  currentSlide <= 0 ? currentSlide = slides.length - 1 : currentSlide--
-  init(currentSlide)
-}
-
-document.querySelector(".next").addEventListener('click', next)
-
-document.querySelector(".prev").addEventListener('click', prev)
-
-
-setInterval(() => {
-  next()
-}, 15000);
-
-dots.forEach((dot, i) => {
-  dot.addEventListener("click", () => {
-    console.log(currentSlide)
-    init(i)
-    currentSlide = i
-  })
-})
-
-
-</script></div>
+				<span class="et_pb_image_wrap "><img decoding="async" src="images/FightdenLogo.png" alt="Fight Den Services - Jiu-Jitsu, Krav Maga, MMA &amp; Combat Fitness in the Vaughan and North Toronto Area! " title="FightdenLogo"></span>
 			</div>
 			</div>
 				
@@ -700,206 +599,20 @@ dots.forEach((dot, i) => {
 			</div>
 				
 				
-			</div><div class="et_pb_section et_pb_section_1 blacktrill fdvideosec et_section_regular">
+			</div><div class="et_pb_section et_pb_section_1 et_pb_with_background et_section_regular">
 				
 				
 				
 				
 				
 				
-				<div id="header_row" class="et_pb_row et_pb_row_1 title_row">
-				<div class="et_pb_column et_pb_column_4_4 et_pb_column_2  et_pb_css_mix_blend_mode_passthrough et-last-child">
+				<div class="et_pb_row et_pb_row_1 bubblebox">
+				<div class="et_pb_column et_pb_column_1_4 et_pb_column_2  et_pb_css_mix_blend_mode_passthrough">
 				
 				
 				
 				
-				<div class="et_pb_module et_pb_code et_pb_code_2">
-				
-				
-				
-				
-				<div class="et_pb_code_inner"><h2>Welcome To Fight Den</h2>
-<div class="underline"></div></div>
-			</div>
-			</div>
-				
-				
-				
-				
-			</div><div class="et_pb_row et_pb_row_2 et_pb_equal_columns">
-				<div class="et_pb_column et_pb_column_1_2 et_pb_column_3 put_in_middle firstcolvideo  et_pb_css_mix_blend_mode_passthrough">
-				
-				
-				
-				
-				<div class="et_pb_module et_pb_code et_pb_code_3 heading3andtext">
-				
-				
-				
-				
-				<div class="et_pb_code_inner"><h3>
-Sensei Mike Khardas Teaches Krav Maga To Rafael Domingos BJJ Black Belt Under Demian Maia  
-</h3>
-<p>
-This is a fun clip from a crash course in Krav Maga with Sensei Mike Khardas and Professional Brazilian Jiu Jitsu competitor/ Demian Maia Black Belt Rafael Domingos. Glad Frankie Forza and Rafael and all the other BJJ ninjas enjoyed the techniques. BJJ black belts are Mcdojo and Bullshido proof, so having them praise the techniques is awesome. We are bringing street safety and weapons disarms back to BJJ and Jiu Jitsu one MMA school at a time! 
-</p> </div>
-			</div>
-			</div><div class="et_pb_column et_pb_column_1_2 et_pb_column_4 put_in_middle twocolvideo  et_pb_css_mix_blend_mode_passthrough et-last-child">
-				
-				
-				
-				
-				<div class="et_pb_module et_pb_code et_pb_code_4 showonlyonscrolls containxlose">
-				
-				
-				
-				
-				<div class="et_pb_code_inner"><a class="closethisforgood" href="javascript:void(0)">Close</a>  </div>
-			</div><div class="et_pb_module et_pb_video et_pb_video_0 dm-autoplay">
-				
-				
-				
-				
-				<div class="et_pb_video_box"><iframe loading="lazy" title="Sensei Mike Khardas teaches Krav Maga to Rafael Domingos BJJ Black Belt under Demian Maia" width="1080" height="608" src="QeSGjfzvS8I.html" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe></div>
-				<div style="background-image:url(images/maxresdefault.jpg)" class="et_pb_video_overlay"><div class="et_pb_video_overlay_hover"><a href="#" class="et_pb_video_play"></a></div></div>
-			</div><div class="et_pb_module et_pb_code et_pb_code_5 showonlyonscrolls">
-				
-				
-				
-				
-				<div class="et_pb_code_inner"><a style="padding:16px; display:block; text-align:center;" class="callnumbernow btn draw-border" href="/contact/"> Get in Touch</a> </div>
-			</div><div class="et_pb_module et_pb_code et_pb_code_6">
-				
-				
-				
-				
-				<div class="et_pb_code_inner"><style>
-.fdvideosec.displaynothingnow {
-    display: none!important;
-  }
-</style>
-
-<script>
-    // Check if the screen width is greater than 980px
-    if (window.innerWidth > 980) {
-      // Your first script
-      var lastScrollTop = 0;
-      window.addEventListener('scroll', function() {
-        var scrollTop = window.scrollY || document.documentElement.scrollTop;
-
-        if (scrollTop > lastScrollTop) {
-          // Scrolling down
-          var scrollPercentage = (scrollTop + window.innerHeight) / document.documentElement.scrollHeight;
-          if (scrollPercentage >= 0.95) {
-            var elements = document.querySelectorAll('.fdvideosec');
-            elements.forEach(function(element) {
-              element.classList.add('displaynothingnow');
-            });
-          }
-        } else {
-          // Scrolling up
-          var elements = document.querySelectorAll('.fdvideosec');
-          elements.forEach(function(element) {
-            element.classList.remove('displaynothingnow');
-          });
-        }
-
-        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-      });
-
-      // Your second script
-      jQuery(document).ready(function() {
-        var closeButtonPressed = false;
-
-        // Function to handle closing action
-        function handleCloseAction() {
-          closeButtonPressed = true;
-          // Revert any changes made by scrolling logic
-          var fdvideosec = jQuery('.fdvideosec');
-          fdvideosec.removeClass("sticktobottom");
-          fdvideosec.addClass("blacktrill");
-          // Add any additional logic you want to execute when the close button is pressed
-        }
-
-        // Check scroll position on scroll
-        jQuery(window).scroll(function() {
-          if (!closeButtonPressed) {
-            var fdvideosec = jQuery('.fdvideosec');
-            var theheaderhome = jQuery('.theheaderhome');
-            var totalScrollableHeight = fdvideosec.prop("scrollHeight");
-            var scrollTop = jQuery(window).scrollTop();
-            var windowHeight = jQuery(window).height();
-            var scrollBottom = totalScrollableHeight - (scrollTop + windowHeight);
-
-            // Check if the user has scrolled to the bottom
-            if (scrollBottom <= 0) {
-              // Check if the user is above or below the element with class "theheaderhome"
-              if (theheaderhome.offset().top > (scrollTop + windowHeight) || (theheaderhome.offset().top + theheaderhome.height()) < scrollTop) {
-                // Perform your action here
-                fdvideosec.addClass("sticktobottom");
-                fdvideosec.removeClass("blacktrill");  
-              } else {
-                // If crossing class "theheaderhome," remove the added classes
-                fdvideosec.removeClass("sticktobottom");
-                fdvideosec.addClass("blacktrill");    
-              }
-            } else {
-              // If scrolling back up, remove the added classes
-              fdvideosec.removeClass("sticktobottom");
-              fdvideosec.addClass("blacktrill");  	
-            }
-          }
-        });
-
-        // Handle click event for the close button
-        jQuery('.closethisforgood').click(function() {
-          handleCloseAction();
-        });
-      });
-    }
-  </script></div>
-			</div>
-			</div>
-				
-				
-				
-				
-			</div>
-				
-				
-			</div><div class="et_pb_section et_pb_section_2 et_pb_with_background et_section_regular">
-				
-				
-				
-				
-				
-				
-				<div id="header_row" class="et_pb_row et_pb_row_3 title_row">
-				<div class="et_pb_column et_pb_column_4_4 et_pb_column_5  et_pb_css_mix_blend_mode_passthrough et-last-child">
-				
-				
-				
-				
-				<div class="et_pb_module et_pb_code et_pb_code_7">
-				
-				
-				
-				
-				<div class="et_pb_code_inner"><h2>What We Offer</h2>
-<div class="underline"></div></div>
-			</div>
-			</div>
-				
-				
-				
-				
-			</div><div class="et_pb_row et_pb_row_4 bubblebox">
-				<div class="et_pb_column et_pb_column_1_4 et_pb_column_6  et_pb_css_mix_blend_mode_passthrough">
-				
-				
-				
-				
-				<div id="service_here" class="et_pb_module et_pb_code et_pb_code_8 et_clickable  et_pb_text_align_center">
+				<div id="service_here" class="et_pb_module et_pb_code et_pb_code_1 et_clickable  et_pb_text_align_center">
 				
 				
 				
@@ -910,12 +623,12 @@ Krav Maga Weapons &amp; Disarm <span class="lessonss">Lessons</span>
   </h3>
 </div></div>
 			</div>
-			</div><div class="et_pb_column et_pb_column_1_4 et_pb_column_7  et_pb_css_mix_blend_mode_passthrough">
+			</div><div class="et_pb_column et_pb_column_1_4 et_pb_column_3  et_pb_css_mix_blend_mode_passthrough">
 				
 				
 				
 				
-				<div id="service_here" class="et_pb_module et_pb_code et_pb_code_9 et_clickable  et_pb_text_align_center">
+				<div id="service_here" class="et_pb_module et_pb_code et_pb_code_2 et_clickable  et_pb_text_align_center">
 				
 				
 				
@@ -926,12 +639,12 @@ No-Gi Jiu Jitsu <span class="lessonss">Lessons</span>
   </h3>
 </div></div>
 			</div>
-			</div><div class="et_pb_column et_pb_column_1_4 et_pb_column_8  et_pb_css_mix_blend_mode_passthrough">
+			</div><div class="et_pb_column et_pb_column_1_4 et_pb_column_4  et_pb_css_mix_blend_mode_passthrough">
 				
 				
 				
 				
-				<div id="service_here" class="et_pb_module et_pb_code et_pb_code_10 et_clickable  et_pb_text_align_center">
+				<div id="service_here" class="et_pb_module et_pb_code et_pb_code_3 et_clickable  et_pb_text_align_center">
 				
 				
 				
@@ -942,12 +655,12 @@ Mixed Martial Arts <span class="lessonss">Lessons</span>
   </h3>
 </div></div>
 			</div>
-			</div><div class="et_pb_column et_pb_column_1_4 et_pb_column_9  et_pb_css_mix_blend_mode_passthrough et-last-child">
+			</div><div class="et_pb_column et_pb_column_1_4 et_pb_column_5  et_pb_css_mix_blend_mode_passthrough et-last-child">
 				
 				
 				
 				
-				<div id="service_here" class="et_pb_module et_pb_code et_pb_code_11 et_clickable  et_pb_text_align_center">
+				<div id="service_here" class="et_pb_module et_pb_code et_pb_code_4 et_clickable  et_pb_text_align_center">
 				
 				
 				
@@ -966,180 +679,241 @@ Combat Fitness <span class="lessonss">Classes</span>
 			</div>
 				
 				
-			</div><div id="separatorsect" class="et_pb_section et_pb_section_3 et_pb_with_background et_section_regular">
+			</div><div id="service_section" class="et_pb_section et_pb_section_2 blacktrill et_section_regular">
 				
 				
 				
 				
 				
 				
-				<div class="et_pb_row et_pb_row_5">
-				<div class="et_pb_column et_pb_column_4_4 et_pb_column_10  et_pb_css_mix_blend_mode_passthrough et-last-child">
+				<div id="services_rowhere" class="et_pb_row et_pb_row_2 et_pb_equal_columns">
+				<div class="et_pb_column et_pb_column_1_2 et_pb_column_6 columnforimage put_in_middle  et_pb_css_mix_blend_mode_passthrough" id="image_column">
 				
 				
 				
 				
-				<div class="et_pb_module et_pb_code et_pb_code_12  et_pb_text_align_center">
+				<div class="et_pb_module et_pb_image et_pb_image_1">
+				
+				
+				
+				
+				<span class="et_pb_image_wrap "><img fetchpriority="high" decoding="async" width="850" height="604" src="images/Krav.jpg" alt="Fight Den Services - Jiu-Jitsu, Krav Maga, MMA &amp; Combat Fitness in the Vaughan and North Toronto Area! " title="Krav" srcset="images/Krav.jpg 850w, images/Krav-480x341.jpg 480w" sizes="(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) 850px, 100vw" class="wp-image-7677"></span>
+			</div>
+			</div><div class="et_pb_column et_pb_column_1_2 et_pb_column_7 texthere put_in_middle  et_pb_css_mix_blend_mode_passthrough et-last-child" id="textcolumn">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_code et_pb_code_5 heading3andtext">
 				
 				
 				
 				
 				<div class="et_pb_code_inner"><h3>
-Friends and VIPs
-</h3></div>
-			</div>
-			</div>
-				
-				
-				
-				
-			</div>
-				
-				
-			</div><div class="et_pb_section et_pb_section_4 blacktrill et_section_regular">
-				
-				
-				
-				
-				
-				
-				<div id="header_row" class="et_pb_row et_pb_row_6 title_row">
-				<div class="et_pb_column et_pb_column_4_4 et_pb_column_11  et_pb_css_mix_blend_mode_passthrough et-last-child">
-				
-				
-				
-				
-				<div class="et_pb_module et_pb_code et_pb_code_13">
-				
-				
-				
-				
-				<div class="et_pb_code_inner"><h2>What is Combat Jiu Jitsu and Jiu Jitsu based Krav Maga?</h2>
-<div class="underline"></div></div>
-			</div>
-			</div>
-				
-				
-				
-				
-			</div><div class="et_pb_row et_pb_row_7 et_pb_equal_columns">
-				<div class="et_pb_column et_pb_column_1_2 et_pb_column_12 put_in_middle  et_pb_css_mix_blend_mode_passthrough">
-				
-				
-				
-				
-				<div class="et_pb_with_border et_pb_module et_pb_image et_pb_image_0 et_animated et-waypoint">
-				
-				
-				
-				
-				<span class="et_pb_image_wrap has-box-shadow-overlay"><div class="box-shadow-overlay"></div><img fetchpriority="high" decoding="async" width="850" height="567" src="images/HomePage.jpg" alt="" title="HomePage" srcset="images/HomePage.jpg 850w, images/HomePage-480x320.jpg 480w" sizes="(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) 850px, 100vw" class="wp-image-7802"></span>
-			</div>
-			</div><div class="et_pb_column et_pb_column_1_2 et_pb_column_13 put_in_middle  et_pb_css_mix_blend_mode_passthrough et-last-child">
-				
-				
-				
-				
-				<div class="et_pb_module et_pb_code et_pb_code_14 heading3andtext">
-				
-				
-				
-				
-				<div class="et_pb_code_inner"><h3>&nbsp;
-Combat Jiu-Jitsu (CJJ) is a hybrid grappling sport that blends
-traditional no-gi Jiu-Jitsu techniques with open-handed strikes to create a
-more realistic simulation of MMA-style ground fighting. Unlike standard Gi BJJ,
-where striking is prohibited, CJJ allows palm strikes once the fight hits the
-ground, forcing competitors to adapt their positions and submissions with the
-threat of damage in mind. This dynamic rule set encourages a more aggressive
-approach to passing guard, securing dominant positions, and finishing
-submissions while also emphasizing defensive awareness against strikes. By
-integrating striking with high-level grappling, Combat Jiu-Jitsu bridges the
-gap between sport BJJ and full-contact MMA, making it an ideal testing ground
-for fighters looking to transition into mixed martial arts. Our classes are all
-no gi, and we also incorporate leg locks and Rubber Guard techniques into our syllabus to maintain true to mixed martial arts simulation sparring.
+Krav Maga Weapons &amp; Disarm Lessons 
+</h3>
+<p>
+Services at Fight Den begin with Krav Maga. Krav Maga combines an evolutionary form of self-defense and physical training based on the use of reflexive responses to threatening situations.
+</p> 
 
-&nbsp;<p></p> </h3></div>
-			</div>
-			</div>
-				
-				
-				
-				
-			</div>
-				
-				
-			</div><div class="et_pb_section et_pb_section_5 et_pb_with_background et_section_regular">
-				
-				
-				
-				
-				
-				
-				<div class="et_pb_row et_pb_row_8">
-				<div class="et_pb_column et_pb_column_1_2 et_pb_column_14  et_pb_css_mix_blend_mode_passthrough">
-				
-				
-				
-				
-				<div id="mailisthead" class="et_pb_module et_pb_code et_pb_code_15">
-				
-				
-				
-				
-				<div class="et_pb_code_inner"><h3>Sign Up For Our Mailing List</h3>
-
-<h4 style="color:#fff!important;
-  font-weight:900!important;
-  line-height:1.25em!important;">Uber connect with <a class="vipkrav hover_text" href="https://vipkrav.com/" target="_blank" rel="noopener">VIP Krav</a> and Fight Den.</h4>
-<i class="gg-arrow-long-right"></i></div>
-			</div>
-			</div><div class="et_pb_column et_pb_column_1_2 et_pb_column_15  et_pb_css_mix_blend_mode_passthrough et-last-child">
-				
-				
-				
-				
-				<div id="newscode" class="et_pb_module et_pb_code et_pb_code_16">
-				
-				
-				
-				
-				<div class="et_pb_code_inner">
-                <div class="gf_browser_chrome gform_wrapper gravity-theme gform-theme--no-framework" data-form-theme="gravity-theme" data-form-index="0" id="gform_wrapper_4">
-                        <div class="gform_heading">
-							<p class="gform_required_legend">"<span class="gfield_required gfield_required_asterisk">*</span>" indicates required fields</p>
-                        </div><form method="post" enctype="multipart/form-data" id="gform_4" action="/" data-formid="4" novalidate="">
-                        <div class="gform-body gform_body"><div id="gform_fields_4" class="gform_fields top_label form_sublabel_below description_below validation_below"><div id="field_4_6" class="gfield gfield--type-text gfield--input-type-text gfield--width-full gfield_contains_required field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible" data-js-reload="field_4_6"><label class="gfield_label gform-field-label" for="input_4_6">Name<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class="ginput_container ginput_container_text"><input name="input_6" id="input_4_6" type="text" value="" class="large" aria-required="true" aria-invalid="false"> </div></div><div id="field_4_3" class="gfield gfield--type-phone gfield--input-type-phone gfield--width-full gfield_contains_required field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible" data-js-reload="field_4_3"><label class="gfield_label gform-field-label" for="input_4_3">Phone Number<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class="ginput_container ginput_container_phone"><input name="input_3" id="input_4_3" type="tel" value="" class="large" aria-required="true" aria-invalid="false"></div></div><div id="field_4_4" class="gfield gfield--type-email gfield--input-type-email gfield--width-full gfield_contains_required field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible" data-js-reload="field_4_4"><label class="gfield_label gform-field-label" for="input_4_4">Email Address<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class="ginput_container ginput_container_email">
-                            <input name="input_4" id="input_4_4" type="email" value="" class="large" aria-required="true" aria-invalid="false">
-                        </div></div><fieldset id="field_4_8" class="gfield gfield--type-checkbox gfield--type-choice gfield--input-type-checkbox gfield--width-full gfield_contains_required field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible" data-js-reload="field_4_8"><legend class="gfield_label gform-field-label gfield_label_before_complex">Programs Interested<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></legend><div class="ginput_container ginput_container_checkbox"><div class="gfield_checkbox" id="input_4_8"><div class="gchoice gchoice_4_8_1">
-								<input class="gfield-choice-input" name="input_8.1" type="checkbox" value="Group classes" id="choice_4_8_1">
-								<label for="choice_4_8_1" id="label_4_8_1" class="gform-field-label gform-field-label--type-inline">Group classes</label>
-							</div><div class="gchoice gchoice_4_8_2">
-								<input class="gfield-choice-input" name="input_8.2" type="checkbox" value="Day pass" id="choice_4_8_2">
-								<label for="choice_4_8_2" id="label_4_8_2" class="gform-field-label gform-field-label--type-inline">Day pass</label>
-							</div><div class="gchoice gchoice_4_8_3">
-								<input class="gfield-choice-input" name="input_8.3" type="checkbox" value="Private lessons/Private lessons course" id="choice_4_8_3">
-								<label for="choice_4_8_3" id="label_4_8_3" class="gform-field-label gform-field-label--type-inline">Private lessons/Private lessons course</label>
-							</div><div class="gchoice gchoice_4_8_4">
-								<input class="gfield-choice-input" name="input_8.4" type="checkbox" value="Corporate seminars" id="choice_4_8_4">
-								<label for="choice_4_8_4" id="label_4_8_4" class="gform-field-label gform-field-label--type-inline">Corporate seminars</label>
-							</div></div></div></fieldset><div id="field_4_5" class="gfield gfield--type-textarea gfield--input-type-textarea gfield--width-full gfield_contains_required field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible" data-js-reload="field_4_5"><label class="gfield_label gform-field-label" for="input_4_5">Message<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class="ginput_container ginput_container_textarea"><textarea name="input_5" id="input_4_5" class="textarea large" aria-required="true" aria-invalid="false" rows="10" cols="50"></textarea></div></div><div id="field_4_9" class="gfield gfield--type-captcha gfield--input-type-captcha gfield--width-full field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible" data-js-reload="field_4_9"><label class="gfield_label gform-field-label" for="input_4_9">CAPTCHA</label><div id="input_4_9" class="ginput_container ginput_recaptcha" data-sitekey="6LeqM9MiAAAAACvskGnalPk0rU3-ZoWEByvOW1w7" data-theme="light" data-tabindex="0" data-badge=""></div></div><div id="field_4_10" class="gfield gfield--type-honeypot gform_validation_container field_sublabel_below gfield--has-description field_description_below field_validation_below gfield_visibility_visible" data-js-reload="field_4_10"><label class="gfield_label gform-field-label" for="input_4_10">Phone</label><div class="ginput_container"><input name="input_10" id="input_4_10" type="text" value="" autocomplete="new-password"></div><div class="gfield_description" id="gfield_description_4_10">This field is for validation purposes and should be left unchanged.</div></div></div></div>
-        <div class="gform_footer top_label"> <input type="submit" id="gform_submit_button_4" class="gform_button button" value="Send Message" onclick="if(window[&quot;gf_submitting_4&quot;]){return false;}  if( !jQuery(&quot;#gform_4&quot;)[0].checkValidity || jQuery(&quot;#gform_4&quot;)[0].checkValidity()){window[&quot;gf_submitting_4&quot;]=true;}  " onkeypress="if( event.keyCode == 13 ){ if(window[&quot;gf_submitting_4&quot;]){return false;} if( !jQuery(&quot;#gform_4&quot;)[0].checkValidity || jQuery(&quot;#gform_4&quot;)[0].checkValidity()){window[&quot;gf_submitting_4&quot;]=true;}  jQuery(&quot;#gform_4&quot;).trigger(&quot;submit&quot;,[true]); }"> 
-            <input type="hidden" class="gform_hidden" name="is_submit_4" value="1">
-            <input type="hidden" class="gform_hidden" name="gform_submit" value="4">
-            
-            <input type="hidden" class="gform_hidden" name="gform_unique_id" value="">
-            <input type="hidden" class="gform_hidden" name="state_4" value="WyJ7XCI4LjFcIjpcImJiNThkNzk0Y2ZjZDY0YTY1NThmMGE0ZTcwNWE2YTdhXCIsXCI4LjJcIjpcIjhhOTNiYzdkNTA0YzNhODM1OWIyODljM2I5OWFiNjY2XCIsXCI4LjNcIjpcIjc0YzdiMzBhNjExNzc2MTRiY2NjYWE3MmJmZTViNmRkXCIsXCI4LjRcIjpcIjIwN2FlMDU3ZDdhMmY1YmNjNGFlODkyOGJkYjM0ZjZmXCJ9IiwiMDM5YzYzZGNiMzU3YTIwZTBmMDU1MGJjNjcxNmM1MDUiXQ==">
-            <input type="hidden" class="gform_hidden" name="gform_target_page_number_4" id="gform_target_page_number_4" value="0">
-            <input type="hidden" class="gform_hidden" name="gform_source_page_number_4" id="gform_source_page_number_4" value="1">
-            <input type="hidden" name="gform_field_values" value="">
-            
-        </div>
-                        </form>
-                        </div><script>
-gform.initializeOnLoaded( function() {gformInitSpinner( 4, 'https://fightden.ca/wp-content/plugins/gravityforms/images/spinner.svg', true );jQuery('#gform_ajax_frame_4').on('load',function(){var contents = jQuery(this).contents().find('*').html();var is_postback = contents.indexOf('GF_AJAX_POSTBACK') >= 0;if(!is_postback){return;}var form_content = jQuery(this).contents().find('#gform_wrapper_4');var is_confirmation = jQuery(this).contents().find('#gform_confirmation_wrapper_4').length > 0;var is_redirect = contents.indexOf('gformRedirect(){') >= 0;var is_form = form_content.length > 0 && ! is_redirect && ! is_confirmation;var mt = parseInt(jQuery('html').css('margin-top'), 10) + parseInt(jQuery('body').css('margin-top'), 10) + 100;if(is_form){jQuery('#gform_wrapper_4').html(form_content.html());if(form_content.hasClass('gform_validation_error')){jQuery('#gform_wrapper_4').addClass('gform_validation_error');} else {jQuery('#gform_wrapper_4').removeClass('gform_validation_error');}setTimeout( function() { /* delay the scroll by 50 milliseconds to fix a bug in chrome */  }, 50 );if(window['gformInitDatepicker']) {gformInitDatepicker();}if(window['gformInitPriceFields']) {gformInitPriceFields();}var current_page = jQuery('#gform_source_page_number_4').val();gformInitSpinner( 4, 'https://fightden.ca/wp-content/plugins/gravityforms/images/spinner.svg', true );jQuery(document).trigger('gform_page_loaded', [4, current_page]);window['gf_submitting_4'] = false;}else if(!is_redirect){var confirmation_content = jQuery(this).contents().find('.GF_AJAX_POSTBACK').html();if(!confirmation_content){confirmation_content = contents;}jQuery('#gform_wrapper_4').replaceWith(confirmation_content);jQuery(document).trigger('gform_confirmation_loaded', [4]);window['gf_submitting_4'] = false;wp.a11y.speak(jQuery('#gform_confirmation_message_4').text());}else{jQuery('#gform_4').append(contents);if(window['gformRedirect']) {gformRedirect();}}jQuery(document).trigger("gform_pre_post_render", [{ formId: "4", currentPage: "current_page", abort: function() { this.preventDefault(); } }]);                if (event && event.defaultPrevented) {                return;         }        const gformWrapperDiv = document.getElementById( "gform_wrapper_4" );        if ( gformWrapperDiv ) {            const visibilitySpan = document.createElement( "span" );            visibilitySpan.id = "gform_visibility_test_4";            gformWrapperDiv.insertAdjacentElement( "afterend", visibilitySpan );        }        const visibilityTestDiv = document.getElementById( "gform_visibility_test_4" );        let postRenderFired = false;                function triggerPostRender() {            if ( postRenderFired ) {                return;            }            postRenderFired = true;            jQuery( document ).trigger( 'gform_post_render', [4, current_page] );            gform.utils.trigger( { event: 'gform/postRender', native: false, data: { formId: 4, currentPage: current_page } } );            if ( visibilityTestDiv ) {                visibilityTestDiv.parentNode.removeChild( visibilityTestDiv );            }        }        function debounce( func, wait, immediate ) {            var timeout;            return function() {                var context = this, args = arguments;                var later = function() {                    timeout = null;                    if ( !immediate ) func.apply( context, args );                };                var callNow = immediate && !timeout;                clearTimeout( timeout );                timeout = setTimeout( later, wait );                if ( callNow ) func.apply( context, args );            };        }        const debouncedTriggerPostRender = debounce( function() {            triggerPostRender();        }, 200 );        if ( visibilityTestDiv && visibilityTestDiv.offsetParent === null ) {            const observer = new MutationObserver( ( mutations ) => {                mutations.forEach( ( mutation ) => {                    if ( mutation.type === 'attributes' && visibilityTestDiv.offsetParent !== null ) {                        debouncedTriggerPostRender();                        observer.disconnect();                    }                });            });            observer.observe( document.body, {                attributes: true,                childList: false,                subtree: true,                attributeFilter: [ 'style', 'class' ],            });        } else {            triggerPostRender();        }    } );} );
-</script>
+<div class="showundercat">
+<div class="container_for_serv"><div class="show_under_service">
+<a href="https://fightden.ca/service/womens-classes/">Women’s Classes</a>
 </div>
+         
+        <div class="show_under_service">
+<a href="https://fightden.ca/service/1-on-1-private-lessons/">1 on 1 Private Lessons</a>
+</div>
+         
+        <div class="show_under_service">
+<a href="https://fightden.ca/service/krav-maga/">Krav Maga</a>
+</div>
+         
+        </div>
+</div></div>
+			</div>
+			</div>
+				
+				
+				
+				
+			</div>
+				
+				
+			</div><div id="service_section" class="et_pb_section et_pb_section_3 service_section lightertrill et_pb_with_background et_section_regular">
+				
+				
+				
+				
+				
+				
+				<div id="services_rowhere" class="et_pb_row et_pb_row_3 custom_row et_pb_equal_columns">
+				<div class="et_pb_column et_pb_column_1_2 et_pb_column_8 texthere put_in_middle second-on-mobile  et_pb_css_mix_blend_mode_passthrough" id="textcolumn">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_code et_pb_code_6 heading3andtext">
+				
+				
+				
+				
+				<div class="et_pb_code_inner"><h3>
+No-Gi Jiu Jitsu
+</h3>
+<p>
+Fight Den provides the best Pro Wrestling in the Vaughan and North Toronto Area! One of the best programs that you can enrol in at Fight Den is Pro Wrestling, and Submission Grappling. Learning to wrestle not only gives you the skills to become a well-rounded fighter, but also transforms your mind to boost your confidence and make you at ease in all kinds of dangerous situations and environments.
+</p> 
+
+<div class="showundercat">
+<div class="container_for_serv"><div class="show_under_service">
+<a href="https://fightden.ca/service/rogue-planet-rubber-guard-jiu-jitsu/">Rogue Planet Rubber Guard Jiu Jitsu</a>
+</div>
+         
+        <div class="show_under_service">
+<a href="https://fightden.ca/service/brazilian-jiu-jitsu/">Japanese &amp; Brazilian No-Gi Jiu Jitsu</a>
+</div>
+         
+        </div>
+</div></div>
+			</div>
+			</div><div class="et_pb_column et_pb_column_1_2 et_pb_column_9 columnforimage put_in_middle first-on-mobile  et_pb_css_mix_blend_mode_passthrough et-last-child" id="image_column">
+				
+				
+				
+				
+				<div id="eventproduction" class="et_pb_module et_pb_image et_pb_image_2">
+				
+				
+				
+				
+				<span class="et_pb_image_wrap "><img decoding="async" width="800" height="568" src="images/GiJit.jpg" alt="Fight Den Services - Jiu-Jitsu, Krav Maga, MMA &amp; Combat Fitness in the Vaughan and North Toronto Area! han and North Toronto Area! " title="GiJit" srcset="images/GiJit.jpg 800w, images/GiJit-480x341.jpg 480w" sizes="(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) 800px, 100vw" class="wp-image-7678"></span>
+			</div>
+			</div>
+				
+				
+				
+				
+			</div>
+				
+				
+			</div><div id="service_section" class="et_pb_section et_pb_section_4 et_pb_with_background et_section_regular">
+				
+				
+				
+				
+				
+				
+				<div id="services_rowhere" class="et_pb_row et_pb_row_4 et_pb_equal_columns">
+				<div class="et_pb_column et_pb_column_1_2 et_pb_column_10 columnforimage put_in_middle  et_pb_css_mix_blend_mode_passthrough" id="image_column">
+				
+				
+				
+				
+				<div id="digitalcontent" class="et_pb_module et_pb_image et_pb_image_3">
+				
+				
+				
+				
+				<span class="et_pb_image_wrap "><img decoding="async" width="850" height="604" src="images/MMA.jpg" alt="Fight Den Services - Jiu-Jitsu, Krav Maga, MMA &amp; Combat Fitness in the Vaughan and North Toronto Area! " title="MMA" srcset="images/MMA.jpg 850w, images/MMA-480x341.jpg 480w" sizes="(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) 850px, 100vw" class="wp-image-7686"></span>
+			</div>
+			</div><div class="et_pb_column et_pb_column_1_2 et_pb_column_11 texthere put_in_middle  et_pb_css_mix_blend_mode_passthrough et-last-child" id="textcolumn">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_code et_pb_code_7 heading3andtext">
+				
+				
+				
+				
+				<div class="et_pb_code_inner"><h3>
+Mixed Martial Arts
+</h3>
+<p>
+
+</p> 
+
+<div class="showundercat">
+<div class="container_for_serv"><div class="show_under_service">
+<a href="https://fightden.ca/service/rogue-planet-rubber-guard-jiu-jitsu/">Rogue Planet Rubber Guard Jiu Jitsu</a>
+</div>
+         
+        <div class="show_under_service">
+<a href="https://fightden.ca/service/judo/">Judo</a>
+</div>
+         
+        <div class="show_under_service">
+<a href="https://fightden.ca/service/kickboxing/">Kickboxing</a>
+</div>
+         
+        <div class="show_under_service">
+<a href="https://fightden.ca/service/muay-thai/">Muay Thai</a>
+</div>
+         
+        </div>
+</div></div>
+			</div>
+			</div>
+				
+				
+				
+				
+			</div>
+				
+				
+			</div><div id="service_section" class="et_pb_section et_pb_section_5 lightertrill et_pb_with_background et_section_regular">
+				
+				
+				
+				
+				
+				
+				<div id="services_rowhere" class="et_pb_row et_pb_row_5 custom_row et_pb_equal_columns">
+				<div class="et_pb_column et_pb_column_1_2 et_pb_column_12 texthere put_in_middle second-on-mobile  et_pb_css_mix_blend_mode_passthrough" id="textcolumn">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_code et_pb_code_8 heading3andtext">
+				
+				
+				
+				
+				<div class="et_pb_code_inner"><h3>
+Combat Fitness
+</h3>
+<p>
+
+</p> 
+
+<div class="showundercat">
+<div class="container_for_serv"><div class="show_under_service">
+<a href="https://fightden.ca/service/corporate-team-building/">Corporate Team Building</a>
+</div>
+         
+        <div class="show_under_service">
+<a href="https://fightden.ca/service/boxing/">Boxing</a>
+</div>
+         
+        <div class="show_under_service">
+<a href="https://fightden.ca/service/wrestling/">Wrestling</a>
+</div>
+         
+        </div>
+</div></div>
+			</div>
+			</div><div class="et_pb_column et_pb_column_1_2 et_pb_column_13 columnforimage put_in_middle first-on-mobile  et_pb_css_mix_blend_mode_passthrough et-last-child" id="image_column">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_image et_pb_image_4">
+				
+				
+				
+				
+				<span class="et_pb_image_wrap "><img loading="lazy" decoding="async" width="850" height="567" src="images/onevone.jpg" alt="Krav Maga, MMA &amp; Combat Fitness in the Vaughan and North Toronto Area! " title="Combat Fitness At Fight Den" srcset="images/onevone.jpg 850w, images/onevone-480x320.jpg 480w" sizes="auto, (min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) 850px, 100vw" class="wp-image-7970"></span>
 			</div>
 			</div>
 				
@@ -1193,7 +967,7 @@ gform.initializeOnLoaded( function() {gformInitSpinner( 4, 'https://fightden.ca/
 				
 				
 				<div class="et_pb_code_inner"><div class="menu-main-menu-container"><ul id="menu-main-menu-1" class="menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-51"><a href="https://fightden.ca/about/">About</a></li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-50"><a href="https://fightden.ca/services/">What We Offer</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-42 current_page_item menu-item-50"><a href="https://fightden.ca/services/" aria-current="page">What We Offer</a></li>
 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-98"><a href="https://fightden.ca/locations/">Locations</a></li>
 <li class="scheduleclass menu-item menu-item-type-post_type menu-item-object-page menu-item-8469"><a href="https://fightden.ca/schedule/">Schedule</a></li>
 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7861"><a href="https://fightden.ca/schedule/">Classes</a></li>
@@ -1225,7 +999,7 @@ gform.initializeOnLoaded( function() {gformInitSpinner( 4, 'https://fightden.ca/
 			</div>
 				
 				
-			</div><div id="scrolltopbtnfoot" class="et_pb_section et_pb_section_1_tb_footer scrolltopbtnfooter et_section_regular">
+			</div><div class="et_pb_section et_pb_section_1_tb_footer sectionforgetintouch et_section_regular">
 				
 				
 				
@@ -1238,55 +1012,94 @@ gform.initializeOnLoaded( function() {gformInitSpinner( 4, 'https://fightden.ca/
 				
 				
 				
-				<div class="et_pb_module et_pb_code et_pb_code_3_tb_footer">
+				<div class="et_pb_module et_pb_code et_pb_code_3_tb_footer bottomsticky  et_pb_text_align_right">
 				
 				
 				
 				
-				<div class="et_pb_code_inner"><button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
+				<div class="et_pb_code_inner"><script>
+jQuery(window).scroll(function() {
+    var scrollHeight = jQuery(document).height() - jQuery(window).height();
+    var scrollPercentage = 100 * jQuery(window).scrollTop() / scrollHeight;
+    
+    // Toggle visibility for .sectionforgetintouch based on scroll
+    if (scrollPercentage > 95) {
+        jQuery('.sectionforgetintouch').css('display', 'none');
+    } else {
+        jQuery('.sectionforgetintouch').css('display', 'block');
+    }
+
+    // Add or remove class for #promotion based on scroll
+    if (scrollPercentage > 40) {
+        jQuery('#promotion').addClass('enlarge_it');
+    } else {
+        jQuery('#promotion').removeClass('enlarge_it');
+    }
+});
+</script>
 <style>
-#myBtn {
-  display: none; /* Hidden by default */
-  position: fixed; /* Fixed/sticky position */
-  bottom: 20px; /* Place the button at the bottom of the page */
-  right: 30px; /* Place the button 30px from the right */
-  z-index: 99; /* Make sure it does not overlap */
-  border: none; /* Remove borders */
-  outline: none; /* Remove outline */
-  background-color: red; /* Set a background color */
-  color: white; /* Text color */
-  cursor: pointer; /* Add a mouse pointer on hover */
-  padding: 15px; /* Some padding */
-  border-radius: 10px; /* Rounded corners */
-  font-size: 18px; /* Increase font size */
+ a#promotion.enlarge_it .outtercircle {
+    width: 150px;
+    transition:0.25s ease;
 }
 
-#myBtn:hover {
-  background-color: #555; /* Add a dark-grey background on hover */
+a#promotion.enlarge_it .innercircle {
+        width: 135px;
+        transition:0.25s ease;
+    
+}
+.innercircle {
+     display: -webkit-box!important;
+    display: -ms-flexbox!important;
+    display: flex!important;
+    text-align: center!important;
+    -webkit-box-align: center!important;
+    -ms-flex-align: center!important;
+    align-items: center!important;
+}
+
+#promotion {
+  text-transform:none;
+    position: fixed!important;
+    bottom: 3px;
+    right: 3px;
+    z-index: 9999;
+}
+.outtercircle {
+  width: 100px;
+  background:#000;
+	height: 100px; 
+  border:5px solid red;
+  padding:5px;
+  -webkit-animation: rotate 14s linear infinite, border-pulse 14s infinite alternate;
+  animation: rotate 14s linear infinite, border-pulse 14s infinite alternate;
+}
+
+.innercircle {
+  position:absolute;
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+    top: 8px;
+    left: 8px;
+  padding:5px;
+}
+
+
+.circletext {
+  width:90px;
+	color:#fff;
+  text-align:center;
+  margin:0 auto;
 }
 </style>
-<script>
-// Get the button:
-let mybutton = document.getElementById("myBtn");
-
-// When the user scrolls down 20px from the top of the document, show the button
-window.onscroll = function() {scrollFunction()};
-
-function scrollFunction() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    mybutton.style.display = "block";
-  } else {
-    mybutton.style.display = "none";
-  }
-}
-
-// When the user clicks on the button, scroll to the top of the document
-function topFunction() {
-  document.body.scrollTop = 0; // For Safari
-  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-}
-
-</script></div>
+<a class="onclickclosebtnbook" href="javascript:;"></a>
+<a id="promotion" class="thespinningthing animate__animated animate__bounce draw-border" href="/contact/">  
+  <div class="outtercircle"></div>
+      <div class="innercircle">
+        <h2 class="circletext" style="padding:0px;">Get In Touch</h2>
+       </div>
+</a></div>
 			</div>
 			</div>
 				
@@ -1308,8 +1121,8 @@ function topFunction() {
 {"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/Divi_Child/*","/wp-content/themes/Divi/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
 </script>
 	<script type="text/javascript">
-				var et_animation_data = [{"class":"et_pb_section_1_tb_header","style":"fade","repeat":"once","duration":"1000ms","delay":"0ms","intensity":"50%","starting_opacity":"0%","speed_curve":"ease-in-out"},{"class":"et_pb_section_2_tb_header","style":"fade","repeat":"once","duration":"1000ms","delay":"0ms","intensity":"50%","starting_opacity":"0%","speed_curve":"ease-in-out"},{"class":"et_pb_code_1","style":"roll","repeat":"once","duration":"1000ms","delay":"0ms","intensity":"50%","starting_opacity":"0%","speed_curve":"ease-in-out"},{"class":"et_pb_image_0","style":"roll","repeat":"once","duration":"1000ms","delay":"0ms","intensity":"50%","starting_opacity":"0%","speed_curve":"ease-in-out"}];
-					var et_link_options_data = [{"class":"et_pb_code_8","url":"\/?service_category=krav-maga-weapons-disarm","target":"_self"},{"class":"et_pb_code_9","url":"\/?service_category=no-gi-jiu-jitsu","target":"_self"},{"class":"et_pb_code_10","url":"\/?service_category=mixed-martial-arts","target":"_self"},{"class":"et_pb_code_11","url":"\/?service_category=combat-fitness","target":"_self"}];
+				var et_animation_data = [{"class":"et_pb_section_1_tb_header","style":"fade","repeat":"once","duration":"1000ms","delay":"0ms","intensity":"50%","starting_opacity":"0%","speed_curve":"ease-in-out"},{"class":"et_pb_section_2_tb_header","style":"fade","repeat":"once","duration":"1000ms","delay":"0ms","intensity":"50%","starting_opacity":"0%","speed_curve":"ease-in-out"},{"class":"et_pb_image_0","style":"roll","repeat":"once","duration":"1000ms","delay":"0ms","intensity":"50%","starting_opacity":"0%","speed_curve":"ease-in-out"}];
+					var et_link_options_data = [{"class":"et_pb_code_1","url":"\/?service_category=krav-maga-weapons-disarm","target":"_self"},{"class":"et_pb_code_2","url":"\/?service_category=no-gi-jiu-jitsu","target":"_self"},{"class":"et_pb_code_3","url":"\/?service_category=mixed-martial-arts","target":"_self"},{"class":"et_pb_code_4","url":"\/?service_category=combat-fitness","target":"_self"}];
 			</script>
 		<script type="text/javascript">
 		(function () {
@@ -1559,7 +1372,7 @@ jQuery('.open_filters').toggleClass('opened closed');
 		
 })
 </script><script id="ppcp-smart-button-js-extra">
-var PayPalCommerceGateway = {"url":"https://www.paypal.com/sdk/js?client-id=Aa7U-7Sncg7HkxVA5rlPSeq66-_p3zDSzT6Hb_vPWQ_rhdB9AiuE0DGNiCRiaHbPv2fvaHkTTxnSxzvt&currency=USD&integration-date=2026-06-11&components=buttons,funding-eligibility&vault=false&commit=false&intent=capture&disable-funding=card&enable-funding=venmo,paylater","url_params":{"client-id":"Aa7U-7Sncg7HkxVA5rlPSeq66-_p3zDSzT6Hb_vPWQ_rhdB9AiuE0DGNiCRiaHbPv2fvaHkTTxnSxzvt","currency":"USD","integration-date":"2026-06-11","components":"buttons,funding-eligibility","vault":"false","commit":"false","intent":"capture","disable-funding":"bancontact,blik,eps,ideal,mybank,p24,trustly,multibanco,oxxo,card","enable-funding":"venmo,paylater"},"script_attributes":{"data-partner-attribution-id":"Woo_PPCP","data-page-type":"mini-cart"},"client_id":"Aa7U-7Sncg7HkxVA5rlPSeq66-_p3zDSzT6Hb_vPWQ_rhdB9AiuE0DGNiCRiaHbPv2fvaHkTTxnSxzvt","currency":"USD","data_client_id":{"set_attribute":false,"endpoint":"/?wc-ajax=ppc-data-client-id","nonce":"5b1bc2609a","user":0,"has_subscriptions":false,"paypal_subscriptions_enabled":false},"redirect":"https://fightden.ca/checkout/","context":"mini-cart","ajax":{"simulate_cart":{"endpoint":"/?wc-ajax=ppc-simulate-cart","nonce":"1cc560149e"},"change_cart":{"endpoint":"/?wc-ajax=ppc-change-cart","nonce":"c281e6fa2f"},"create_order":{"endpoint":"/?wc-ajax=ppc-create-order","nonce":"fa6b786957"},"approve_order":{"endpoint":"/?wc-ajax=ppc-approve-order","nonce":"4d0e2bb744"},"get_order":{"endpoint":"/?wc-ajax=ppc-get-order","nonce":"fc79a56cba"},"approve_subscription":{"endpoint":"/?wc-ajax=ppc-approve-subscription","nonce":"1c5e64ca20"},"save_checkout_form":{"endpoint":"/?wc-ajax=ppc-save-checkout-form","nonce":"63a32c6fdf"},"validate_checkout":{"endpoint":"/?wc-ajax=ppc-validate-checkout","nonce":"f9aadf278a"},"cart_script_params":{"endpoint":"/?wc-ajax=ppc-cart-script-params"},"create_setup_token":{"endpoint":"/?wc-ajax=ppc-create-setup-token","nonce":"75ea8e88d5"},"create_payment_token":{"endpoint":"/?wc-ajax=ppc-create-payment-token","nonce":"998f67d476"},"create_payment_token_for_guest":{"endpoint":"/?wc-ajax=ppc-update-customer-id","nonce":"ada78606a4"},"update_shipping":{"endpoint":"/?wc-ajax=ppc-update-shipping","nonce":"1f8cdab0a1"},"update_customer_shipping":{"shipping_options":{"endpoint":"https://fightden.ca/wp-json/wc/store/v1/cart/select-shipping-rate"},"shipping_address":{"cart_endpoint":"https://fightden.ca/wp-json/wc/store/v1/cart/","update_customer_endpoint":"https://fightden.ca/wp-json/wc/store/v1/cart/update-customer"},"wp_rest_nonce":"82ed9582b8","update_shipping_method":"/?wc-ajax=update_shipping_method"}},"cart_contains_subscription":"","subscription_plan_id":"","subscription_custom_id":"","variable_paypal_subscription_variations":[],"variable_paypal_subscription_variation_from_cart":"","subscription_product_allowed":"","locations_with_subscription_product":{"product":false,"payorder":false,"cart":false},"enforce_vault":"","can_save_vault_token":"","is_free_trial_cart":"","bn_codes":{"checkout":"Woo_PPCP","cart":"Woo_PPCP","mini-cart":"Woo_PPCP","product":"Woo_PPCP"},"payer":null,"button":{"wrapper":"#ppc-button-ppcp-gateway","is_disabled":false,"mini_cart_wrapper":"#ppc-button-minicart","is_mini_cart_disabled":false,"cancel_wrapper":"#ppcp-cancel","mini_cart_style":{"layout":"vertical","color":"gold","shape":"rect","label":"paypal","tagline":false,"height":35},"style":{"layout":"vertical","color":"gold","shape":"rect","label":"paypal","tagline":false}},"separate_buttons":{"card":{"id":"ppcp-card-button-gateway","wrapper":"#ppc-button-ppcp-card-button-gateway","style":{"shape":"rect","color":"black","layout":"horizontal"}}},"hosted_fields":{"wrapper":"#ppcp-hosted-fields","labels":{"credit_card_number":"","cvv":"","mm_yy":"MM/YY","fields_empty":"Card payment details are missing. Please fill in all required fields.","fields_not_valid":"Unfortunately, your credit card details are not valid.","card_not_supported":"Unfortunately, we do not support your credit card.","cardholder_name_required":"Cardholder's first and last name are required, please fill the checkout form required fields."},"valid_cards":["mastercard","visa","amex","american-express","master-card"],"contingency":"NO_3D_SECURE"},"messages":[],"labels":{"error":{"generic":"Something went wrong. Please try again or choose another payment source.","required":{"generic":"Required form fields are not filled.","field":"%s is a required field.","elements":{"terms":"Please read and accept the terms and conditions to proceed with your order."}}},"billing_field":"Billing %s","shipping_field":"Shipping %s"},"simulate_cart":{"enabled":true,"throttling":5000},"order_id":"0","order_key":"","single_product_buttons_enabled":"1","mini_cart_buttons_enabled":"1","basic_checkout_validation_enabled":"","early_checkout_validation_enabled":"1","funding_sources_without_redirect":["paypal","paylater","venmo","card"],"user":{"is_logged":false,"has_wc_card_payment_tokens":false},"should_handle_shipping_in_paypal":"","server_side_shipping_callback":{"enabled":true},"appswitch":{"enabled":true},"needShipping":"","vaultingEnabled":"","productType":null,"manualRenewalEnabled":"","final_review_enabled":"1"};
+var PayPalCommerceGateway = {"url":"https://www.paypal.com/sdk/js?client-id=Aa7U-7Sncg7HkxVA5rlPSeq66-_p3zDSzT6Hb_vPWQ_rhdB9AiuE0DGNiCRiaHbPv2fvaHkTTxnSxzvt&currency=USD&integration-date=2026-06-11&components=buttons,funding-eligibility&vault=false&commit=false&intent=capture&disable-funding=card&enable-funding=venmo,paylater","url_params":{"client-id":"Aa7U-7Sncg7HkxVA5rlPSeq66-_p3zDSzT6Hb_vPWQ_rhdB9AiuE0DGNiCRiaHbPv2fvaHkTTxnSxzvt","currency":"USD","integration-date":"2026-06-11","components":"buttons,funding-eligibility","vault":"false","commit":"false","intent":"capture","disable-funding":"bancontact,blik,eps,ideal,mybank,p24,trustly,multibanco,oxxo,card","enable-funding":"venmo,paylater"},"script_attributes":{"data-partner-attribution-id":"Woo_PPCP"},"client_id":"Aa7U-7Sncg7HkxVA5rlPSeq66-_p3zDSzT6Hb_vPWQ_rhdB9AiuE0DGNiCRiaHbPv2fvaHkTTxnSxzvt","currency":"USD","data_client_id":{"set_attribute":false,"endpoint":"/?wc-ajax=ppc-data-client-id","nonce":"5b1bc2609a","user":0,"has_subscriptions":false,"paypal_subscriptions_enabled":false},"redirect":"https://fightden.ca/checkout/","context":"mini-cart","ajax":{"simulate_cart":{"endpoint":"/?wc-ajax=ppc-simulate-cart","nonce":"1cc560149e"},"change_cart":{"endpoint":"/?wc-ajax=ppc-change-cart","nonce":"c281e6fa2f"},"create_order":{"endpoint":"/?wc-ajax=ppc-create-order","nonce":"fa6b786957"},"approve_order":{"endpoint":"/?wc-ajax=ppc-approve-order","nonce":"4d0e2bb744"},"get_order":{"endpoint":"/?wc-ajax=ppc-get-order","nonce":"fc79a56cba"},"approve_subscription":{"endpoint":"/?wc-ajax=ppc-approve-subscription","nonce":"1c5e64ca20"},"save_checkout_form":{"endpoint":"/?wc-ajax=ppc-save-checkout-form","nonce":"63a32c6fdf"},"validate_checkout":{"endpoint":"/?wc-ajax=ppc-validate-checkout","nonce":"f9aadf278a"},"cart_script_params":{"endpoint":"/?wc-ajax=ppc-cart-script-params"},"create_setup_token":{"endpoint":"/?wc-ajax=ppc-create-setup-token","nonce":"75ea8e88d5"},"create_payment_token":{"endpoint":"/?wc-ajax=ppc-create-payment-token","nonce":"998f67d476"},"create_payment_token_for_guest":{"endpoint":"/?wc-ajax=ppc-update-customer-id","nonce":"ada78606a4"},"update_shipping":{"endpoint":"/?wc-ajax=ppc-update-shipping","nonce":"1f8cdab0a1"},"update_customer_shipping":{"shipping_options":{"endpoint":"https://fightden.ca/wp-json/wc/store/v1/cart/select-shipping-rate"},"shipping_address":{"cart_endpoint":"https://fightden.ca/wp-json/wc/store/v1/cart/","update_customer_endpoint":"https://fightden.ca/wp-json/wc/store/v1/cart/update-customer"},"wp_rest_nonce":"82ed9582b8","update_shipping_method":"/?wc-ajax=update_shipping_method"}},"cart_contains_subscription":"","subscription_plan_id":"","subscription_custom_id":"","variable_paypal_subscription_variations":[],"variable_paypal_subscription_variation_from_cart":"","subscription_product_allowed":"","locations_with_subscription_product":{"product":false,"payorder":false,"cart":false},"enforce_vault":"","can_save_vault_token":"","is_free_trial_cart":"","bn_codes":{"checkout":"Woo_PPCP","cart":"Woo_PPCP","mini-cart":"Woo_PPCP","product":"Woo_PPCP"},"payer":null,"button":{"wrapper":"#ppc-button-ppcp-gateway","is_disabled":false,"mini_cart_wrapper":"#ppc-button-minicart","is_mini_cart_disabled":false,"cancel_wrapper":"#ppcp-cancel","mini_cart_style":{"layout":"vertical","color":"gold","shape":"rect","label":"paypal","tagline":false,"height":35},"style":{"layout":"vertical","color":"gold","shape":"rect","label":"paypal","tagline":false}},"separate_buttons":{"card":{"id":"ppcp-card-button-gateway","wrapper":"#ppc-button-ppcp-card-button-gateway","style":{"shape":"rect","color":"black","layout":"horizontal"}}},"hosted_fields":{"wrapper":"#ppcp-hosted-fields","labels":{"credit_card_number":"","cvv":"","mm_yy":"MM/YY","fields_empty":"Card payment details are missing. Please fill in all required fields.","fields_not_valid":"Unfortunately, your credit card details are not valid.","card_not_supported":"Unfortunately, we do not support your credit card.","cardholder_name_required":"Cardholder's first and last name are required, please fill the checkout form required fields."},"valid_cards":["mastercard","visa","amex","american-express","master-card"],"contingency":"NO_3D_SECURE"},"messages":[],"labels":{"error":{"generic":"Something went wrong. Please try again or choose another payment source.","required":{"generic":"Required form fields are not filled.","field":"%s is a required field.","elements":{"terms":"Please read and accept the terms and conditions to proceed with your order."}}},"billing_field":"Billing %s","shipping_field":"Shipping %s"},"simulate_cart":{"enabled":true,"throttling":5000},"order_id":"0","order_key":"","single_product_buttons_enabled":"1","mini_cart_buttons_enabled":"1","basic_checkout_validation_enabled":"","early_checkout_validation_enabled":"1","funding_sources_without_redirect":["paypal","paylater","venmo","card"],"user":{"is_logged":false,"has_wc_card_payment_tokens":false},"should_handle_shipping_in_paypal":"","server_side_shipping_callback":{"enabled":true},"appswitch":{"enabled":true},"needShipping":"","vaultingEnabled":"","productType":null,"manualRenewalEnabled":"","final_review_enabled":"1"};
 //# sourceURL=ppcp-smart-button-js-extra
 </script>
 <script id="ppcp-smart-button-js" src="js/ppcp-button-js-button.js"></script>
@@ -1567,7 +1380,7 @@ var PayPalCommerceGateway = {"url":"https://www.paypal.com/sdk/js?client-id=Aa7U
 var DIVI = {"item_count":"%d Item","items_count":"%d Items"};
 var et_builder_utils_params = {"condition":{"diviTheme":true,"extraTheme":false},"scrollLocations":["app","top"],"builderScrollLocations":{"desktop":"app","tablet":"app","phone":"app"},"onloadScrollLocation":"app","builderType":"fe"};
 var et_frontend_scripts = {"builderCssContainerPrefix":"#et-boc","builderCssLayoutPrefix":"#et-boc .et-l"};
-var et_pb_custom = {"ajaxurl":"https://fightden.ca/wp-admin/admin-ajax.php","images_uri":"https://fightden.ca/wp-content/themes/Divi/images","builder_images_uri":"https://fightden.ca/wp-content/themes/Divi/includes/builder/images","et_frontend_nonce":"88a6a78914","subscription_failed":"Please, check the fields below to make sure you entered the correct information.","et_ab_log_nonce":"18299a569d","fill_message":"Please, fill in the following fields:","contact_error_message":"Please, fix the following errors:","invalid":"Invalid email","captcha":"Captcha","prev":"Prev","previous":"Previous","next":"Next","wrong_captcha":"You entered the wrong number in captcha.","wrong_checkbox":"Checkbox","ignore_waypoints":"no","is_divi_theme_used":"1","widget_search_selector":".widget_search","ab_tests":[],"is_ab_testing_active":"","page_id":"34","unique_test_id":"","ab_bounce_rate":"5","is_cache_plugin_active":"yes","is_shortcode_tracking":"","tinymce_uri":"https://fightden.ca/wp-content/themes/Divi/includes/builder/frontend-builder/assets/vendors","accent_color":"#7EBEC5","waypoints_options":[]};
+var et_pb_custom = {"ajaxurl":"https://fightden.ca/wp-admin/admin-ajax.php","images_uri":"https://fightden.ca/wp-content/themes/Divi/images","builder_images_uri":"https://fightden.ca/wp-content/themes/Divi/includes/builder/images","et_frontend_nonce":"88a6a78914","subscription_failed":"Please, check the fields below to make sure you entered the correct information.","et_ab_log_nonce":"18299a569d","fill_message":"Please, fill in the following fields:","contact_error_message":"Please, fix the following errors:","invalid":"Invalid email","captcha":"Captcha","prev":"Prev","previous":"Previous","next":"Next","wrong_captcha":"You entered the wrong number in captcha.","wrong_checkbox":"Checkbox","ignore_waypoints":"no","is_divi_theme_used":"1","widget_search_selector":".widget_search","ab_tests":[],"is_ab_testing_active":"","page_id":"42","unique_test_id":"","ab_bounce_rate":"5","is_cache_plugin_active":"yes","is_shortcode_tracking":"","tinymce_uri":"https://fightden.ca/wp-content/themes/Divi/includes/builder/frontend-builder/assets/vendors","accent_color":"#7EBEC5","waypoints_options":[]};
 var et_pb_box_shadow_elements = [];
 //# sourceURL=divi-custom-script-js-extra
 </script>
@@ -1575,7 +1388,7 @@ var et_pb_box_shadow_elements = [];
 <script id="es6-promise-js" src="js/es6-promise.auto.min.js"></script>
 <script id="et-recaptcha-v3-js" src="js/api_1.js"></script>
 <script id="et-core-api-spam-recaptcha-js-extra">
-var et_core_api_spam_recaptcha = {"site_key":"6Ld1SPsoAAAAAHFDFD9x3BWj90YqhnEmKH_I7DEK","page_action":{"action":"fightden_ca"}};
+var et_core_api_spam_recaptcha = {"site_key":"6Ld1SPsoAAAAAHFDFD9x3BWj90YqhnEmKH_I7DEK","page_action":{"action":"services"}};
 //# sourceURL=et-core-api-spam-recaptcha-js-extra
 </script>
 <script id="et-core-api-spam-recaptcha-js" src="js/recaptcha.js"></script>
@@ -1588,38 +1401,17 @@ var wc_order_attribution = {"params":{"lifetime":1.00000000000000008180305391403
 </script>
 <script id="wc-order-attribution-js" src="js/order-attribution.min.js"></script>
 <script id="ppcp-fraudnet-js-extra">
-var FraudNetConfig = {"f":"a9463a1eb54c41e9a59bc3ba3d16172b","s":"7YYRBBNDGPJXC_checkout-page","sandbox":""};
+var FraudNetConfig = {"f":"15908df6ede63c464b922831e4746262","s":"7YYRBBNDGPJXC_checkout-page","sandbox":""};
 //# sourceURL=ppcp-fraudnet-js-extra
 </script>
 <script id="ppcp-fraudnet-js" src="js/ppcp-wc-gateway-js-fraudnet.js"></script>
-<script id="wp-dom-ready-js" src="js/dom-ready.min.js"></script>
-<script id="wp-hooks-js" src="js/hooks.min.js"></script>
-<script id="wp-i18n-js" src="js/i18n.min.js"></script>
-<script id="wp-i18n-js-after">
-wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
-//# sourceURL=wp-i18n-js-after
-</script>
-<script id="wp-a11y-js" src="js/a11y.min.js"></script>
-<script id="gform_masked_input-js" defer="defer" src="js/jquery.maskedinput.min.js"></script>
-<script id="gform_gravityforms_theme_vendors-js" defer="defer" src="js/vendor-theme.min.js"></script>
-<script id="gform_gravityforms_theme-js-extra">
-var gform_theme_config = {"common":{"form":{"honeypot":{"version_hash":"830bfc630bb8d526a865fc42343dedfd"}}},"hmr_dev":"","public_path":"https://fightden.ca/wp-content/plugins/gravityforms/assets/js/dist/"};
-//# sourceURL=gform_gravityforms_theme-js-extra
-</script>
-<script id="gform_gravityforms_theme-js" defer="defer" src="js/scripts-theme.min.js"></script>
 <script id="et-core-common-js" src="js/common.js"></script>
 <script id="et-builder-modules-script-sticky-js-extra">
 var et_pb_sticky_elements = {"et_pb_section_0_tb_header":{"id":"et_pb_section_0_tb_header","selector":".et_pb_section_0_tb_header","position":"top","topOffset":"0px","bottomOffset":"0px","topLimit":"none","bottomLimit":"none","offsetSurrounding":"on","transition":"on","styles":{"module_alignment":{"desktop":"","tablet":"","phone":""},"positioning":"relative"},"stickyStyles":{"position_origin_r":"top_left","horizontal_offset":"","vertical_offset":""}},"et_pb_section_2_tb_header":{"id":"et_pb_section_2_tb_header","selector":".et_pb_section_2_tb_header","position":"top","topOffset":"0px","bottomOffset":"0px","topLimit":"none","bottomLimit":"none","offsetSurrounding":"on","transition":"on","styles":{"module_alignment":{"desktop":"","tablet":"","phone":""},"positioning":"relative"},"stickyStyles":{"position_origin_r":"top_left","horizontal_offset":"","vertical_offset":""}}};
 //# sourceURL=et-builder-modules-script-sticky-js-extra
 </script>
 <script id="et-builder-modules-script-sticky-js" src="js/sticky-elements.js"></script>
-<style id="et-builder-module-design-tb-11-tb-9391-34-cached-inline-styles">div#marklogofightden img{max-width:100px;position:absolute;top:-20px!important}.et_pb_sticky span.coming_soon,.et-db #et-boc .et_pb_sticky span.coming_soon{display:none}div#textlogofightden{margin:0px!important}.et_pb_sticky #textlogofightden{display:none!important}.et_pb_sticky #marklogofightden{display:block!important}#marklogofightden{display:none!important}.et-db #et-boc .et-l div#bodyforservice.et_pb_section{background-color:#050404!important;background-image:url(images/black-twill.png)!important;background-size:25px 25px!important}div#first-columnmenu{display:block!important;margin:auto!important}div#main_menu{box-shadow:0 1px 6px 0 rgb(32 33 36 / 28%)}div#main_menu img:hover{-webkit-filter:drop-shadow(5px 5px 5px #d1d1d1);filter:drop-shadow(5px 5px 5px #d1d1d1)}div#main_menu a:focus img{outline:1px solid;-webkit-filter:drop-shadow(5px 5px 5px #d1d1d1);filter:drop-shadow(5px 5px 5px #d1d1d1)}a.getstarted:hover{background-color:#107ac2;transform:scale(1.05)}.put_in_middle{display:flex;flex-direction:column;justify-content:center}span.therundown{display:block;position:absolute;font-size:8px;top:-8px;letter-spacing:0px}div#costantemenu ul.sub-menu:before{content:"";position:absolute;top:-8px;left:28px;border:8px solid #fff;border-color:transparent transparent;transform:translateX(-50%) rotate(135deg);box-shadow:-2px 2px 2px rgb(57 73 76);background:#fff}.et_pb_sticky #textlogofightden{display:none}.et_pb_sticky #marklogofightden{display:block!important}#marklogofightden{display:none}.et_pb_stickydiv.et_pb_section.et_pb_section_0_tb_header{background-image:initial!important}.et_pb_section_0_tb_header.et_pb_section,.et_pb_section_2_tb_header.et_pb_section{padding-top:8px;padding-bottom:8px;background-color:#000000!important}div.et_pb_section.et_pb_section_0_tb_header{transition:background-color 300ms ease 0ms,background-image 300ms ease 0ms}.et_pb_sticky.et_pb_section_0_tb_header.et_pb_section{background-color:#FFFFFF!important}.et_pb_row_0_tb_header.et_pb_row{padding-top:0px!important;padding-bottom:0px!important;padding-top:0px;padding-bottom:0px}.et_pb_row_0_tb_header,body #page-container .et-db #et-boc .et-l .et_pb_row_0_tb_header.et_pb_row,body.et_pb_pagebuilder_layout.single #page-container #et-boc .et-l .et_pb_row_0_tb_header.et_pb_row,body.et_pb_pagebuilder_layout.single.et_full_width_page #page-container #et-boc .et-l .et_pb_row_0_tb_header.et_pb_row{width:100%;max-width:100%}.et_pb_image_0_tb_header{max-width:250px;text-align:left;margin-left:0}.et_pb_menu_0_tb_header.et_pb_menu ul li a{font-family:'Lato',Helvetica,Arial,Lucida,sans-serif;color:#FFFFFF!important}.et_pb_menu_0_tb_header.et_pb_menu ul li.current-menu-item a{transition:color 300ms ease 0ms;color:#FFFFFF!important}.et_pb_sticky .et_pb_menu_0_tb_header.et_pb_menu ul li.current-menu-item a{color:#FFFFFF!important}.et_pb_menu_0_tb_header.et_pb_menu .nav li ul,.et_pb_menu_0_tb_header.et_pb_menu .et_mobile_menu,.et_pb_menu_0_tb_header.et_pb_menu .et_mobile_menu ul{background-color:#ffffff!important}.et_pb_menu_0_tb_header .et_pb_menu_inner_container>.et_pb_menu__logo-wrap,.et_pb_menu_0_tb_header .et_pb_menu__logo-slot{width:auto;max-width:100%}.et_pb_menu_0_tb_header .et_pb_menu_inner_container>.et_pb_menu__logo-wrap .et_pb_menu__logo img,.et_pb_menu_0_tb_header .et_pb_menu__logo-slot .et_pb_menu__logo-wrap img{height:auto;max-height:none}.et_pb_menu_0_tb_header .mobile_nav .mobile_menu_bar:before,.et_pb_menu_0_tb_header .et_pb_menu__icon.et_pb_menu__search-button,.et_pb_menu_0_tb_header .et_pb_menu__icon.et_pb_menu__close-search-button,.et_pb_menu_0_tb_header .et_pb_menu__icon.et_pb_menu__cart-button{color:#7EBEC5}.et_pb_section_1_tb_header.et_pb_section{padding-top:8px;padding-bottom:8px;margin-top:0px;margin-bottom:0px}.et_pb_section_2_tb_header{margin-top:0px;margin-bottom:0px}.et_pb_row_1_tb_header.et_pb_row{padding-top:0px!important;padding-bottom:0px!important;margin-top:0px!important;margin-bottom:0px!important;padding-top:0px;padding-bottom:0px}.et_pb_row_1_tb_header,body #page-container .et-db #et-boc .et-l .et_pb_row_1_tb_header.et_pb_row,body.et_pb_pagebuilder_layout.single #page-container #et-boc .et-l .et_pb_row_1_tb_header.et_pb_row,body.et_pb_pagebuilder_layout.single.et_full_width_page #page-container #et-boc .et-l .et_pb_row_1_tb_header.et_pb_row{width:100%}.et_pb_image_2_tb_header{text-align:left;margin-left:0}.et_pb_code_1_tb_header,.et_pb_code_2_tb_header{padding-top:0px;padding-bottom:0px;margin-top:0px!important;margin-bottom:0px!important}.et_pb_image_0_tb_header.et_pb_module{margin-left:auto!important;margin-right:auto!important}@media only screen and (min-width:981px){.et_pb_section_1_tb_header,.et_pb_section_2_tb_header{display:none!important}}@media only screen and (max-width:980px){.et_pb_image_0_tb_header .et_pb_image_wrap img,.et_pb_image_2_tb_header .et_pb_image_wrap img{width:auto}}@media only screen and (min-width:768px) and (max-width:980px){.et_pb_section_0_tb_header{display:none!important}}@media only screen and (max-width:767px){.et_pb_section_0_tb_header{display:none!important}.et_pb_image_0_tb_header .et_pb_image_wrap img,.et_pb_image_2_tb_header .et_pb_image_wrap img{width:auto}}.et_pb_section_0_tb_footer{border-top-width:2px;border-style:none;border-top-color:#FFD201}.et_pb_section_0_tb_footer.et_pb_section{padding-top:8px;padding-bottom:8px;background-color:#221F26!important}.et_pb_row_0_tb_footer.et_pb_row,.et_pb_row_1_tb_footer.et_pb_row{padding-top:0px!important;padding-bottom:0px!important;padding-top:0px;padding-bottom:0px}.et_pb_row_0_tb_footer,body #page-container .et-db #et-boc .et-l .et_pb_row_0_tb_footer.et_pb_row,body.et_pb_pagebuilder_layout.single #page-container #et-boc .et-l .et_pb_row_0_tb_footer.et_pb_row,body.et_pb_pagebuilder_layout.single.et_full_width_page #page-container #et-boc .et-l .et_pb_row_0_tb_footer.et_pb_row{width:100%;max-width:100%}.et_pb_image_0_tb_footer{text-align:center}.et_pb_section_1_tb_footer.et_pb_section{padding-top:0px;padding-bottom:0px}@media only screen and (min-width:981px){.et_pb_section_1_tb_footer{display:none!important}}@media only screen and (max-width:980px){.et_pb_section_0_tb_footer{border-top-width:2px;border-top-color:#FFD201}.et_pb_image_0_tb_footer .et_pb_image_wrap img{width:auto}}@media only screen and (min-width:768px) and (max-width:980px){.et_pb_column_0_tb_footer{display:none!important}}@media only screen and (max-width:767px){.et_pb_section_0_tb_footer{border-top-width:2px;border-top-color:#FFD201}.et_pb_column_0_tb_footer{display:none!important}.et_pb_image_0_tb_footer .et_pb_image_wrap img{width:auto}}#contain_video{border-radius:8px 8px 8px 8px;overflow:hidden;border-color:#000000;box-shadow:0px 2px 18px 0px #000000;max-width:500px;max-height:250px}.slide-container img{border-radius:8px 8px 8px 8px;overflow:hidden;border-color:#000000;box-shadow:0px 2px 18px 0px #000000;max-width:500px;max-height:250px;object-fit:cover}.slide-container .prev,.slide-container .next{cursor:pointer;position:absolute;top:50%;width:auto;margin-top:-22px;padding:16px;color:white;font-weight:bold;font-size:20px;transition:all 0.6s ease;border-radius:0 3px 3px 0;user-select:none}.slide-container .prev:hover,.slide-container .next:hover{background-color:rgba(0,0,0,0.8);color:white}.slide-container .prev{left:2px}.slide-container .next{right:2px}.dots-container{display:flex;justify-content:center;align-items:center;padding:10px;position:absolute;bottom:0px;width:100%;text-align:center}.dots-container .dot{cursor:pointer;margin:5px;width:10px;height:10px;color:#333;border-radius:50%;background-color:#fff}.dots-container .dot.active{border:2px solid red;background:grey}.slide-container{display:flex;justify-content:center;align-items:center;max-width:1000px;margin:auto;position:relative}.slide-container .slide{display:none;width:100%}.slide-container .slide.fade{animation:fade 0.5s cubic-bezier(0.55,0.085,0.68,0.53) both}.slide-container .slide img{width:100%}#mc-embedded-subscribe{align-items:center;background-clip:padding-box;border:1px solid transparent;border-radius:0.25rem;box-shadow:rgb(0 0 0 / 2%) 0 1px 3px 0;box-sizing:border-box;color:#fff!important;color:#fff;cursor:pointer;font-family:system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:16px;font-weight:600;justify-content:center;margin:0;position:relative;text-decoration:none;transition:all 250ms;user-select:none;-webkit-user-select:none;touch-action:manipulation;vertical-align:baseline;width:auto}#mc_embed_signup .button{display:block;width:100%;height:inherit!important;padding:16px;text-transform:uppercase;font-weight:900;font-size:32px}.home #showproducts .wcpscwc-product-category{display:none}a.getstarted.learnmoresmall{font-size:12px;padding:4px 16px;line-height:2em}.gg-arrow-long-right{box-sizing:border-box;position:relative;display:block;transform:scale(var(--ggs,1));border-top:2px solid transparent;border-bottom:2px solid #dc1212;box-shadow:inset 0 0 0 2px #dc1212;width:100%;height:6px}.gg-arrow-long-right::after{content:"";display:block;box-sizing:border-box;position:absolute;width:24px;height:24px;border-top:8px solid #dc1212;border-right:8px solid #dc1212;transform:rotate(45deg);right:0;bottom:-11px}#mc_embed_signup{background:rgba(255,255,255,0);clear:left}#mc_embed_signup .mc-field-group label{display:block;margin-bottom:3px}div#mc_embed_signup_scroll input{height:54px}#mc_embed_signup .mc-field-group label{color:#fff;font-size:16px!important;font-weight:bold}#mc_embed_signup .foot{display:block;width:96%;align-items:center}.et_pb_section_0{min-height:300px}.et_pb_section_0.et_pb_section{padding-top:0px;padding-bottom:0px}.et_pb_row_1.et_pb_row,.et_pb_row_3.et_pb_row,.et_pb_row_6.et_pb_row{padding-top:0px!important;padding-bottom:0px!important;padding-top:0px;padding-bottom:0px}.et_pb_code_4{padding-top:0px;padding-bottom:0px;margin-top:0px!important;margin-bottom:0px!important}.et_pb_video_0,.et_pb_video_0 iframe{border-radius:8px 8px 8px 8px;overflow:hidden}.et_pb_video_0{max-height:300px;padding-top:0px;padding-bottom:0px;margin-top:0px!important;margin-bottom:0px!important;box-shadow:0px 2px 18px 0px rgba(0,0,0,0.3)}.et_pb_video_0 .et_pb_video_overlay_hover:hover{background-color:rgba(0,0,0,.6)}.et_pb_section_2.et_pb_section{background-color:#000000!important}.et_pb_code_9{margin-bottom:7px!important}div.et_pb_section.et_pb_section_3{background-size:contain;background-image:url(images/rere.jpg)!important}.et_pb_section_3.et_pb_section{background-color:#221F26!important}.et_pb_image_0 .et_pb_image_wrap{border-radius:8px 8px 8px 8px;overflow:hidden;border-color:#000000;box-shadow:0px 2px 18px 0px #000000}.et_pb_image_0{text-align:left;margin-left:0}.et_pb_code_14{padding-bottom:0px}div.et_pb_section.et_pb_section_5{background-blend-mode:overlay;background-image:url(images/FIGHTDEN-mainimage3-min.jpg)!important}.et_pb_section_5.et_pb_section{background-color:rgba(0,0,0,0.86)!important}.et_pb_code_15{padding-top:18%;margin-top:20px!important}@media only screen and (max-width:980px){.et_pb_image_0 .et_pb_image_wrap img{width:auto}}@media only screen and (min-width:768px) and (max-width:980px){.et_pb_code_4,.et_pb_code_5,.et_pb_code_6{display:none!important}}@media only screen and (max-width:767px){.et_pb_code_4,.et_pb_code_5,.et_pb_code_6{display:none!important}.et_pb_image_0 .et_pb_image_wrap img{width:auto}}</style><script>
-gform.initializeOnLoaded( function() { jQuery(document).on('gform_post_render', function(event, formId, currentPage){if(formId == 4) {jQuery('#input_4_3').mask('(999) 999-9999').bind('keypress', function(e){if(e.which == 13){jQuery(this).blur();} } );} } );jQuery(document).on('gform_post_conditional_logic', function(event, formId, fields, isInit){} ) } );
-</script>
-<script>
-gform.initializeOnLoaded( function() {jQuery(document).trigger("gform_pre_post_render", [{ formId: "4", currentPage: "1", abort: function() { this.preventDefault(); } }]);                if (event && event.defaultPrevented) {                return;         }        const gformWrapperDiv = document.getElementById( "gform_wrapper_4" );        if ( gformWrapperDiv ) {            const visibilitySpan = document.createElement( "span" );            visibilitySpan.id = "gform_visibility_test_4";            gformWrapperDiv.insertAdjacentElement( "afterend", visibilitySpan );        }        const visibilityTestDiv = document.getElementById( "gform_visibility_test_4" );        let postRenderFired = false;                function triggerPostRender() {            if ( postRenderFired ) {                return;            }            postRenderFired = true;            jQuery( document ).trigger( 'gform_post_render', [4, 1] );            gform.utils.trigger( { event: 'gform/postRender', native: false, data: { formId: 4, currentPage: 1 } } );            if ( visibilityTestDiv ) {                visibilityTestDiv.parentNode.removeChild( visibilityTestDiv );            }        }        function debounce( func, wait, immediate ) {            var timeout;            return function() {                var context = this, args = arguments;                var later = function() {                    timeout = null;                    if ( !immediate ) func.apply( context, args );                };                var callNow = immediate && !timeout;                clearTimeout( timeout );                timeout = setTimeout( later, wait );                if ( callNow ) func.apply( context, args );            };        }        const debouncedTriggerPostRender = debounce( function() {            triggerPostRender();        }, 200 );        if ( visibilityTestDiv && visibilityTestDiv.offsetParent === null ) {            const observer = new MutationObserver( ( mutations ) => {                mutations.forEach( ( mutation ) => {                    if ( mutation.type === 'attributes' && visibilityTestDiv.offsetParent !== null ) {                        debouncedTriggerPostRender();                        observer.disconnect();                    }                });            });            observer.observe( document.body, {                attributes: true,                childList: false,                subtree: true,                attributeFilter: [ 'style', 'class' ],            });        } else {            triggerPostRender();        }    } );
-</script>
-	
+<style id="et-builder-module-design-tb-11-tb-81-42-cached-inline-styles">div#marklogofightden img{max-width:100px;position:absolute;top:-20px!important}.et_pb_sticky span.coming_soon,.et-db #et-boc .et_pb_sticky span.coming_soon{display:none}div#textlogofightden{margin:0px!important}.et_pb_sticky #textlogofightden{display:none!important}.et_pb_sticky #marklogofightden{display:block!important}#marklogofightden{display:none!important}.et-db #et-boc .et-l div#bodyforservice.et_pb_section{background-color:#050404!important;background-image:url(images/black-twill.png)!important;background-size:25px 25px!important}div#first-columnmenu{display:block!important;margin:auto!important}div#main_menu{box-shadow:0 1px 6px 0 rgb(32 33 36 / 28%)}div#main_menu img:hover{-webkit-filter:drop-shadow(5px 5px 5px #d1d1d1);filter:drop-shadow(5px 5px 5px #d1d1d1)}div#main_menu a:focus img{outline:1px solid;-webkit-filter:drop-shadow(5px 5px 5px #d1d1d1);filter:drop-shadow(5px 5px 5px #d1d1d1)}a.getstarted:hover{background-color:#107ac2;transform:scale(1.05)}.put_in_middle{display:flex;flex-direction:column;justify-content:center}span.therundown{display:block;position:absolute;font-size:8px;top:-8px;letter-spacing:0px}div#costantemenu ul.sub-menu:before{content:"";position:absolute;top:-8px;left:28px;border:8px solid #fff;border-color:transparent transparent;transform:translateX(-50%) rotate(135deg);box-shadow:-2px 2px 2px rgb(57 73 76);background:#fff}.et_pb_sticky #textlogofightden{display:none}.et_pb_sticky #marklogofightden{display:block!important}#marklogofightden{display:none}.et_pb_stickydiv.et_pb_section.et_pb_section_0_tb_header{background-image:initial!important}.et_pb_section_0_tb_header.et_pb_section,.et_pb_section_2_tb_header.et_pb_section{padding-top:8px;padding-bottom:8px;background-color:#000000!important}div.et_pb_section.et_pb_section_0_tb_header{transition:background-color 300ms ease 0ms,background-image 300ms ease 0ms}.et_pb_sticky.et_pb_section_0_tb_header.et_pb_section{background-color:#FFFFFF!important}.et_pb_row_0_tb_header.et_pb_row{padding-top:0px!important;padding-bottom:0px!important;padding-top:0px;padding-bottom:0px}.et_pb_row_0_tb_header,body #page-container .et-db #et-boc .et-l .et_pb_row_0_tb_header.et_pb_row,body.et_pb_pagebuilder_layout.single #page-container #et-boc .et-l .et_pb_row_0_tb_header.et_pb_row,body.et_pb_pagebuilder_layout.single.et_full_width_page #page-container #et-boc .et-l .et_pb_row_0_tb_header.et_pb_row{width:100%;max-width:100%}.et_pb_image_0_tb_header{max-width:250px;text-align:left;margin-left:0}.et_pb_menu_0_tb_header.et_pb_menu ul li a{font-family:'Lato',Helvetica,Arial,Lucida,sans-serif;color:#FFFFFF!important}.et_pb_menu_0_tb_header.et_pb_menu ul li.current-menu-item a{transition:color 300ms ease 0ms;color:#FFFFFF!important}.et_pb_sticky .et_pb_menu_0_tb_header.et_pb_menu ul li.current-menu-item a{color:#FFFFFF!important}.et_pb_menu_0_tb_header.et_pb_menu .nav li ul,.et_pb_menu_0_tb_header.et_pb_menu .et_mobile_menu,.et_pb_menu_0_tb_header.et_pb_menu .et_mobile_menu ul{background-color:#ffffff!important}.et_pb_menu_0_tb_header .et_pb_menu_inner_container>.et_pb_menu__logo-wrap,.et_pb_menu_0_tb_header .et_pb_menu__logo-slot{width:auto;max-width:100%}.et_pb_menu_0_tb_header .et_pb_menu_inner_container>.et_pb_menu__logo-wrap .et_pb_menu__logo img,.et_pb_menu_0_tb_header .et_pb_menu__logo-slot .et_pb_menu__logo-wrap img{height:auto;max-height:none}.et_pb_menu_0_tb_header .mobile_nav .mobile_menu_bar:before,.et_pb_menu_0_tb_header .et_pb_menu__icon.et_pb_menu__search-button,.et_pb_menu_0_tb_header .et_pb_menu__icon.et_pb_menu__close-search-button,.et_pb_menu_0_tb_header .et_pb_menu__icon.et_pb_menu__cart-button{color:#7EBEC5}.et_pb_section_1_tb_header.et_pb_section{padding-top:8px;padding-bottom:8px;margin-top:0px;margin-bottom:0px}.et_pb_section_2_tb_header{margin-top:0px;margin-bottom:0px}.et_pb_row_1_tb_header.et_pb_row{padding-top:0px!important;padding-bottom:0px!important;margin-top:0px!important;margin-bottom:0px!important;padding-top:0px;padding-bottom:0px}.et_pb_row_1_tb_header,body #page-container .et-db #et-boc .et-l .et_pb_row_1_tb_header.et_pb_row,body.et_pb_pagebuilder_layout.single #page-container #et-boc .et-l .et_pb_row_1_tb_header.et_pb_row,body.et_pb_pagebuilder_layout.single.et_full_width_page #page-container #et-boc .et-l .et_pb_row_1_tb_header.et_pb_row{width:100%}.et_pb_image_2_tb_header{text-align:left;margin-left:0}.et_pb_code_1_tb_header,.et_pb_code_2_tb_header{padding-top:0px;padding-bottom:0px;margin-top:0px!important;margin-bottom:0px!important}.et_pb_image_0_tb_header.et_pb_module{margin-left:auto!important;margin-right:auto!important}@media only screen and (min-width:981px){.et_pb_section_1_tb_header,.et_pb_section_2_tb_header{display:none!important}}@media only screen and (max-width:980px){.et_pb_image_0_tb_header .et_pb_image_wrap img,.et_pb_image_2_tb_header .et_pb_image_wrap img{width:auto}}@media only screen and (min-width:768px) and (max-width:980px){.et_pb_section_0_tb_header{display:none!important}}@media only screen and (max-width:767px){.et_pb_section_0_tb_header{display:none!important}.et_pb_image_0_tb_header .et_pb_image_wrap img,.et_pb_image_2_tb_header .et_pb_image_wrap img{width:auto}}.et_pb_section_0_tb_footer{border-top-width:2px;border-style:none;border-top-color:#FFD201}.et_pb_section_0_tb_footer.et_pb_section{padding-top:8px;padding-bottom:8px;background-color:#221F26!important}.et_pb_row_0_tb_footer.et_pb_row,.et_pb_row_1_tb_footer.et_pb_row{padding-top:0px!important;padding-bottom:0px!important;padding-top:0px;padding-bottom:0px}.et_pb_row_0_tb_footer,body #page-container .et-db #et-boc .et-l .et_pb_row_0_tb_footer.et_pb_row,body.et_pb_pagebuilder_layout.single #page-container #et-boc .et-l .et_pb_row_0_tb_footer.et_pb_row,body.et_pb_pagebuilder_layout.single.et_full_width_page #page-container #et-boc .et-l .et_pb_row_0_tb_footer.et_pb_row{width:100%;max-width:100%}.et_pb_image_0_tb_footer{text-align:center}.et_pb_code_0_tb_footer{padding-top:0px;padding-bottom:0px;margin-top:0px!important;margin-bottom:0px!important}.et_pb_section_1_tb_footer.et_pb_section{padding-top:0px;padding-bottom:0px}@media only screen and (max-width:980px){.et_pb_section_0_tb_footer{border-top-width:2px;border-top-color:#FFD201}.et_pb_image_0_tb_footer .et_pb_image_wrap img{width:auto}}@media only screen and (min-width:768px) and (max-width:980px){.et_pb_column_0_tb_footer{display:none!important}}@media only screen and (max-width:767px){.et_pb_section_0_tb_footer{border-top-width:2px;border-top-color:#FFD201}.et_pb_column_0_tb_footer{display:none!important}.et_pb_image_0_tb_footer .et_pb_image_wrap img{width:auto}}div#service_section img{border-radius:8px 8px 8px 8px;box-shadow:0px 0px 10px #0000008f}div#service_section h3{text-transform:uppercase;font-size:32px;line-height:1em}.et_pb_row_0.et_pb_row,.et_pb_row_2.et_pb_row,.et_pb_row_3.et_pb_row,.et_pb_row_5.et_pb_row{padding-top:0px!important;padding-bottom:0px!important;padding-top:0px;padding-bottom:0px}.et_pb_image_0,.et_pb_image_2,.et_pb_image_3,.et_pb_image_4{text-align:left;margin-left:0}.et_pb_section_1.et_pb_section,.et_pb_section_4.et_pb_section{background-color:#000000!important}.et_pb_code_2{margin-bottom:7px!important}.et_pb_image_1{text-align:center}.et_pb_section_3.et_pb_section,.et_pb_section_5.et_pb_section{background-color:#e5e5e5!important}@media only screen and (max-width:980px){.et_pb_image_0 .et_pb_image_wrap img,.et_pb_image_1 .et_pb_image_wrap img,.et_pb_image_2 .et_pb_image_wrap img,.et_pb_image_3 .et_pb_image_wrap img,.et_pb_image_4 .et_pb_image_wrap img{width:auto}}@media only screen and (min-width:768px) and (max-width:980px){.et_pb_column_1{display:none!important}}@media only screen and (max-width:767px){.et_pb_column_1{display:none!important}.et_pb_image_0 .et_pb_image_wrap img,.et_pb_image_1 .et_pb_image_wrap img,.et_pb_image_2 .et_pb_image_wrap img,.et_pb_image_3 .et_pb_image_wrap img,.et_pb_image_4 .et_pb_image_wrap img{width:auto}}</style>	
 	<script defer="" src="js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447.js" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;649d48af30164b9ba93822102c23d7f3&quot;,&quot;r&quot;:1,&quot;server_timing&quot;:{&quot;name&quot;:{&quot;cfCacheStatus&quot;:true,&quot;cfEdge&quot;:true,&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfSpeedBrain&quot;:true},&quot;location_startswith&quot;:null}}" crossorigin="anonymous"></script>
 
 
@@ -1628,4 +1420,4 @@ gform.initializeOnLoaded( function() {jQuery(document).trigger("gform_pre_post_r
 
 
 
-</body></html><!-- Dynamic page generated in 3.037 seconds. --><!-- Cached page generated by WP-Super-Cache on 2026-06-26 08:33:27 --><!-- Compression = gzip --><!-- super cache -->
+</body></html><!-- Dynamic page generated in 2.286 seconds. --><!-- Cached page generated by WP-Super-Cache on 2026-06-26 09:23:24 --><!-- Compression = gzip --><!-- super cache -->

@@ -25,6 +25,9 @@ import { readdir, stat } from 'node:fs';
 import { join } from 'node:path';
 import { promisify } from 'util';
 import scrape from 'website-scraper';
+import { analyzeHead, analyzeHeadWithOrdering } from '@rviscomi/capo.js';
+import { BrowserAdapter } from '@rviscomi/capo.js/adapters';
+import { generate } from "critical";
 
 /*
 dependencies
@@ -52,41 +55,70 @@ var arrURLs = ['https://fightden.ca',
 'https://www.fightden.ca/product-category/digital-products/',
 'https://www.fightden.ca/contact/'
 	 ]
-		
+
 //scrapeWeb();
 //minifyHTML()
+//analyzeHTMLHead();
+analyzeCriticalPath();
 //discoverFonts(arrURLs);
-minifyFonts();
+//minifyFonts();
 //minifyFA();
 //minifyJS();
 //minifyCSS();
 //minifyImages();
-generateReport();
+//generateReport();
 
 console.log("Minify Complete");
 
-function scrapeWeb()
+function analyzeCriticalPath()
+{
+	generate({
+		inline: true,
+		base: "critical/",
+		src: "index.html",
+		css: ["assets/css/facustom.min.css"],
+		target: {
+			css: "output/critical.css",
+			html: "output/index-critical.html",
+			uncritical: "output/uncritical.css",
+		  },
+		width: 1300,
+		height: 900,
+	  });
+	  console.log("critical complete");
+}
+
+function analyzeHTMLHead()
+{
+	console.log("Analyze Head");
+	const head = "<head><meta charset='utf-8'><title>Web Page title</title><meta name=viewport content=width=device-width,initial-scale=1,maximum-scale=3></head>";
+	const resultorder = analyzeHeadWithOrdering(head, new BrowserAdapter());
+	console.log(resultorder);
+}
+
+async function scrapeWeb()
 {
 	try
 	{
-	  scrape({
-		urls: ['https://fightden.ca',
-		'https://fightden.ca/about',
-		'https://fightden.ca/services/',
-		'https://www.fightden.ca/service-category/krav-maga-weapons-disarm/',
-		'https://www.fightden.ca/service-category/no-gi-jiu-jitsu/',
-		'https://www.fightden.ca/service-category/mixed-martial-arts/',
-		'https://www.fightden.ca/service-category/combat-fitness/',
-		'https://www.fightden.ca/schedule/',
-		'https://www.fightden.ca/product-category/memberships/',
-		'https://www.fightden.ca/product-category/individual-classes/',
-		'https://www.fightden.ca/product-category/corporate-classes/',
-		'https://www.fightden.ca/product-category/digital-products/',
-		'https://www.fightden.ca/contact/'
+	  const result = await scrape({
+		urls: [
+		{url: 'https://fightden.ca', filename: 'index.html' },
+		{url: 'https://fightden.ca/about', filename: 'about.html'},
+		{url: 'https://fightden.ca/services/', filename: 'services.html'},
+		{url: 'https://www.fightden.ca/service-category/krav-maga-weapons-disarm/',filename: 'kravmaga.html'},
+		{url: 'https://www.fightden.ca/service-category/no-gi-jiu-jitsu/',filename: 'jiujitsu.html'},
+		{url: 'https://www.fightden.ca/service-category/mixed-martial-arts/',filename: 'mma.html'},
+		{url: 'https://www.fightden.ca/service-category/combat-fitness/',filename: 'combatfitness.html'},
+		{url: 'https://www.fightden.ca/schedule/',filename: 'schedule.html'},
+		{url: 'https://www.fightden.ca/product-category/memberships/',filename: 'memberships.html'},
+		{url: 'https://www.fightden.ca/product-category/individual-classes/',filename: 'classesindiv.html'},
+		{url: 'https://www.fightden.ca/product-category/corporate-classes/',filename: 'corproateindiv.html'},
+		{url: 'https://www.fightden.ca/product-category/digital-products/',filename: 'digitalproducts.html'},
+		{url: 'https://www.fightden.ca/contact/',filename: 'contact.html'}
 		 ],	// Will be saved with default filename 'index.html'
 		directory: 'scrape/fightden.ca'
 	  });
-	  console.log("scrape complete");
+	  console.log("scrape complete:" + result);
 	}
 	catch (error)
 	{
