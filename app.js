@@ -11,7 +11,7 @@
 
 import imagemin from 'imagemin';
 import imageminWebp from 'imagemin-webp';
-import fs  from 'fs';
+import fs from 'fs';
 import path from 'path';
 import { bundle, transform } from 'lightningcss';
 import { glob, globSync } from 'glob';
@@ -22,7 +22,7 @@ import { faBriefcase } from '@fortawesome/free-solid-svg-icons';
 import { faUser } from '@fortawesome/free-regular-svg-icons';
 import { faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { execSync } from 'child_process';
-import { readdir, stat } from 'node:fs';
+import { unlink, readdir, stat } from 'node:fs';
 import { join } from 'node:path';
 import { promisify } from 'util';
 import scrape from 'website-scraper';
@@ -64,9 +64,9 @@ var arrURLs = ['https://fightden.ca',
 //discoverFonts(arrURLs);
 //minifyFonts();
 //minifyFA();
-//minifyJS();
+minifyJS();
 //minifyCSS();
-minifyImages();
+//minifyImages();
 //generateReport();
 
 console.log("Minify Complete");
@@ -388,15 +388,31 @@ function minifyJS()
     };
 
 
-	// Find all CSS files in your source directory
+	// Find all JS files in your source directory
 const inputDir = path.join(import.meta.dirname, '/js');
 const outputDir = path.join(import.meta.dirname, '/js/min');
 
 // Ensure output sub-directories exist
 fs.mkdirSync(path.dirname(outputDir), { recursive: true });
-	
 
- // Find all .css files recursively
+	//delete all existing .js files in min directory
+	const jsminfiles = globSync('*.js', { cwd: outputDir });
+	//console.log("min folder:" + jsminfiles);
+
+	// 3. Delete each .js file
+	jsminfiles.forEach(file => {
+	try
+	{
+    	fs.unlinkSync(outputDir + "/" + file);
+		console.log("File deleted:" + file)
+	}
+	catch (error)
+	{
+		console.error("error deleting existing .min file: " + error.message);
+	}
+})
+
+ // Find all .js files recursively
 const jsfiles = globSync('*.js', { cwd: inputDir });
 console.log(jsfiles);
 

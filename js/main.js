@@ -5,7 +5,6 @@
 */
 
 (function() {
-
 	"use strict";
 
 	var	$body = document.querySelector('body');
@@ -37,30 +36,10 @@
 					// Images (in the format of 'url': 'alignment').
 						images: {
 							'images/bg01.webp': 'center',
-							'images/bg02.webp': 'center',
-							'images/bg03.webp': 'center',
-							'images/bg04.webp': 'center',
-							'images/bg05.webp': 'center',
-							'images/bg06.webp': 'center',
-							'images/bg07.webp': 'center',
-							'images/bg08.webp': 'center',
-							'images/bg09.webp': 'center',
-							'images/bg10.webp': 'center',
-							'images/bg11.webp': 'center',
-							'images/bg12.webp': 'center',
-							'images/bg13.webp': 'center',
-							'images/bg14.webp': 'center',
-							'images/bg15.webp': 'center',
-							'images/bg16.webp': 'center',
-							'images/bg17.webp': 'center',
-							'images/bg18.webp': 'center',
-							'images/bg19.webp': 'center',
-							'images/bg20.webp': 'center',
-							'images/bg21.webp': 'center'
 						},
 
 					// Delay.
-						delay: 5000 //6000
+						delay: 6000
 
 				};
 
@@ -76,25 +55,20 @@
 
 				for (k in settings.images) {
 
-					// Create BG
+					// Create BG.
 						$bg = document.createElement('div');
 							$bg.style.backgroundImage = 'url("' + k + '")';
 							$bg.style.backgroundPosition = settings.images[k];
 							$wrapper.appendChild($bg);
 
-					// Add it to array
+					// Add it to array.
 						$bgs.push($bg);
 
 				}
 
-			// Main loop
+			// Main loop.
 				$bgs[pos].classList.add('visible');
 				$bgs[pos].classList.add('top');
-
-				// Bail if we only have a single BG or the client doesn't support transitions.
-					if ($bgs.length == 1
-					||	!canUse('transition'))
-						return;
 
 				window.setInterval(function() {
 
@@ -118,37 +92,5 @@
 				}, settings.delay);
 
 		})();
+
 })();
-
-function copyRSSURL() {
-	navigator.clipboard.writeText("https://jax.tech/anylove/rsstest.xml");
-}
-
-function downloadApp()
-{
-	alert("The app is under development.")
-}
-
-async function sharePage()
-{
-	const shareData = {
-		title: 'Any Love',
-		url: 'https://anylove.jax.tech'
-	};
-	
-	try {
-		await navigator.share(shareData);
-	} catch (err) {
-		console.error(`Error: ${err}`);
-	}
-}
-
-function generateBrowserNonce() {
-    const array = new Uint8Array(16);
-    window.crypto.getRandomValues(array);
-    return btoa(String.fromCharCode(...array));
-  }
-  
-//const nonce = generateBrowserNonce();
-//console.log(nonce); // Example: "dGhpcyBpcyBhIG5vbmNl"
-  
