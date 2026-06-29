@@ -29,6 +29,8 @@ import scrape from 'website-scraper';
 import { analyzeHead, analyzeHeadWithOrdering } from '@rviscomi/capo.js';
 import { BrowserAdapter } from '@rviscomi/capo.js/adapters';
 import { generate } from "critical";
+import lighthouse from 'lighthouse';
+import * as chromeLauncher from 'chrome-launcher';
 
 /*
 dependencies
@@ -57,6 +59,7 @@ var arrURLs = ['https://fightden.ca',
 'https://www.fightden.ca/contact/'
 	 ]
 
+//lighthouseAudit("https://jax.tech");
 //scrapeWeb();
 //minifyHTML()
 //analyzeHTMLHead();
@@ -64,12 +67,30 @@ var arrURLs = ['https://fightden.ca',
 //discoverFonts(arrURLs);
 //minifyFonts();
 //minifyFA();
-minifyJS();
+//minifyJS();
 //minifyCSS();
 //minifyImages();
 //generateReport();
 
 console.log("Minify Complete");
+
+async function lighthouseAudit(strURL)
+{
+	console.log("Starting Lighthouse audit");
+	const chrome = await chromeLauncher.launch({chromeFlags: ['--headless']});
+	const options = {logLevel: 'info', output: 'html', onlyCategories: ['performance'], port: chrome.port};
+	const runnerResult = await lighthouse(strURL, options);
+
+	// `.report` is the HTML report as a string
+	const reportHtml = runnerResult.report;
+	fs.writeFileSync('lhreport.html', reportHtml);
+
+	// `.lhr` is the Lighthouse Result as a JS object
+	console.log('Report is done for', runnerResult.lhr.finalDisplayedUrl);
+	console.log('Performance score was', runnerResult.lhr.categories.performance.score * 100);
+
+	chrome.kill();
+}
 
 function analyzeCriticalPath()
 {
